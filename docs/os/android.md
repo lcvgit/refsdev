@@ -13,7 +13,7 @@
 
 :   An integer for the Android API level.
 
-    Defined in `<android/api-level.h>`.
+    Defined in `<android/api-level.h>`, which is included by `<features.h>`.
 
 ### API Level
 
