@@ -1,5 +1,13 @@
 # k/OpenSolaris
 
+## Identification
+
+`__GLIBC__` and `__OpenSolaris_kernel__`
+
+:   Identifies the target operating system as k/OpenSolaris.
+
+## References
+
 <!---
 <gcc/config/kopensolaris-gnu.h> (14.2.0)
 

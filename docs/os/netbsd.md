@@ -14,6 +14,6 @@
 
 `NetBSD<major>_<minor>`
 
-* <https://github.com/NetBSD/src>
-* <https://github.com/NetBSD/src/blob/trunk/sys/sys/param.h#L70>
-* <https://github.com/gcc-mirror/gcc/blob/master/gcc/config/netbsd.h#L24>
+- <https://github.com/NetBSD/src>
+- <https://github.com/NetBSD/src/blob/trunk/sys/sys/param.h#L70>
+- <https://github.com/gcc-mirror/gcc/blob/master/gcc/config/netbsd.h#L24>
