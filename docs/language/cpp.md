@@ -39,7 +39,7 @@
 
 `__STDC_HOSTED__`
 
-:   Defined as `1` if the implementation is a hosted implementation or defined as `0` if it is not.
+:   Defined as `#!c 1` if the implementation is a hosted implementation or defined as `#!c 0` if it is not.
 
 ## Library
 
@@ -51,17 +51,17 @@
 
     | Standard | `__cplusplus` |
     | -------- | ------------- |
-    | C++98    | `199711L`     |
-    | C++03    | `199711L`     |
-    | C++11    | `201103L`     |
-    | C++14    | `201402L`     |
-    | C++17    | `201703L`     |
-    | C++20    | `202002L`     |
-    | C++23    | `202302L`     |
+    | C++98    | `#!c 199711L` |
+    | C++03    | `#!c 199711L` |
+    | C++11    | `#!c 201103L` |
+    | C++14    | `#!c 201402L` |
+    | C++17    | `#!c 201703L` |
+    | C++20    | `#!c 202002L` |
+    | C++23    | `#!c 202302L` |
 
     !!!info
 
-        Early drafts of C++98 defined `__cplusplus` as `199707L` which certain compilers retained (e.g., HP aC++).
+        Early drafts of C++98 defined `__cplusplus` as `#!c 199707L` which certain compilers retained (e.g., HP aC++).
 
 `__cplusplus_cli`
 

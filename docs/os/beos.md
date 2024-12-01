@@ -20,3 +20,4 @@
 ## References
 
 - [BeOS - Wikipedia](http://en.wikipedia.org/wiki/BeOS){:target="_blank"}
+- [BeBuild.h](https://git.haiku-os.org/haiku/tree/headers/os/BeBuild.h){:target="_blank"}
