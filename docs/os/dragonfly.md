@@ -8,9 +8,11 @@
 
 ## Versioning
 
+<!-- FIXME versions before 2.0 -->
+
 `__DragonFly_version`
 
-:   An integer for the version of DragonFly, encoded as a decimal integer with the general form of <**_ABBBCC_**>~10~, where:
+:   An integer for the version of DragonFly, which is encoded as a decimal integer with the general form of <**_ABBBCC_**>~10~, where:
 
     - <**_A_**>~10~ is the major version;
     - <**_BBB_**>~10~ is the minor version; and
