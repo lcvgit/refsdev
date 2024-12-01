@@ -1,0 +1,110 @@
+site_name: refs.dev
+site_url: https://refs.dev
+
+theme:
+  name: material
+  features:
+    - content.tooltips
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # - navigation.sections
+    - navigation.path
+    - navigation.prune
+    # - navigation.instant
+    - navigation.indexes 
+    - content.footnote.tooltips
+    - search.highlight
+    - search.share
+    - search.suggest
+    # - toc.integrate
+
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - abbr
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+        - includes/references.md
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: false
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.blocks.caption
+  - tables
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.magiclink
+  - toc:
+      # permalink: ⚓︎
+      permalink: 🔗
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.betterem
+  - pymdownx.details
+  - pymdownx.tabbed
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+watch:
+  - includes
+
+plugins:
+  - awesome-pages
+  - autorefs
+  - search
+  - offline:
+      enabled: !ENV [OFFLINE, false]
+  - tags:
+      tags: false
+  
+# nav:
+#   - Overview: index.md
+#   - Compiler:
+#     - compiler/acc.md
+#   - CPU:
+#     - cpu/aarch64.md
+#     - cpu/amd-am29k.md
+#   - OS:
+#     - AIX: os/aix.md

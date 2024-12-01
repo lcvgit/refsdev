@@ -1,0 +1,6 @@
+order: asc
+order_by: title
+sort_type: natural
+nav:
+  - Overview: index.md
+  - ...
