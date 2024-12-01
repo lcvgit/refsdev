@@ -1,0 +1,3786 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://refs.dev/cpu/blackfin/">
+      
+      
+        <link rel="prev" href="../avr/">
+      
+      
+        <link rel="next" href="../bpf/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+    
+    
+      
+        <title>Blackfin - refs.dev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#blackfin" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="refs.dev" class="md-header__button md-logo" aria-label="refs.dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            refs.dev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Blackfin
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../byte-order/" class="md-tabs__link">
+        
+  
+    
+  
+  Byte Order
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../aarch64/" class="md-tabs__link">
+          
+  
+    
+  
+  CPU
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../compiler/acc/" class="md-tabs__link">
+          
+  
+    
+  
+  Compiler
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../data-model/" class="md-tabs__link">
+          
+  
+    
+  
+  Data Model
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../language/assembly/" class="md-tabs__link">
+          
+  
+    
+  
+  Language
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../library/c/bionic/" class="md-tabs__link">
+          
+  
+    
+  
+  Library
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../os/aix/" class="md-tabs__link">
+          
+  
+    
+  
+  OS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../standard/lsb/" class="md-tabs__link">
+          
+  
+    
+  
+  Standard
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="refs.dev" class="md-nav__button md-logo" aria-label="refs.dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    refs.dev
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../byte-order/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Byte Order
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    CPU
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            CPU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aarch64/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AArch64
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../amd-am29k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AMD Am29000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../amd-gcn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AMD GCN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ARC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ARM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../avr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AVR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Blackfin
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Blackfin
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BPF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Convex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CRIS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C-SKY
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../d30v/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    D30V
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dec-alpha/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DEC Alpha
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dec-pdp11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DEC PDP-11
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dec-vax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DEC VAX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsp16xx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DSP16xx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elbrus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elbrus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elxsi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    elxsi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../epiphany/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epiphany
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fr30/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FR30
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FR-V
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft32/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FT32
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../h8300/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    H8/300
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hc08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HC08
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hc11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HC11
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hexagon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hexagon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hppa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HP/PA RISC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ia64/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IA-64
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iq2000/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IQ2000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lm32/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LM32
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loongarch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LoongArch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m16c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M16C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m32c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M32C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m32r/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M32R/D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m68k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M68000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m88k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M88000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microblaze/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MicroBlaze
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MIPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mmix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MMIX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mn10200/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MN10200
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mn10300/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MN10300
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../moxie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moxie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msp430/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MSP430
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../native-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Native Client / PNaCl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nds32/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NDS32
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nec-sx-aurora/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NEC SX-Aurora TSUBASA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nios2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NIOS II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ns32k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NS32000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../or1k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenRISC 1000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PJ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../power/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POWER / PowerPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PRU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ptx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nvidia PTX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyramid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pyramid 9810
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../riscv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RISC-V
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rl78/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RL78
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../romp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROMP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rs6k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RS/6000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s370/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S370
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s390/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S390
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sparc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SPARC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../st7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ST7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stm8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STM8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../str9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STR9
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../superh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SuperH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tms320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TMS320
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tms470/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TMS470
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v850/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V850
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visium/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visium
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../we32k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WE32000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../x80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    x80
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../x86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    x86
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xstormy16/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xstormy16
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xtensa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xtensa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../z/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System/Z
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../x86/32/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    X86
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../compiler/acc/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Compiler
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../data-model/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Data Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../language/assembly/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Language
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../library/c/bionic/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Library
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../os/aix/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../standard/lsb/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Standard
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="blackfin">Blackfin<a class="headerlink" href="#blackfin" title="Permanent link">🔗</a></h1>
+<h2 id="identification">Identification<a class="headerlink" href="#identification" title="Permanent link">🔗</a></h2>
+<dl>
+<dt><code>__ADSPBLACKFIN__</code></dt>
+<dt><code>__ADSPLPBLACKFIN__</code></dt>
+<dd>
+<p>Identifies the target processor as a Blackfin processor.</p>
+</dd>
+<dt><code>BFIN</code></dt>
+<dt><code>__BFIN</code></dt>
+<dt><code>__BFIN__</code></dt>
+<dd>
+<p>Identifies the target processor as a Blackfin processor.</p>
+</dd>
+<dt><code>bfin</code></dt>
+<dt><code>__bfin</code></dt>
+<dt><code>__bfin__</code></dt>
+<dd>
+<p>Identifies the target processor as a Blackfin processor.</p>
+</dd>
+</dl>
+<h2 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">🔗</a></h2>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Macro</th>
+<th>Generic Macros</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADSP-BF504</td>
+<td><code>__ADSPBF504__</code></td>
+<td><code>__ADSPBF50x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF506F_FAMILY__</code></td>
+<td>5.0.400</td>
+</tr>
+<tr>
+<td>ADSP-BF504F</td>
+<td><code>__ADSPBF504F__</code></td>
+<td><code>__ADSPBF50x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF506F_FAMILY__</code></td>
+<td>5.0.470</td>
+</tr>
+<tr>
+<td>ADSP-BF506F</td>
+<td><code>__ADSPBF506F__</code></td>
+<td><code>__ADSPBF50x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF506F_FAMILY__</code></td>
+<td>5.0.670</td>
+</tr>
+<tr>
+<td>ADSP-BF512</td>
+<td><code>__ADSPBF512__</code></td>
+<td><code>__ADSPBF51x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF518_FAMILY__</code></td>
+<td>5.1.200</td>
+</tr>
+<tr>
+<td>ADSP-BF514</td>
+<td><code>__ADSPBF514__</code></td>
+<td><code>__ADSPBF51x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF518_FAMILY__</code></td>
+<td>5.1.400</td>
+</tr>
+<tr>
+<td>ADSP-BF516</td>
+<td><code>__ADSPBF516__</code></td>
+<td><code>__ADSPBF51x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF518_FAMILY__</code></td>
+<td>5.1.600</td>
+</tr>
+<tr>
+<td>ADSP-BF518</td>
+<td><code>__ADSPBF518__</code></td>
+<td><code>__ADSPBF51x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF518_FAMILY__</code></td>
+<td>5.1.800</td>
+</tr>
+<tr>
+<td>ADSP-BF522</td>
+<td><code>__ADSPBF522__</code></td>
+<td><code>__ADSPBF52x__</code><br/><code>__ADSPBF52xLP__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF526_FAMILY__</code></td>
+<td>5.2.200</td>
+</tr>
+<tr>
+<td>ADSP-BF523</td>
+<td><code>__ADSPBF523__</code></td>
+<td><code>__ADSPBF52x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF527_FAMILY__</code></td>
+<td>5.2.300</td>
+</tr>
+<tr>
+<td>ADSP-BF524</td>
+<td><code>__ADSPBF524__</code></td>
+<td><code>__ADSPBF52x__</code><br/><code>__ADSPBF52xLP__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF526_FAMILY__</code></td>
+<td>5.2.400</td>
+</tr>
+<tr>
+<td>ADSP-BF525</td>
+<td><code>__ADSPBF525__</code></td>
+<td><code>__ADSPBF52x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF527_FAMILY__</code></td>
+<td>5.2.500</td>
+</tr>
+<tr>
+<td>ADSP-BF526</td>
+<td><code>__ADSPBF526__</code></td>
+<td><code>__ADSPBF52x__</code><br/><code>__ADSPBF52xLP__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF526_FAMILY__</code></td>
+<td>5.2.600</td>
+</tr>
+<tr>
+<td>ADSP-BF527</td>
+<td><code>__ADSPBF527__</code></td>
+<td><code>__ADSPBF52x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF527_FAMILY__</code></td>
+<td>5.2.700</td>
+</tr>
+<tr>
+<td>ADSP-BF531</td>
+<td><code>__ADSPBF531__</code></td>
+<td><code>__ADSPBF53x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF533_FAMILY__</code></td>
+<td>5.3.100</td>
+</tr>
+<tr>
+<td>ADSP-BF532</td>
+<td><code>__ADSPBF532__</code></td>
+<td><code>__ADSPBF53x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF533_FAMILY__</code></td>
+<td>5.3.200</td>
+</tr>
+<tr>
+<td>ADSP-BF533</td>
+<td><code>__ADSPBF533__</code></td>
+<td><code>__ADSPBF53x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF533_FAMILY__</code></td>
+<td>5.3.300</td>
+</tr>
+<tr>
+<td>ADSP-BF534</td>
+<td><code>__ADSPBF534__</code></td>
+<td><code>__ADSPBF53x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF537_FAMILY__</code></td>
+<td>5.3.400</td>
+</tr>
+<tr>
+<td>ADSP-BF536</td>
+<td><code>__ADSPBF536__</code></td>
+<td><code>__ADSPBF53x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF537_FAMILY__</code></td>
+<td>5.3.600</td>
+</tr>
+<tr>
+<td>ADSP-BF537</td>
+<td><code>__ADSPBF537__</code></td>
+<td><code>__ADSPBF53x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF537_FAMILY__</code></td>
+<td>5.3.700</td>
+</tr>
+<tr>
+<td>ADSP-BF538</td>
+<td><code>__ADSPBF538__</code></td>
+<td><code>__ADSPBF53x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF538_FAMILY__</code></td>
+<td>5.3.800</td>
+</tr>
+<tr>
+<td>ADSP-BF539</td>
+<td><code>__ADSPBF539__</code></td>
+<td><code>__ADSPBF53x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF538_FAMILY__</code></td>
+<td>5.3.900</td>
+</tr>
+<tr>
+<td>ADSP-BF542</td>
+<td><code>__ADSPBF542__</code></td>
+<td><code>__ADSPBF54x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF548_FAMILY__</code></td>
+<td>5.4.200</td>
+</tr>
+<tr>
+<td>ADSP-BF542M</td>
+<td><code>__ADSPBF542M__</code></td>
+<td><code>__ADSPBF548M_FAMILY__</code></td>
+<td>5.4.277</td>
+</tr>
+<tr>
+<td>ADSP-BF544</td>
+<td><code>__ADSPBF544__</code></td>
+<td><code>__ADSPBF54x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF548_FAMILY__</code></td>
+<td>5.4.400</td>
+</tr>
+<tr>
+<td>ADSP-BF544M</td>
+<td><code>__ADSPBF544M__</code></td>
+<td><code>__ADSPBF548M_FAMILY__</code></td>
+<td>5.4.477</td>
+</tr>
+<tr>
+<td>ADSP-BF547</td>
+<td><code>__ADSPBF547__</code></td>
+<td><code>__ADSPBF54x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF548_FAMILY__</code></td>
+<td>5.4.700</td>
+</tr>
+<tr>
+<td>ADSP-BF547M</td>
+<td><code>__ADSPBF547M__</code></td>
+<td><code>__ADSPBF548M_FAMILY__</code></td>
+<td>5.4.777</td>
+</tr>
+<tr>
+<td>ADSP-BF548</td>
+<td><code>__ADSPBF548__</code></td>
+<td><code>__ADSPBF54x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF548_FAMILY__</code></td>
+<td>5.4.800</td>
+</tr>
+<tr>
+<td>ADSP-BF548M</td>
+<td><code>__ADSPBF548M__</code></td>
+<td><code>__ADSPBF548M_FAMILY__</code></td>
+<td>5.4.877</td>
+</tr>
+<tr>
+<td>ADSP-BF549</td>
+<td><code>__ADSPBF549__</code></td>
+<td><code>__ADSPBF54x__</code><br/><code>__ADSPBF5xx__</code><br/><code>__ADSPBF548_FAMILY__</code></td>
+<td>5.4.900</td>
+</tr>
+<tr>
+<td>ADSP-BF549M</td>
+<td><code>__ADSPBF549M__</code></td>
+<td><code>__ADSPBF548M_FAMILY__</code></td>
+<td>5.4.977</td>
+</tr>
+<tr>
+<td>ADSP-BF561</td>
+<td><code>__ADSPBF561__</code></td>
+<td><code>__ADSPBF56x__</code><br/><code>__ADSPBF5xx__</code></td>
+<td>5.6.100</td>
+</tr>
+<tr>
+<td>ADSP-BF592-A</td>
+<td><code>__ADSPBF592A__</code></td>
+<td><code>__ADSPBF59x__</code><br/><code>__ADSPBF5xx__</code></td>
+<td>5.9.265</td>
+</tr>
+<tr>
+<td>ADSP-BF606</td>
+<td><code>__ADSPBF606__</code></td>
+<td><code>__ADSPBF60x__</code><br/><code>__ADSPBF6xx__</code><br/><code>__ADSPBF609_FAMILY__</code></td>
+<td>6.0.600</td>
+</tr>
+<tr>
+<td>ADSP-BF607</td>
+<td><code>__ADSPBF607__</code></td>
+<td><code>__ADSPBF60x__</code><br/><code>__ADSPBF6xx__</code><br/><code>__ADSPBF609_FAMILY__</code></td>
+<td>6.0.700</td>
+</tr>
+<tr>
+<td>ADSP-BF608</td>
+<td><code>__ADSPBF608__</code></td>
+<td><code>__ADSPBF60x__</code><br/><code>__ADSPBF6xx__</code><br/><code>__ADSPBF609_FAMILY__</code></td>
+<td>6.0.800</td>
+</tr>
+<tr>
+<td>ADSP-BF609</td>
+<td><code>__ADSPBF609__</code></td>
+<td><code>__ADSPBF60x__</code><br/><code>__ADSPBF6xx__</code><br/><code>__ADSPBF609_FAMILY__</code></td>
+<td>6.0.900</td>
+</tr>
+<tr>
+<td>ADSP-BF700</td>
+<td><code>__ADSPBF700__</code></td>
+<td><code>__ADSPBF70x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF707_FAMILY__</code></td>
+<td>7.0.0</td>
+</tr>
+<tr>
+<td>ADSP-BF701</td>
+<td><code>__ADSPBF701__</code></td>
+<td><code>__ADSPBF70x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF707_FAMILY__</code></td>
+<td>7.0.100</td>
+</tr>
+<tr>
+<td>ADSP-BF702</td>
+<td><code>__ADSPBF702__</code></td>
+<td><code>__ADSPBF70x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF707_FAMILY__</code></td>
+<td>7.0.200</td>
+</tr>
+<tr>
+<td>ADSP-BF703</td>
+<td><code>__ADSPBF703__</code></td>
+<td><code>__ADSPBF70x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF707_FAMILY__</code></td>
+<td>7.0.300</td>
+</tr>
+<tr>
+<td>ADSP-BF704</td>
+<td><code>__ADSPBF704__</code></td>
+<td><code>__ADSPBF70x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF707_FAMILY__</code></td>
+<td>7.0.400</td>
+</tr>
+<tr>
+<td>ADSP-BF705</td>
+<td><code>__ADSPBF705__</code></td>
+<td><code>__ADSPBF70x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF707_FAMILY__</code></td>
+<td>7.0.500</td>
+</tr>
+<tr>
+<td>ADSP-BF706</td>
+<td><code>__ADSPBF706__</code></td>
+<td><code>__ADSPBF70x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF707_FAMILY__</code></td>
+<td>7.0.600</td>
+</tr>
+<tr>
+<td>ADSP-BF707</td>
+<td><code>__ADSPBF707__</code></td>
+<td><code>__ADSPBF70x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF707_FAMILY__</code></td>
+<td>7.0.700</td>
+</tr>
+<tr>
+<td>ADSP-BF715</td>
+<td><code>__ADSPBF715__</code></td>
+<td><code>__ADSPBF71x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF716_FAMILY__</code></td>
+<td>7.1.500</td>
+</tr>
+<tr>
+<td>ADSP-BF716</td>
+<td><code>__ADSPBF716__</code></td>
+<td><code>__ADSPBF71x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF716_FAMILY__</code></td>
+<td>7.1.600</td>
+</tr>
+<tr>
+<td>ADSP-BF718</td>
+<td><code>__ADSPBF718__</code></td>
+<td><code>__ADSPBF71x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF716_FAMILY__</code></td>
+<td>7.1.800</td>
+</tr>
+<tr>
+<td>ADSP-BF719</td>
+<td><code>__ADSPBF719__</code></td>
+<td><code>__ADSPBF71x__</code><br/><code>__ADSPBF7xx__</code><br/><code>__ADSPBF716_FAMILY__</code></td>
+<td>7.1.900</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt><code>__ADSPBF50x__</code></dt>
+<dd>
+<p>Defined as <code class="language-c highlight"><span class="mi">1</span></code> when the target processor is the ADSP-BF504, ADSP-BF504F, or ADSP-BF506F processor.</p>
+</dd>
+<dt><code>__ADSPBF51x__</code></dt>
+<dd>
+<p>Defined as <code class="language-c highlight"><span class="mi">1</span></code> when the target processor is the ADSP-BF512, ADSP-BF514, ADSP-BF516, or ADSP-BF518 processor.</p>
+</dd>
+<dt><code>__ADSPBF52x__</code></dt>
+<dd>
+<p>Defined as <code class="language-c highlight"><span class="mi">1</span></code> when the target processor is the ADSP-BF522, ADSP-BF524, ADSP-BF526, ADSP-BF523, ADSP-BF525, or ADSP-BF527 processor.</p>
+</dd>
+<dt><code>__ADSPBF52xLP__</code></dt>
+<dd>
+<p>Defined as <code class="language-c highlight"><span class="mi">1</span></code> when the target processor is the ADSP-BF522, ADSP-BF524, or ADSP-BF526 processor.</p>
+</dd>
+<dt><code>__ADSPBF53x__</code></dt>
+<dd>
+<p>Defined as <code class="language-c highlight"><span class="mi">1</span></code> when the target processor is the ADSP-BF531, ADSP-BF532, ADSP-BF533, ADSP-BF534, ADSP-BF536, ADSP-BF537, ADSP-BF538, or ADSP-BF539 processor.</p>
+</dd>
+<dt><code>__ADSPBF54x__</code></dt>
+<dd>
+<p>Defined as <code class="language-c highlight"><span class="mi">1</span></code> when the target processor is the ADSP-BF542, ADSP-BF544, ADSP-BF547, ADSP-BF548, or ADSP-BF549 processor.</p>
+</dd>
+<dt><code>__ADSPBF56x__</code></dt>
+<dd>
+<p>Defined as <code class="language-c highlight"><span class="mi">1</span></code> when the target processor is the ADSP-BF561 processor.</p>
+</dd>
+<dt><code>__ADSPBF59x__</code></dt>
+<dd>
+<p>Defined as <code class="language-c highlight"><span class="mi">1</span></code> when the target processor is the ADSP-BF592-A processor.</p>
+</dd>
+<dt><code>__ADSPBF5xx__</code></dt>
+<dd>
+<p>Defined to <code class="language-c highlight"><span class="mi">1</span></code> when building for any of the ADSP-BF5xx parts, equivalent to:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><span class="p">(</span><span class="w"> </span><span class="n">defined</span><span class="p">(</span><span class="n">__ADSPBF50x__</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">defined</span><span class="p">(</span><span class="n">__ADSPBF51x__</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+</span><span id="__span-0-2"><span class="w">  </span><span class="n">defined</span><span class="p">(</span><span class="n">__ADSPBF52x__</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">defined</span><span class="p">(</span><span class="n">__ADSPBF53x__</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+</span><span id="__span-0-3"><span class="w">  </span><span class="n">defined</span><span class="p">(</span><span class="n">__ADSPBF54x__</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">defined</span><span class="p">(</span><span class="n">__ADSPBF56x__</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+</span><span id="__span-0-4"><span class="w">  </span><span class="n">defined</span><span class="p">(</span><span class="n">__ADSPBF59x__</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+</span></code></pre></div>
+</dd>
+<dt><code>__ADSPBF60x__</code></dt>
+<dd>
+<p>Defined as <code class="language-c highlight"><span class="mi">1</span></code> when the target processor is the ADSP-BF606, ADSP-BF607, ADSP-BF608 or ADSP-BF609 processor.</p>
+</dd>
+<dt><code>__ADSPBF6xx__</code></dt>
+<dd>
+<p>Equivalent to <code>__ADSPBF60x__</code>.</p>
+</dd>
+<dt><code>__ADSPBF70x__</code></dt>
+<dd>
+<p>Defined as <code class="language-c highlight"><span class="mi">1</span></code> when the target processor is the ADSP-BF700, ADSP-BF701, ADSP-BF702, ADSP-BF703, ADSP-BF704, ADSP-BF705, ADSP-BF706 or ADSP-BF707 processor.</p>
+</dd>
+<dt><code>__ADSPBF71x__</code></dt>
+<dd>
+<p>Defined as <code class="language-c highlight"><span class="mi">1</span></code> when the target processor is the ADSP-BF715, ADSP-BF716, ADSP-BF718 or ADSP-BF719 processor.</p>
+</dd>
+<dt><code>__ADSPBF7xx__</code></dt>
+<dd>
+<p>Defined to <code class="language-c highlight"><span class="mi">1</span></code> when building for any of the ADSP-BF7xx parts, equivalent to: </p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><span class="p">(</span><span class="n">defined</span><span class="p">(</span><span class="n">__ADSPBF70x__</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">defined</span><span class="p">(</span><span class="n">__ADSPBF71x__</span><span class="p">))</span>
+</span></code></pre></div>
+</dd>
+<dt><code>__ADSPBF506F_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the ADSP-BF504, ADSP-BF504F, or ADSP-BF506F.</p>
+</dd>
+<dt><code>__ADSPBF518_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the ADSP-BF512, ADSP-BF514, ADSP-BF516, or ADSP-BF518.</p>
+</dd>
+<dt><code>__ADSPBF526_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the ADSP-BF522, ADSP-BF524, ADSP-BF526, ADSP-BF523, ADSP-BF525, or ADSP-BF527.</p>
+</dd>
+<dt><code>__ADSPBF527_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the ADSP-BF523, ADSP-BF525, or ADSP-BF527.</p>
+</dd>
+<dt><code>__ADSPBF533_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the ADSP-BF531, ADSP-BF532, or ADSP-BF533.</p>
+</dd>
+<dt><code>__ADSPBF537_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the  ADSP-BF534, ADSP-BF536 or ADSP-BF537.</p>
+</dd>
+<dt><code>__ADSPBF538_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the ADSP-BF538 or ADSP-BF539.</p>
+</dd>
+<dt><code>__ADSPBF548_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the ADSP-BF542, ADSP-BF544, ADSP-BF547, ADSP-BF548, or ADSP-BF549.</p>
+</dd>
+<dt><code>__ADSPBF548M_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the ADSP-BF542M, ADSP-BF544M, ADSP-BF547M, ADSP-BF548M, or ADSP-BF549M.</p>
+</dd>
+<dt><code>__ADSPBF609_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the ADSP-BF606, ADSP-BF607, ADSP-BF608 or ADSP-BF609 processor.</p>
+</dd>
+<dt><code>__ADSPBF707_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the ADSP-BF700, ADSP-BF701, ADSP-BF702, ADSP-BF703, ADSP-BF704, ADSP-BF705, ADSP-BF706 or ADSP-BF707.</p>
+</dd>
+<dt><code>__ADSPBF716_FAMILY__</code></dt>
+<dd>
+<p>Indicates that the processor is the ADSP-BF715, ADSP-BF716, ADSP-BF718 or ADSP-BF719.</p>
+</dd>
+<dt><code>__SILICON_REVISION__</code></dt>
+<dd>
+<p>ccblkfn defines <code>__SILICON_REVISION__</code> to a hexadecimal constant corresponding to the target processor revision; may also be set by the <code>-si-revision</code> option.</p>
+</dd>
+</dl>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">🔗</a></h2>
+<ul>
+<li><a href="https://www.analog.com/media/en/dsp-documentation/software-manuals/cces-blackfincompiler-library-manual.pdf" target="_blank">CCES Blackfin Manual</a></li>
+<li><a href="https://github.com/gcc-mirror/gcc/blob/master/gcc/config/bfin/bfin.h" target="_blank">gcc/config/bfin/bfin.h</a></li>
+</ul>
+<!---
+<gcc/config/bfin/bfin.h> (14.2.0)
+
+#define TARGET_CPU_CPP_BUILTINS()       \
+  do                        \
+    {                       \
+      builtin_define_std ("bfin");      \
+      builtin_define_std ("BFIN");      \
+      builtin_define ("__ADSPBLACKFIN__");  \
+      builtin_define ("__ADSPLPBLACKFIN__");    \
+                        \
+      switch (bfin_cpu_type)            \
+    {                   \
+    case BFIN_CPU_UNKNOWN:          \
+      break;                \
+    case BFIN_CPU_BF512:            \
+      builtin_define ("__ADSPBF512__"); \
+      builtin_define ("__ADSPBF51x__"); \
+      break;                \
+    case BFIN_CPU_BF514:            \
+      builtin_define ("__ADSPBF514__"); \
+      builtin_define ("__ADSPBF51x__"); \
+      break;                \
+    case BFIN_CPU_BF516:            \
+      builtin_define ("__ADSPBF516__"); \
+      builtin_define ("__ADSPBF51x__"); \
+      break;                \
+    case BFIN_CPU_BF518:            \
+      builtin_define ("__ADSPBF518__"); \
+      builtin_define ("__ADSPBF51x__"); \
+      break;                \
+    case BFIN_CPU_BF522:            \
+      builtin_define ("__ADSPBF522__"); \
+      builtin_define ("__ADSPBF52x__"); \
+      break;                \
+    case BFIN_CPU_BF523:            \
+      builtin_define ("__ADSPBF523__"); \
+      builtin_define ("__ADSPBF52x__"); \
+      break;                \
+    case BFIN_CPU_BF524:            \
+      builtin_define ("__ADSPBF524__"); \
+      builtin_define ("__ADSPBF52x__"); \
+      break;                \
+    case BFIN_CPU_BF525:            \
+      builtin_define ("__ADSPBF525__"); \
+      builtin_define ("__ADSPBF52x__"); \
+      break;                \
+    case BFIN_CPU_BF526:            \
+      builtin_define ("__ADSPBF526__"); \
+      builtin_define ("__ADSPBF52x__"); \
+      break;                \
+    case BFIN_CPU_BF527:            \
+      builtin_define ("__ADSPBF527__"); \
+      builtin_define ("__ADSPBF52x__"); \
+      break;                \
+    case BFIN_CPU_BF531:            \
+      builtin_define ("__ADSPBF531__"); \
+      break;                \
+    case BFIN_CPU_BF532:            \
+      builtin_define ("__ADSPBF532__"); \
+      break;                \
+    case BFIN_CPU_BF533:            \
+      builtin_define ("__ADSPBF533__"); \
+      break;                \
+    case BFIN_CPU_BF534:            \
+      builtin_define ("__ADSPBF534__"); \
+      break;                \
+    case BFIN_CPU_BF536:            \
+      builtin_define ("__ADSPBF536__"); \
+      break;                \
+    case BFIN_CPU_BF537:            \
+      builtin_define ("__ADSPBF537__"); \
+      break;                \
+    case BFIN_CPU_BF538:            \
+      builtin_define ("__ADSPBF538__"); \
+      break;                \
+    case BFIN_CPU_BF539:            \
+      builtin_define ("__ADSPBF539__"); \
+      break;                \
+    case BFIN_CPU_BF542M:           \
+      builtin_define ("__ADSPBF542M__");    \
+      /* FALLTHRU */            \
+    case BFIN_CPU_BF542:            \
+      builtin_define ("__ADSPBF542__"); \
+      builtin_define ("__ADSPBF54x__"); \
+      break;                \
+    case BFIN_CPU_BF544M:           \
+      builtin_define ("__ADSPBF544M__");    \
+      /* FALLTHRU */            \
+    case BFIN_CPU_BF544:            \
+      builtin_define ("__ADSPBF544__"); \
+      builtin_define ("__ADSPBF54x__"); \
+      break;                \
+    case BFIN_CPU_BF547M:           \
+      builtin_define ("__ADSPBF547M__");    \
+      /* FALLTHRU */            \
+    case BFIN_CPU_BF547:            \
+      builtin_define ("__ADSPBF547__"); \
+      builtin_define ("__ADSPBF54x__"); \
+      break;                \
+    case BFIN_CPU_BF548M:           \
+      builtin_define ("__ADSPBF548M__");    \
+      /* FALLTHRU */            \
+    case BFIN_CPU_BF548:            \
+      builtin_define ("__ADSPBF548__"); \
+      builtin_define ("__ADSPBF54x__"); \
+      break;                \
+    case BFIN_CPU_BF549M:           \
+      builtin_define ("__ADSPBF549M__");    \
+      /* FALLTHRU */            \
+    case BFIN_CPU_BF549:            \
+      builtin_define ("__ADSPBF549__"); \
+      builtin_define ("__ADSPBF54x__"); \
+      break;                \
+    case BFIN_CPU_BF561:            \
+      builtin_define ("__ADSPBF561__"); \
+      break;                \
+    case BFIN_CPU_BF592:            \
+      builtin_define ("__ADSPBF592__"); \
+      builtin_define ("__ADSPBF59x__"); \
+      break;                \
+    }                   \
+                        \
+      if (bfin_si_revision != -1)       \
+    {                   \
+      /* space of 0xnnnn and a NUL */   \
+      char *buf = XALLOCAVEC (char, 7); \
+                        \
+      sprintf (buf, "0x%04x", bfin_si_revision);            \
+      builtin_define_with_value ("__SILICON_REVISION__", buf, 0);   \
+    }                               \
+                                    \
+      if (bfin_workarounds)                     \
+    builtin_define ("__WORKAROUNDS_ENABLED");           \
+      if (ENABLE_WA_SPECULATIVE_LOADS)                  \
+    builtin_define ("__WORKAROUND_SPECULATIVE_LOADS");      \
+      if (ENABLE_WA_SPECULATIVE_SYNCS)                  \
+    builtin_define ("__WORKAROUND_SPECULATIVE_SYNCS");      \
+      if (ENABLE_WA_INDIRECT_CALLS)                 \
+    builtin_define ("__WORKAROUND_INDIRECT_CALLS");         \
+      if (ENABLE_WA_RETS)                       \
+    builtin_define ("__WORKAROUND_RETS");               \
+                        \
+      if (TARGET_FDPIC)             \
+    {                   \
+      builtin_define ("__BFIN_FDPIC__");    \
+      builtin_define ("__FDPIC__");     \
+    }                   \
+      if (TARGET_ID_SHARED_LIBRARY      \
+      && !TARGET_SEP_DATA)          \
+    builtin_define ("__ID_SHARED_LIB__");   \
+      if (flag_no_builtin)          \
+    builtin_define ("__NO_BUILTIN");    \
+      if (TARGET_MULTICORE)         \
+    builtin_define ("__BFIN_MULTICORE");    \
+      if (TARGET_COREA)             \
+    builtin_define ("__BFIN_COREA");    \
+      if (TARGET_COREB)             \
+    builtin_define ("__BFIN_COREB");    \
+      if (TARGET_SDRAM)             \
+    builtin_define ("__BFIN_SDRAM");    \
+    }                       \
+  while (0)
+#endif
+--->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.prune", "navigation.indexes", "content.footnote.tooltips", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3843 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://refs.dev/cpu/avr/">
+      
+      
+        <link rel="prev" href="../arm/">
+      
+      
+        <link rel="next" href="../blackfin/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+    
+    
+      
+        <title>AVR - refs.dev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#avr" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="refs.dev" class="md-header__button md-logo" aria-label="refs.dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            refs.dev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AVR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../byte-order/" class="md-tabs__link">
+        
+  
+    
+  
+  Byte Order
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../aarch64/" class="md-tabs__link">
+          
+  
+    
+  
+  CPU
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../compiler/acc/" class="md-tabs__link">
+          
+  
+    
+  
+  Compiler
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../data-model/" class="md-tabs__link">
+          
+  
+    
+  
+  Data Model
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../language/assembly/" class="md-tabs__link">
+          
+  
+    
+  
+  Language
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../library/c/bionic/" class="md-tabs__link">
+          
+  
+    
+  
+  Library
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../os/aix/" class="md-tabs__link">
+          
+  
+    
+  
+  OS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../standard/lsb/" class="md-tabs__link">
+          
+  
+    
+  
+  Standard
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="refs.dev" class="md-nav__button md-logo" aria-label="refs.dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    refs.dev
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../byte-order/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Byte Order
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    CPU
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            CPU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aarch64/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AArch64
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../amd-am29k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AMD Am29000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../amd-gcn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AMD GCN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ARC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ARM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    AVR
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    AVR
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identification
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blackfin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blackfin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BPF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Convex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CRIS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C-SKY
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../d30v/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    D30V
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dec-alpha/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DEC Alpha
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dec-pdp11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DEC PDP-11
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dec-vax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DEC VAX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsp16xx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DSP16xx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elbrus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elbrus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elxsi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    elxsi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../epiphany/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epiphany
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fr30/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FR30
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FR-V
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft32/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FT32
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../h8300/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    H8/300
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hc08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HC08
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hc11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HC11
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hexagon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hexagon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hppa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HP/PA RISC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ia64/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IA-64
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iq2000/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IQ2000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lm32/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LM32
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loongarch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LoongArch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m16c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M16C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m32c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M32C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m32r/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M32R/D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m68k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M68000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m88k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M88000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microblaze/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MicroBlaze
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MIPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mmix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MMIX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mn10200/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MN10200
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mn10300/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MN10300
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../moxie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moxie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msp430/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MSP430
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../native-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Native Client / PNaCl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nds32/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NDS32
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nec-sx-aurora/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NEC SX-Aurora TSUBASA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nios2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NIOS II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ns32k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NS32000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../or1k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenRISC 1000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PJ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../power/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POWER / PowerPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PRU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ptx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nvidia PTX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyramid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pyramid 9810
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../riscv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RISC-V
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rl78/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RL78
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../romp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROMP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rs6k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RS/6000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s370/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S370
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s390/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S390
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sparc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SPARC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../st7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ST7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stm8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STM8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../str9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STR9
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../superh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SuperH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tms320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TMS320
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tms470/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TMS470
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v850/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V850
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visium/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visium
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../we32k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WE32000
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../x80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    x80
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../x86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    x86
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xstormy16/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xstormy16
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xtensa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xtensa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../z/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System/Z
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../x86/32/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    X86
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../compiler/acc/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Compiler
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../data-model/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Data Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../language/assembly/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Language
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../library/c/bionic/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Library
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../os/aix/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../standard/lsb/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Standard
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identification
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="avr">AVR<a class="headerlink" href="#avr" title="Permanent link">🔗</a></h1>
+<h2 id="identification">Identification<a class="headerlink" href="#identification" title="Permanent link">🔗</a></h2>
+<p><code>AVR</code>
+<code>__AVR__</code>
+<code>__avr32__</code></p>
+<!----
+<gcc/config/avr/avr-c.cc> (14.2.0)
+
+  void
+  avr_cpu_cpp_builtins (struct cpp_reader *pfile)
+  {
+    builtin_define_std ("AVR");
+
+    /* __AVR_DEVICE_NAME__ and  avr_mcu_types[].macro like __AVR_ATmega8__
+      are defined by -D command option, see device-specs file.  */
+
+    if (avr_arch->macro)
+      cpp_define_formatted (pfile, "__AVR_ARCH__=%s", avr_arch->macro);
+    if (AVR_HAVE_RAMPD)    cpp_define (pfile, "__AVR_HAVE_RAMPD__");
+    if (AVR_HAVE_RAMPX)    cpp_define (pfile, "__AVR_HAVE_RAMPX__");
+    if (AVR_HAVE_RAMPY)    cpp_define (pfile, "__AVR_HAVE_RAMPY__");
+    if (AVR_HAVE_RAMPZ)    cpp_define (pfile, "__AVR_HAVE_RAMPZ__");
+    if (AVR_HAVE_ELPM)     cpp_define (pfile, "__AVR_HAVE_ELPM__");
+    if (AVR_HAVE_ELPMX)    cpp_define (pfile, "__AVR_HAVE_ELPMX__");
+    if (AVR_HAVE_MOVW)     cpp_define (pfile, "__AVR_HAVE_MOVW__");
+    if (AVR_HAVE_LPMX)     cpp_define (pfile, "__AVR_HAVE_LPMX__");
+    if (AVR_HAVE_ADIW)     cpp_define (pfile, "__AVR_HAVE_ADIW__");
+
+    if (avr_arch->asm_only)
+      cpp_define (pfile, "__AVR_ASM_ONLY__");
+    if (AVR_HAVE_MUL)
+      {
+        cpp_define (pfile, "__AVR_ENHANCED__");
+        cpp_define (pfile, "__AVR_HAVE_MUL__");
+      }
+
+    if (AVR_HAVE_JMP_CALL)
+      cpp_define (pfile, "__AVR_HAVE_JMP_CALL__");
+
+    if (avr_arch->have_jmp_call)
+      cpp_define (pfile, "__AVR_MEGA__");
+
+    if (AVR_SHORT_CALLS)
+      cpp_define (pfile, "__AVR_SHORT_CALLS__");
+
+    if (AVR_XMEGA)
+      cpp_define (pfile, "__AVR_XMEGA__");
+
+    if (AVR_TINY)
+      {
+        cpp_define (pfile, "__AVR_TINY__");
+
+        /* Define macro "__AVR_TINY_PM_BASE_ADDRESS__" with mapped program memory
+    start address.  This macro shall be used where mapped program
+    memory is accessed, eg. copying data section (__do_copy_data)
+    contents to data memory region.
+    NOTE:
+    Program memory of AVR_TINY devices cannot be accessed directly,
+    it has been mapped to the data memory.  For AVR_TINY devices
+    (ATtiny4/5/9/10/20 and 40) mapped program memory starts at 0x4000. */
+
+        cpp_define_formatted (pfile, "__AVR_TINY_PM_BASE_ADDRESS__=0x%x",
+            avr_arch->flash_pm_offset);
+      }
+
+    if (avr_arch->flash_pm_offset)
+      cpp_define_formatted (pfile, "__AVR_PM_BASE_ADDRESS__=0x%x",
+          avr_arch->flash_pm_offset);
+
+    if (AVR_HAVE_EIJMP_EICALL)
+      {
+        cpp_define (pfile, "__AVR_HAVE_EIJMP_EICALL__");
+        cpp_define (pfile, "__AVR_3_BYTE_PC__");
+      }
+    else
+      {
+        cpp_define (pfile, "__AVR_2_BYTE_PC__");
+      }
+
+    if (AVR_HAVE_8BIT_SP)
+      cpp_define (pfile, "__AVR_HAVE_8BIT_SP__");
+    else
+      cpp_define (pfile, "__AVR_HAVE_16BIT_SP__");
+
+    if (AVR_HAVE_SPH)
+      cpp_define (pfile, "__AVR_HAVE_SPH__");
+    else
+      cpp_define (pfile, "__AVR_SP8__");
+
+    if (TARGET_NO_INTERRUPTS)
+      cpp_define (pfile, "__NO_INTERRUPTS__");
+
+    if (TARGET_SKIP_BUG)
+      {
+        cpp_define (pfile, "__AVR_ERRATA_SKIP__");
+
+        if (AVR_HAVE_JMP_CALL)
+    cpp_define (pfile, "__AVR_ERRATA_SKIP_JMP_CALL__");
+      }
+
+    if (TARGET_RMW)
+      cpp_define (pfile, "__AVR_ISA_RMW__");
+
+    cpp_define_formatted (pfile, "__AVR_SFR_OFFSET__=0x%x",
+        avr_arch->sfr_offset);
+
+  #ifdef WITH_AVRLIBC
+    cpp_define (pfile, "__WITH_AVRLIBC__");
+  #endif /* WITH_AVRLIBC */
+
+    // From configure --with-libf7={|libgcc|math|math-symbols|yes|no}
+
+  #ifdef WITH_LIBF7_LIBGCC
+    cpp_define (pfile, "__WITH_LIBF7_LIBGCC__");
+  #endif /* WITH_LIBF7_LIBGCC */
+
+  #ifdef WITH_LIBF7_MATH
+    cpp_define (pfile, "__WITH_LIBF7_MATH__");
+  #endif /* WITH_LIBF7_MATH */
+
+  #ifdef WITH_LIBF7_MATH_SYMBOLS
+    cpp_define (pfile, "__WITH_LIBF7_MATH_SYMBOLS__");
+  #endif /* WITH_LIBF7_MATH_SYMBOLS */
+
+    // From configure --with-double={|32|32,64|64,32|64}
+
+  #ifdef HAVE_DOUBLE_MULTILIB
+    cpp_define (pfile, "__HAVE_DOUBLE_MULTILIB__");
+  #endif
+
+  #ifdef HAVE_DOUBLE64
+    cpp_define (pfile, "__HAVE_DOUBLE64__");
+  #endif
+
+  #ifdef HAVE_DOUBLE32
+    cpp_define (pfile, "__HAVE_DOUBLE32__");
+  #endif
+
+  #if defined (WITH_DOUBLE64)
+    cpp_define (pfile, "__DEFAULT_DOUBLE__=64");
+  #elif defined (WITH_DOUBLE32)
+    cpp_define (pfile, "__DEFAULT_DOUBLE__=32");
+  #else
+  #error "align this with config.gcc"
+  #endif
+
+    // From configure --with-long-double={|32|32,64|64,32|64|double}
+
+  #ifdef HAVE_LONG_DOUBLE_MULTILIB
+    cpp_define (pfile, "__HAVE_LONG_DOUBLE_MULTILIB__");
+  #endif
+
+  #ifdef HAVE_LONG_DOUBLE64
+    cpp_define (pfile, "__HAVE_LONG_DOUBLE64__");
+  #endif
+
+  #ifdef HAVE_LONG_DOUBLE32
+    cpp_define (pfile, "__HAVE_LONG_DOUBLE32__");
+  #endif
+
+  #ifdef HAVE_LONG_DOUBLE_IS_DOUBLE
+    cpp_define (pfile, "__HAVE_LONG_DOUBLE_IS_DOUBLE__");
+  #endif
+
+  #if defined (WITH_LONG_DOUBLE64)
+    cpp_define (pfile, "__DEFAULT_LONG_DOUBLE__=64");
+  #elif defined (WITH_LONG_DOUBLE32)
+    cpp_define (pfile, "__DEFAULT_LONG_DOUBLE__=32");
+  #else
+  #error "align this with config.gcc"
+  #endif
+
+    // From configure --with-double-comparison={2|3} --with-libf7.
+
+  #if defined (WITH_DOUBLE_COMPARISON)
+  #if WITH_DOUBLE_COMPARISON == 2 || WITH_DOUBLE_COMPARISON == 3
+    /* The number of states a DFmode comparison libcall might take and
+      reflects what avr.cc:FLOAT_LIB_COMPARE_RETURNS_BOOL returns for
+      DFmode.  GCC's default is 3-state, but some libraries like LibF7
+      implement true / false (2-state).  */
+    cpp_define_formatted (pfile, "__WITH_DOUBLE_COMPARISON__=%d",
+        WITH_DOUBLE_COMPARISON);
+  #else
+  #error "align this with config.gcc"
+  #endif
+  #else
+  #error "align this with config.gcc"
+  #endif
+
+    /* Define builtin macros so that the user can easily query whether
+      non-generic address spaces (and which) are supported or not.
+      This is only supported for C.  For C++, a language extension is needed
+      (as mentioned in ISO/IEC DTR 18037; Annex F.2) which is not
+      implemented in GCC up to now.  */
+
+    if (lang_GNU_C ())
+      {
+        for (int i = 0; i < ADDR_SPACE_COUNT; i++)
+    if (!ADDR_SPACE_GENERIC_P (i)
+        /* Only supply __FLASH<n> macro if the address space is reasonable
+          for this target.  The address space qualifier itself is still
+          supported, but using it will throw an error.  */
+        && avr_addr_space_supported_p ((addr_space_t) i))
+      {
+        const char *name = avr_addrspace[i].name;
+        char *Name = (char*) alloca (1 + strlen (name));
+
+        cpp_define (pfile, avr_toupper (Name, name));
+      }
+      }
+
+    /* Define builtin macros so that the user can easily query whether or
+      not a specific builtin is available. */
+
+  #define DEF_BUILTIN(NAME, N_ARGS, TYPE, CODE, LIBNAME)  \
+    cpp_define (pfile, "__BUILTIN_AVR_" #NAME);
+  #include "builtins.def"
+  #undef DEF_BUILTIN
+
+    /* Builtin macros for the __int24 and __uint24 type.  */
+
+    cpp_define_formatted (pfile, "__INT24_MAX__=8388607%s",
+        INT_TYPE_SIZE == 8 ? "LL" : "L");
+    cpp_define (pfile, "__INT24_MIN__=(-__INT24_MAX__-1)");
+    cpp_define_formatted (pfile, "__UINT24_MAX__=16777215%s",
+        INT_TYPE_SIZE == 8 ? "ULL" : "UL");
+  }
+////
+
+
+////
+<gcc/config/avr/avr-mcus.def>
+
+/* AVR MCUs.
+   Copyright (C) 2009-2024 Free Software Foundation, Inc.
+
+   This file is part of GCC.
+
+   GCC is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3, or (at your option)
+   any later version.
+
+   GCC is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with GCC; see the file COPYING3.  If not see
+   <http://www.gnu.org/licenses/>.  */
+
+/* List of all known AVR MCU types.  If updated, cd to $(builddir)/gcc and run
+
+   $ make avr-mcus
+
+   This will regenerate / update the following source files:
+
+   -  $(srcdir)/doc/avr-mmcu.texi
+
+   After that, rebuild everything and check-in the new sources to the repo.
+   The device list below should be kept in sync with AVR-LibC.
+
+   Device info is used during compiler build when the device specific
+   spec files device-specs/specs-<NAME> are being built.  The compiler proper
+   does not use the device info, it only uses info for the core architecture,
+   i.e. for entries with MACRO = NULL.
+
+   Before including this file, define a macro:
+
+    AVR_MCU (NAME, ARCH, ATTR, MACRO, TDATA, TTEXT, FLASH_SIZE, PM_OFFSET)
+
+   where the arguments are the fields of avr_mcu_t:
+
+    NAME    Name of the device as specified by -mmcu=<NAME>.  Also
+        used by DRIVER_SELF_SPECS and gen-avr-mmcu-specs.cc for
+        - the name of the device specific specs file
+          in -specs=device-specs/spec-<NAME>
+        - the name of the startup file crt<NAME>.o
+        - the name of the device library to be linked with -l<NAME>
+
+    ARCH    Specifies the multilib variant together with AVR_SHORT_SP
+
+    ATTR    Specifies the device specific features
+        - additional ISA, short SP, errata skip etc.,
+
+    MACRO   If NULL, this is a core and not a device.  If non-NULL,
+        supply respective built-in macro.
+
+    TDATA   First address of SRAM, used in -Tdata=<DATA_START>.
+
+    TTEXT   First address of Flash, used in -Ttext=<TEXT_START>.
+
+    FLASH_SIZE
+        Flash size in bytes.
+
+    PM_OFFSET
+        Either 0x0 or the offset where flash memory is mirrored
+        into the RAM address space accessible by LD, LDD and LDS.
+        This is only needed if that value deviates from the
+        value for the respective device family.
+
+   "avr2" must be first for the "0" default to work as intended.  */
+
+/* Classic, <= 8K.  */
+AVR_MCU ("avr2",             ARCH_AVR2, AVR_ERRATA_SKIP, NULL,                     0x0060, 0x0, 0x60000, 0)
+
+AVR_MCU ("at90s2313",        ARCH_AVR2, AVR_SHORT_SP, "__AVR_AT90S2313__",         0x0060, 0x0, 0x800, 0)
+AVR_MCU ("at90s2323",        ARCH_AVR2, AVR_SHORT_SP, "__AVR_AT90S2323__",         0x0060, 0x0, 0x800, 0)
+AVR_MCU ("at90s2333",        ARCH_AVR2, AVR_SHORT_SP, "__AVR_AT90S2333__",         0x0060, 0x0, 0x800, 0)
+AVR_MCU ("at90s2343",        ARCH_AVR2, AVR_SHORT_SP, "__AVR_AT90S2343__",         0x0060, 0x0, 0x800, 0)
+AVR_MCU ("attiny22",         ARCH_AVR2, AVR_SHORT_SP, "__AVR_ATtiny22__",          0x0060, 0x0, 0x800, 0)
+AVR_MCU ("attiny26",         ARCH_AVR2, AVR_SHORT_SP, "__AVR_ATtiny26__",          0x0060, 0x0, 0x800, 0)
+AVR_MCU ("at90s4414",        ARCH_AVR2, AVR_ISA_NONE, "__AVR_AT90S4414__",         0x0060, 0x0, 0x1000, 0)
+AVR_MCU ("at90s4433",        ARCH_AVR2, AVR_SHORT_SP, "__AVR_AT90S4433__",         0x0060, 0x0, 0x1000, 0)
+AVR_MCU ("at90s4434",        ARCH_AVR2, AVR_ISA_NONE, "__AVR_AT90S4434__",         0x0060, 0x0, 0x1000, 0)
+AVR_MCU ("at90s8515",        ARCH_AVR2, AVR_ERRATA_SKIP, "__AVR_AT90S8515__",      0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("at90c8534",        ARCH_AVR2, AVR_ISA_NONE, "__AVR_AT90C8534__",         0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("at90s8535",        ARCH_AVR2, AVR_ISA_NONE, "__AVR_AT90S8535__",         0x0060, 0x0, 0x2000, 0)
+/* Classic + MOVW, <= 8K.  */
+AVR_MCU ("avr25",            ARCH_AVR25, AVR_ISA_NONE, NULL,                       0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("ata5272",          ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATA5272__",          0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("ata6616c",         ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATA6616C__",         0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("attiny13",         ARCH_AVR25, AVR_SHORT_SP, "__AVR_ATtiny13__",         0x0060, 0x0, 0x400, 0)
+AVR_MCU ("attiny13a",        ARCH_AVR25, AVR_SHORT_SP, "__AVR_ATtiny13A__",        0x0060, 0x0, 0x400, 0)
+AVR_MCU ("attiny2313",       ARCH_AVR25, AVR_SHORT_SP, "__AVR_ATtiny2313__",       0x0060, 0x0, 0x800, 0)
+AVR_MCU ("attiny2313a",      ARCH_AVR25, AVR_SHORT_SP, "__AVR_ATtiny2313A__",      0x0060, 0x0, 0x800, 0)
+AVR_MCU ("attiny24",         ARCH_AVR25, AVR_SHORT_SP, "__AVR_ATtiny24__",         0x0060, 0x0, 0x800, 0)
+AVR_MCU ("attiny24a",        ARCH_AVR25, AVR_SHORT_SP, "__AVR_ATtiny24A__",        0x0060, 0x0, 0x800, 0)
+AVR_MCU ("attiny4313",       ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny4313__",       0x0060, 0x0, 0x1000, 0)
+AVR_MCU ("attiny44",         ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny44__",         0x0060, 0x0, 0x1000, 0)
+AVR_MCU ("attiny44a",        ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny44A__",        0x0060, 0x0, 0x1000, 0)
+AVR_MCU ("attiny441",        ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny441__",        0x0100, 0x0, 0x1000, 0)
+AVR_MCU ("attiny84",         ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny84__",         0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("attiny84a",        ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny84A__",        0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("attiny25",         ARCH_AVR25, AVR_SHORT_SP, "__AVR_ATtiny25__",         0x0060, 0x0, 0x800, 0)
+AVR_MCU ("attiny45",         ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny45__",         0x0060, 0x0, 0x1000, 0)
+AVR_MCU ("attiny85",         ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny85__",         0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("attiny261",        ARCH_AVR25, AVR_SHORT_SP, "__AVR_ATtiny261__",        0x0060, 0x0, 0x800, 0)
+AVR_MCU ("attiny261a",       ARCH_AVR25, AVR_SHORT_SP, "__AVR_ATtiny261A__",       0x0060, 0x0, 0x800, 0)
+AVR_MCU ("attiny461",        ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny461__",        0x0060, 0x0, 0x1000, 0)
+AVR_MCU ("attiny461a",       ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny461A__",       0x0060, 0x0, 0x1000, 0)
+AVR_MCU ("attiny861",        ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny861__",        0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("attiny861a",       ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny861A__",       0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("attiny43u",        ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny43U__",        0x0060, 0x0, 0x1000, 0)
+AVR_MCU ("attiny87",         ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny87__",         0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("attiny48",         ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny48__",         0x0100, 0x0, 0x1000, 0)
+AVR_MCU ("attiny88",         ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny88__",         0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("attiny828",        ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny828__",        0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("attiny841",        ARCH_AVR25, AVR_ISA_NONE, "__AVR_ATtiny841__",        0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("at86rf401",        ARCH_AVR25, AVR_ISA_NONE, "__AVR_AT86RF401__",        0x0060, 0x0, 0x800, 0)
+/* Classic, > 8K, <= 64K.  */
+AVR_MCU ("avr3",             ARCH_AVR3, AVR_ISA_NONE, NULL,                        0x0060, 0x0, 0x6000, 0)
+AVR_MCU ("at43usb355",       ARCH_AVR3, AVR_ISA_NONE, "__AVR_AT43USB355__",        0x0060, 0x0, 0x6000, 0)
+AVR_MCU ("at76c711",         ARCH_AVR3, AVR_ISA_NONE, "__AVR_AT76C711__",          0x0060, 0x0, 0x4000, 0)
+/* Classic, == 128K.  */
+AVR_MCU ("avr31",            ARCH_AVR31, AVR_ERRATA_SKIP, NULL,                    0x0060, 0x0, 0x20000, 0)
+AVR_MCU ("atmega103",        ARCH_AVR31, AVR_ERRATA_SKIP, "__AVR_ATmega103__",     0x0060, 0x0, 0x20000, 0)
+AVR_MCU ("at43usb320",       ARCH_AVR31, AVR_ISA_NONE, "__AVR_AT43USB320__",       0x0060, 0x0, 0x10000, 0)
+/* Classic + MOVW + JMP/CALL.  */
+AVR_MCU ("avr35",            ARCH_AVR35, AVR_ISA_NONE, NULL,                       0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("ata5505",          ARCH_AVR35, AVR_ISA_NONE, "__AVR_ATA5505__",          0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("ata6617c",         ARCH_AVR35, AVR_ISA_NONE, "__AVR_ATA6617C__",         0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("ata664251",        ARCH_AVR35, AVR_ISA_NONE, "__AVR_ATA664251__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("at90usb82",        ARCH_AVR35, AVR_ISA_NONE, "__AVR_AT90USB82__",        0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("at90usb162",       ARCH_AVR35, AVR_ISA_NONE, "__AVR_AT90USB162__",       0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega8u2",        ARCH_AVR35, AVR_ISA_NONE, "__AVR_ATmega8U2__",        0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("atmega16u2",       ARCH_AVR35, AVR_ISA_NONE, "__AVR_ATmega16U2__",       0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega32u2",       ARCH_AVR35, AVR_ISA_NONE, "__AVR_ATmega32U2__",       0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("attiny167",        ARCH_AVR35, AVR_ISA_NONE, "__AVR_ATtiny167__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("attiny1634",       ARCH_AVR35, AVR_ISA_NONE, "__AVR_ATtiny1634__",       0x0100, 0x0, 0x4000, 0)
+/* Enhanced, <= 8K.  */
+AVR_MCU ("avr4",             ARCH_AVR4, AVR_ISA_NONE,  NULL,                       0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("ata5795",          ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATA5795__",          0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("ata6285",          ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATA6285__",          0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("ata6286",          ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATA6286__",          0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("ata6289",          ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATA6289__",          0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("ata6612c",         ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATA6612C__",         0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("atmega8",          ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega8__",          0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("atmega8a",         ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega8A__",         0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("atmega48",         ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega48__",         0x0100, 0x0, 0x1000, 0)
+AVR_MCU ("atmega48a",        ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega48A__",        0x0100, 0x0, 0x1000, 0)
+AVR_MCU ("atmega48p",        ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega48P__",        0x0100, 0x0, 0x1000, 0)
+AVR_MCU ("atmega48pa",       ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega48PA__",       0x0100, 0x0, 0x1000, 0)
+AVR_MCU ("atmega48pb",       ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega48PB__",       0x0100, 0x0, 0x1000, 0)
+AVR_MCU ("atmega88",         ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega88__",         0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("atmega88a",        ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega88A__",        0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("atmega88p",        ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega88P__",        0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("atmega88pa",       ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega88PA__",       0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("atmega88pb",       ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega88PB__",       0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("atmega8515",       ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega8515__",       0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("atmega8535",       ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega8535__",       0x0060, 0x0, 0x2000, 0)
+AVR_MCU ("atmega8hva",       ARCH_AVR4, AVR_ISA_NONE,  "__AVR_ATmega8HVA__",       0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("at90pwm1",         ARCH_AVR4, AVR_ISA_NONE,  "__AVR_AT90PWM1__",         0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("at90pwm2",         ARCH_AVR4, AVR_ISA_NONE,  "__AVR_AT90PWM2__",         0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("at90pwm2b",        ARCH_AVR4, AVR_ISA_NONE,  "__AVR_AT90PWM2B__",        0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("at90pwm3",         ARCH_AVR4, AVR_ISA_NONE,  "__AVR_AT90PWM3__",         0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("at90pwm3b",        ARCH_AVR4, AVR_ISA_NONE,  "__AVR_AT90PWM3B__",        0x0100, 0x0, 0x2000, 0)
+AVR_MCU ("at90pwm81",        ARCH_AVR4, AVR_ISA_NONE,  "__AVR_AT90PWM81__",        0x0100, 0x0, 0x2000, 0)
+/* Enhanced, > 8K, <= 64K.  */
+AVR_MCU ("avr5",             ARCH_AVR5, AVR_ISA_NONE, NULL,                        0x0060, 0x0, 0x4000, 0)
+AVR_MCU ("ata5700m322",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA5700M322__",       0x0200, 0x8000, 0x10000, 0)
+AVR_MCU ("ata5702m322",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA5702M322__",       0x0200, 0x8000, 0x10000, 0)
+AVR_MCU ("ata5782",          ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA5782__",           0x0200, 0x8000, 0xd000, 0)
+AVR_MCU ("ata5787",          ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA5787__",           0x0200, 0x8000, 0xd200, 0)
+AVR_MCU ("ata5790",          ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA5790__",           0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("ata5790n",         ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA5790N__",          0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("ata5791",          ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA5791__",           0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("ata5831",          ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA5831__",           0x0200, 0x8000, 0xd000, 0)
+AVR_MCU ("ata5835",          ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA5835__",           0x0200, 0x8000, 0xd200, 0)
+AVR_MCU ("ata6613c",         ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA6613C__",          0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("ata6614q",         ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA6614Q__",          0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("ata8210",          ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA8210__",           0x0200, 0x8000, 0xd000, 0)
+AVR_MCU ("ata8510",          ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATA8510__",           0x0200, 0x8000, 0xd000, 0)
+AVR_MCU ("atmega16",         ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega16__",          0x0060, 0x0, 0x4000, 0)
+AVR_MCU ("atmega16a",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega16A__",         0x0060, 0x0, 0x4000, 0)
+AVR_MCU ("atmega161",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega161__",         0x0060, 0x0, 0x4000, 0)
+AVR_MCU ("atmega162",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega162__",         0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega163",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega163__",         0x0060, 0x0, 0x4000, 0)
+AVR_MCU ("atmega164a",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega164A__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega164p",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega164P__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega164pa",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega164PA__",       0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega165",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega165__",         0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega165a",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega165A__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega165p",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega165P__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega165pa",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega165PA__",       0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega168",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega168__",         0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega168a",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega168A__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega168p",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega168P__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega168pa",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega168PA__",       0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega168pb",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega168PB__",       0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega169",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega169__",         0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega169a",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega169A__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega169p",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega169P__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega169pa",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega169PA__",       0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega16hvb",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega16HVB__",       0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega16hvbrevb",  ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega16HVBREVB__",   0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega16m1",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega16M1__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega16u4",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega16U4__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega32a",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega32A__",         0x0060, 0x0, 0x8000, 0)
+AVR_MCU ("atmega32",         ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega32__",          0x0060, 0x0, 0x8000, 0)
+AVR_MCU ("atmega323",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega323__",         0x0060, 0x0, 0x8000, 0)
+AVR_MCU ("atmega324a",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega324A__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega324p",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega324P__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega324pa",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega324PA__",       0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega324pb",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega324PB__",       0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega325",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega325__",         0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega325a",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega325A__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega325p",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega325P__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega325pa",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega325PA__",       0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega3250",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega3250__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega3250a",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega3250A__",       0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega3250p",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega3250P__",       0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega3250pa",     ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega3250PA__",      0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega328",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega328__",         0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega328p",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega328P__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega328pb",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega328PB__",       0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega329",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega329__",         0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega329a",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega329A__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega329p",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega329P__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega329pa",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega329PA__",       0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega3290",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega3290__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega3290a",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega3290A__",       0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega3290p",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega3290P__",       0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega3290pa",     ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega3290PA__",      0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega32c1",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega32C1__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega32m1",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega32M1__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega32u4",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega32U4__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega32u6",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega32U6__",        0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega406",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega406__",         0x0100, 0x0, 0xa000, 0)
+AVR_MCU ("atmega64",         ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega64__",          0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega64a",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega64A__",         0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega640",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega640__",         0x0200, 0x0, 0x10000, 0)
+AVR_MCU ("atmega644",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega644__",         0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega644a",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega644A__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega644p",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega644P__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega644pa",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega644PA__",       0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega645",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega645__",         0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega645a",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega645A__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega645p",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega645P__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega6450",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega6450__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega6450a",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega6450A__",       0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega6450p",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega6450P__",       0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega649",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega649__",         0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega649a",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega649A__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega649p",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega649P__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega6490",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega6490__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega16hva",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega16HVA__",       0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega16hva2",     ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega16HVA2__",      0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("atmega32hvb",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega32HVB__",       0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("atmega6490a",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega6490A__",       0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega6490p",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega6490P__",       0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega64c1",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega64C1__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega64m1",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega64M1__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega64hve",      ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega64HVE__",       0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega64hve2",     ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega64HVE2__",      0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("atmega64rfr2",     ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega64RFR2__",      0x0200, 0x0, 0x10000, 0)
+AVR_MCU ("atmega644rfr2",    ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega644RFR2__",     0x0200, 0x0, 0x10000, 0)
+AVR_MCU ("atmega32hvbrevb",  ARCH_AVR5, AVR_ISA_NONE, "__AVR_ATmega32HVBREVB__",   0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("at90can32",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_AT90CAN32__",         0x0100, 0x0, 0x8000, 0)
+AVR_MCU ("at90can64",        ARCH_AVR5, AVR_ISA_NONE, "__AVR_AT90CAN64__",         0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("at90pwm161",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_AT90PWM161__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("at90pwm216",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_AT90PWM216__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("at90pwm316",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_AT90PWM316__",        0x0100, 0x0, 0x4000, 0)
+AVR_MCU ("at90scr100",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_AT90SCR100__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("at90usb646",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_AT90USB646__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("at90usb647",       ARCH_AVR5, AVR_ISA_NONE, "__AVR_AT90USB647__",        0x0100, 0x0, 0x10000, 0)
+AVR_MCU ("at94k",            ARCH_AVR5, AVR_ISA_NONE, "__AVR_AT94K__",             0x0060, 0x0, 0x8000, 0)
+AVR_MCU ("m3000",            ARCH_AVR5, AVR_ISA_NONE, "__AVR_M3000__",             0x1000, 0x0, 0x10000, 0)
+/* Enhanced, == 128K.  */
+AVR_MCU ("avr51",            ARCH_AVR51, AVR_ISA_NONE, NULL,                       0x0100, 0x0, 0x20000, 0)
+AVR_MCU ("atmega128",        ARCH_AVR51, AVR_ISA_NONE, "__AVR_ATmega128__",        0x0100, 0x0, 0x20000, 0)
+AVR_MCU ("atmega128a",       ARCH_AVR51, AVR_ISA_NONE, "__AVR_ATmega128A__",       0x0100, 0x0, 0x20000, 0)
+AVR_MCU ("atmega1280",       ARCH_AVR51, AVR_ISA_NONE, "__AVR_ATmega1280__",       0x0200, 0x0, 0x20000, 0)
+AVR_MCU ("atmega1281",       ARCH_AVR51, AVR_ISA_NONE, "__AVR_ATmega1281__",       0x0200, 0x0, 0x20000, 0)
+AVR_MCU ("atmega1284",       ARCH_AVR51, AVR_ISA_NONE, "__AVR_ATmega1284__",       0x0100, 0x0, 0x20000, 0)
+AVR_MCU ("atmega1284p",      ARCH_AVR51, AVR_ISA_NONE, "__AVR_ATmega1284P__",      0x0100, 0x0, 0x20000, 0)
+AVR_MCU ("atmega128rfa1",    ARCH_AVR51, AVR_ISA_NONE, "__AVR_ATmega128RFA1__",    0x0200, 0x0, 0x20000, 0)
+AVR_MCU ("atmega128rfr2",    ARCH_AVR51, AVR_ISA_NONE, "__AVR_ATmega128RFR2__",    0x0200, 0x0, 0x20000, 0)
+AVR_MCU ("atmega1284rfr2",   ARCH_AVR51, AVR_ISA_NONE, "__AVR_ATmega1284RFR2__",   0x0200, 0x0, 0x20000, 0)
+AVR_MCU ("at90can128",       ARCH_AVR51, AVR_ISA_NONE, "__AVR_AT90CAN128__",       0x0100, 0x0, 0x20000, 0)
+AVR_MCU ("at90usb1286",      ARCH_AVR51, AVR_ISA_NONE, "__AVR_AT90USB1286__",      0x0100, 0x0, 0x20000, 0)
+AVR_MCU ("at90usb1287",      ARCH_AVR51, AVR_ISA_NONE, "__AVR_AT90USB1287__",      0x0100, 0x0, 0x20000, 0)
+/* 3-Byte PC.  */
+AVR_MCU ("avr6",             ARCH_AVR6, AVR_ISA_NONE, NULL,                        0x0200, 0x0, 0x40000, 0)
+AVR_MCU ("atmega2560",       ARCH_AVR6, AVR_ISA_NONE, "__AVR_ATmega2560__",        0x0200, 0x0, 0x40000, 0)
+AVR_MCU ("atmega2561",       ARCH_AVR6, AVR_ISA_NONE, "__AVR_ATmega2561__",        0x0200, 0x0, 0x40000, 0)
+AVR_MCU ("atmega256rfr2",    ARCH_AVR6, AVR_ISA_NONE, "__AVR_ATmega256RFR2__",     0x0200, 0x0, 0x40000, 0)
+AVR_MCU ("atmega2564rfr2",   ARCH_AVR6, AVR_ISA_NONE, "__AVR_ATmega2564RFR2__",    0x0200, 0x0, 0x40000, 0)
+/* Xmega, 16K <= Flash <= 64K, RAM <= 64K */
+AVR_MCU ("avrxmega2",        ARCH_AVRXMEGA2, AVR_ISA_NONE, NULL,                   0x2000, 0x0, 0x9000, 0)
+AVR_MCU ("atxmega8e5",       ARCH_AVRXMEGA2, AVR_ISA_NONE, "__AVR_ATxmega8E5__",   0x2000, 0x0, 0x2800, 0)
+AVR_MCU ("atxmega16a4",      ARCH_AVRXMEGA2, AVR_ISA_NONE, "__AVR_ATxmega16A4__",  0x2000, 0x0, 0x5000, 0)
+AVR_MCU ("atxmega16d4",      ARCH_AVRXMEGA2, AVR_ISA_NONE, "__AVR_ATxmega16D4__",  0x2000, 0x0, 0x5000, 0)
+AVR_MCU ("atxmega16e5",      ARCH_AVRXMEGA2, AVR_ISA_NONE, "__AVR_ATxmega16E5__",  0x2000, 0x0, 0x5000, 0)
+AVR_MCU ("atxmega32a4",      ARCH_AVRXMEGA2, AVR_ISA_NONE, "__AVR_ATxmega32A4__",  0x2000, 0x0, 0x9000, 0)
+AVR_MCU ("atxmega32c3",      ARCH_AVRXMEGA2, AVR_ISA_RMW,  "__AVR_ATxmega32C3__",  0x2000, 0x0, 0x9000, 0)
+AVR_MCU ("atxmega32d3",      ARCH_AVRXMEGA2, AVR_ISA_NONE, "__AVR_ATxmega32D3__",  0x2000, 0x0, 0x9000, 0)
+AVR_MCU ("atxmega32d4",      ARCH_AVRXMEGA2, AVR_ISA_NONE, "__AVR_ATxmega32D4__",  0x2000, 0x0, 0x9000, 0)
+AVR_MCU ("atxmega16a4u",     ARCH_AVRXMEGA2, AVR_ISA_RMW,  "__AVR_ATxmega16A4U__", 0x2000, 0x0, 0x5000, 0)
+AVR_MCU ("atxmega16c4",      ARCH_AVRXMEGA2, AVR_ISA_RMW,  "__AVR_ATxmega16C4__",  0x2000, 0x0, 0x5000, 0)
+AVR_MCU ("atxmega32a4u",     ARCH_AVRXMEGA2, AVR_ISA_RMW,  "__AVR_ATxmega32A4U__", 0x2000, 0x0, 0x9000, 0)
+AVR_MCU ("atxmega32c4",      ARCH_AVRXMEGA2, AVR_ISA_RMW,  "__AVR_ATxmega32C4__",  0x2000, 0x0, 0x9000, 0)
+AVR_MCU ("atxmega32e5",      ARCH_AVRXMEGA2, AVR_ISA_NONE, "__AVR_ATxmega32E5__",  0x2000, 0x0, 0x9000, 0)
+AVR_MCU ("avr64da28",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DA28__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64da32",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DA32__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64da48",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DA48__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64da64",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DA64__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64db28",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DB28__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64db32",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DB32__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64db48",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DB48__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64db64",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DB64__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64dd14",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DD14__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64dd20",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DD20__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64dd28",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DD28__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64dd32",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DD32__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64du28",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DU28__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64du32",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64DU32__",   0x6000, 0x0, 0x10000, 0)
+AVR_MCU ("avr64ea28",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64EA28__",   0x6800, 0x0, 0x10000, 0)
+AVR_MCU ("avr64ea32",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64EA32__",   0x6800, 0x0, 0x10000, 0)
+AVR_MCU ("avr64ea48",        ARCH_AVRXMEGA2, AVR_ISA_FLMAP, "__AVR_AVR64EA48__",   0x6800, 0x0, 0x10000, 0)
+/* Xmega, Flash + RAM < 64K, flash visible in RAM address space */
+AVR_MCU ("avrxmega3",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  NULL,                  0x3f00, 0x0, 0x8000, 0)
+AVR_MCU ("attiny202",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny202__",   0x3f80, 0x0, 0x800,  0x8000)
+AVR_MCU ("attiny204",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny204__",   0x3f80, 0x0, 0x800,  0x8000)
+AVR_MCU ("attiny402",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny402__",   0x3f00, 0x0, 0x1000, 0x8000)
+AVR_MCU ("attiny404",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny404__",   0x3f00, 0x0, 0x1000, 0x8000)
+AVR_MCU ("attiny406",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny406__",   0x3f00, 0x0, 0x1000, 0x8000)
+AVR_MCU ("attiny804",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny804__",   0x3e00, 0x0, 0x2000, 0x8000)
+AVR_MCU ("attiny806",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny806__",   0x3e00, 0x0, 0x2000, 0x8000)
+AVR_MCU ("attiny807",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny807__",   0x3e00, 0x0, 0x2000, 0x8000)
+AVR_MCU ("attiny1604",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny1604__",  0x3c00, 0x0, 0x4000, 0x8000)
+AVR_MCU ("attiny1606",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny1606__",  0x3c00, 0x0, 0x4000, 0x8000)
+AVR_MCU ("attiny1607",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny1607__",  0x3c00, 0x0, 0x4000, 0x8000)
+AVR_MCU ("attiny212",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny212__",   0x3f80, 0x0, 0x800,  0x8000)
+AVR_MCU ("attiny214",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny214__",   0x3f80, 0x0, 0x800,  0x8000)
+AVR_MCU ("attiny412",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny412__",   0x3f00, 0x0, 0x1000, 0x8000)
+AVR_MCU ("attiny414",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny414__",   0x3f00, 0x0, 0x1000, 0x8000)
+AVR_MCU ("attiny416",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny416__",   0x3f00, 0x0, 0x1000, 0x8000)
+AVR_MCU ("attiny416auto",    ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny416AUTO__", 0x3f00, 0x0, 0x1000, 0x8000)
+AVR_MCU ("attiny417",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny417__",   0x3f00, 0x0, 0x1000, 0x8000)
+AVR_MCU ("attiny814",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny814__",   0x3e00, 0x0, 0x2000, 0x8000)
+AVR_MCU ("attiny816",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny816__",   0x3e00, 0x0, 0x2000, 0x8000)
+AVR_MCU ("attiny817",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny817__",   0x3e00, 0x0, 0x2000, 0x8000)
+AVR_MCU ("attiny1614",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny1614__",  0x3800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("attiny1616",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny1616__",  0x3800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("attiny1617",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny1617__",  0x3800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("attiny3214",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny3214__",  0x3800, 0x0, 0x8000, 0x8000)
+AVR_MCU ("attiny3216",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny3216__",  0x3800, 0x0, 0x8000, 0x8000)
+AVR_MCU ("attiny3217",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny3217__",  0x3800, 0x0, 0x8000, 0x8000)
+AVR_MCU ("attiny424",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny424__",   0x3e00, 0x0, 0x1000, 0x8000)
+AVR_MCU ("attiny426",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny426__",   0x3e00, 0x0, 0x1000, 0x8000)
+AVR_MCU ("attiny427",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny427__",   0x3e00, 0x0, 0x1000, 0x8000)
+AVR_MCU ("attiny824",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny824__",   0x3c00, 0x0, 0x2000, 0x8000)
+AVR_MCU ("attiny826",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny826__",   0x3c00, 0x0, 0x2000, 0x8000)
+AVR_MCU ("attiny827",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATtiny827__",   0x3c00, 0x0, 0x2000, 0x8000)
+AVR_MCU ("attiny1624",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny1624__",  0x3800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("attiny1626",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny1626__",  0x3800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("attiny1627",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny1627__",  0x3800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("attiny3224",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny3224__",  0x3400, 0x0, 0x8000, 0x8000)
+AVR_MCU ("attiny3226",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny3226__",  0x3400, 0x0, 0x8000, 0x8000)
+AVR_MCU ("attiny3227",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATtiny3227__",  0x3400, 0x0, 0x8000, 0x8000)
+AVR_MCU ("atmega808",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATmega808__",   0x3c00, 0x0, 0x2000, 0x4000)
+AVR_MCU ("atmega809",        ARCH_AVRXMEGA3, AVR_ISA_RCALL, "__AVR_ATmega809__",   0x3c00, 0x0, 0x2000, 0x4000)
+AVR_MCU ("atmega1608",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATmega1608__",  0x3800, 0x0, 0x4000, 0x4000)
+AVR_MCU ("atmega1609",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATmega1609__",  0x3800, 0x0, 0x4000, 0x4000)
+AVR_MCU ("atmega3208",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATmega3208__",  0x3000, 0x0, 0x8000, 0x4000)
+AVR_MCU ("atmega3209",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATmega3209__",  0x3000, 0x0, 0x8000, 0x4000)
+AVR_MCU ("atmega4808",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATmega4808__",  0x2800, 0x0, 0xc000, 0x4000)
+AVR_MCU ("atmega4809",       ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_ATmega4809__",  0x2800, 0x0, 0xc000, 0x4000)
+AVR_MCU ("avr16dd14",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16DD14__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16dd20",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16DD20__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16dd28",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16DD28__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16dd32",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16DD32__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16du14",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16DU14__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16du20",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16DU20__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16du28",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16DU28__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16du32",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16DU32__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr32da28",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DA28__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32da32",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DA32__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32da48",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DA48__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32db28",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DB28__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32db32",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DB32__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32db48",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DB48__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32dd14",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DD14__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32dd20",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DD20__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32dd28",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DD28__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32dd32",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DD32__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32du14",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DU14__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32du20",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DU20__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32du28",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DU28__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32du32",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32DU32__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr16eb14",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16EB14__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16eb20",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16EB20__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16eb28",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16EB28__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16eb32",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16EB32__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16ea28",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16EA28__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16ea32",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16EA32__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr16ea48",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR16EA48__",   0x7800, 0x0, 0x4000, 0x8000)
+AVR_MCU ("avr32ea28",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32EA28__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32ea32",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32EA32__",   0x7000, 0x0, 0x8000, 0x8000)
+AVR_MCU ("avr32ea48",        ARCH_AVRXMEGA3, AVR_ISA_NONE,  "__AVR_AVR32EA48__",   0x7000, 0x0, 0x8000, 0x8000)
+/* Xmega, 64K < Flash <= 128K, RAM <= 64K */
+AVR_MCU ("avrxmega4",        ARCH_AVRXMEGA4, AVR_ISA_NONE, NULL,                   0x2000, 0x0, 0x11000, 0)
+AVR_MCU ("atxmega64a3",      ARCH_AVRXMEGA4, AVR_ISA_NONE, "__AVR_ATxmega64A3__",  0x2000, 0x0, 0x11000, 0)
+AVR_MCU ("atxmega64d3",      ARCH_AVRXMEGA4, AVR_ISA_NONE, "__AVR_ATxmega64D3__",  0x2000, 0x0, 0x11000, 0)
+AVR_MCU ("atxmega64a3u",     ARCH_AVRXMEGA4, AVR_ISA_RMW,  "__AVR_ATxmega64A3U__", 0x2000, 0x0, 0x11000, 0)
+AVR_MCU ("atxmega64a4u",     ARCH_AVRXMEGA4, AVR_ISA_RMW,  "__AVR_ATxmega64A4U__", 0x2000, 0x0, 0x11000, 0)
+AVR_MCU ("atxmega64b1",      ARCH_AVRXMEGA4, AVR_ISA_RMW,  "__AVR_ATxmega64B1__",  0x2000, 0x0, 0x11000, 0)
+AVR_MCU ("atxmega64b3",      ARCH_AVRXMEGA4, AVR_ISA_RMW,  "__AVR_ATxmega64B3__",  0x2000, 0x0, 0x11000, 0)
+AVR_MCU ("atxmega64c3",      ARCH_AVRXMEGA4, AVR_ISA_RMW,  "__AVR_ATxmega64C3__",  0x2000, 0x0, 0x11000, 0)
+AVR_MCU ("atxmega64d4",      ARCH_AVRXMEGA4, AVR_ISA_NONE, "__AVR_ATxmega64D4__",  0x2000, 0x0, 0x11000, 0)
+AVR_MCU ("avr128da28",       ARCH_AVRXMEGA4, AVR_ISA_FLMAP, "__AVR_AVR128DA28__",  0x4000, 0x0, 0x20000, 0)
+AVR_MCU ("avr128da32",       ARCH_AVRXMEGA4, AVR_ISA_FLMAP, "__AVR_AVR128DA32__",  0x4000, 0x0, 0x20000, 0)
+AVR_MCU ("avr128da48",       ARCH_AVRXMEGA4, AVR_ISA_FLMAP, "__AVR_AVR128DA48__",  0x4000, 0x0, 0x20000, 0)
+AVR_MCU ("avr128da64",       ARCH_AVRXMEGA4, AVR_ISA_FLMAP, "__AVR_AVR128DA64__",  0x4000, 0x0, 0x20000, 0)
+AVR_MCU ("avr128db28",       ARCH_AVRXMEGA4, AVR_ISA_FLMAP, "__AVR_AVR128DB28__",  0x4000, 0x0, 0x20000, 0)
+AVR_MCU ("avr128db32",       ARCH_AVRXMEGA4, AVR_ISA_FLMAP, "__AVR_AVR128DB32__",  0x4000, 0x0, 0x20000, 0)
+AVR_MCU ("avr128db48",       ARCH_AVRXMEGA4, AVR_ISA_FLMAP, "__AVR_AVR128DB48__",  0x4000, 0x0, 0x20000, 0)
+AVR_MCU ("avr128db64",       ARCH_AVRXMEGA4, AVR_ISA_FLMAP, "__AVR_AVR128DB64__",  0x4000, 0x0, 0x20000, 0)
+/* Xmega, 64K < Flash <= 128K, RAM > 64K */
+AVR_MCU ("avrxmega5",        ARCH_AVRXMEGA5, AVR_ISA_NONE, NULL,                   0x2000, 0x0, 0x11000, 0)
+AVR_MCU ("atxmega64a1",      ARCH_AVRXMEGA5, AVR_ISA_NONE, "__AVR_ATxmega64A1__",  0x2000, 0x0, 0x11000, 0)
+AVR_MCU ("atxmega64a1u",     ARCH_AVRXMEGA5, AVR_ISA_RMW,  "__AVR_ATxmega64A1U__", 0x2000, 0x0, 0x11000, 0)
+/* Xmega, 128K < Flash, RAM <= 64K */
+AVR_MCU ("avrxmega6",        ARCH_AVRXMEGA6, AVR_ISA_NONE, NULL,                       0x2000, 0x0, 0x60000, 0)
+AVR_MCU ("atxmega128a3",     ARCH_AVRXMEGA6, AVR_ISA_NONE, "__AVR_ATxmega128A3__",     0x2000, 0x0, 0x22000, 0)
+AVR_MCU ("atxmega128d3",     ARCH_AVRXMEGA6, AVR_ISA_NONE, "__AVR_ATxmega128D3__",     0x2000, 0x0, 0x22000, 0)
+AVR_MCU ("atxmega192a3",     ARCH_AVRXMEGA6, AVR_ISA_NONE, "__AVR_ATxmega192A3__",     0x2000, 0x0, 0x32000, 0)
+AVR_MCU ("atxmega192d3",     ARCH_AVRXMEGA6, AVR_ISA_NONE, "__AVR_ATxmega192D3__",     0x2000, 0x0, 0x32000, 0)
+AVR_MCU ("atxmega256a3",     ARCH_AVRXMEGA6, AVR_ISA_NONE, "__AVR_ATxmega256A3__",     0x2000, 0x0, 0x42000, 0)
+AVR_MCU ("atxmega256a3b",    ARCH_AVRXMEGA6, AVR_ISA_NONE, "__AVR_ATxmega256A3B__",    0x2000, 0x0, 0x42000, 0)
+AVR_MCU ("atxmega256a3bu",   ARCH_AVRXMEGA6, AVR_ISA_NONE, "__AVR_ATxmega256A3BU__",   0x2000, 0x0, 0x42000, 0)
+AVR_MCU ("atxmega256d3",     ARCH_AVRXMEGA6, AVR_ISA_NONE, "__AVR_ATxmega256D3__",     0x2000, 0x0, 0x42000, 0)
+AVR_MCU ("atxmega128a3u",    ARCH_AVRXMEGA6, AVR_ISA_RMW,  "__AVR_ATxmega128A3U__",    0x2000, 0x0, 0x22000, 0)
+AVR_MCU ("atxmega128b1",     ARCH_AVRXMEGA6, AVR_ISA_RMW,  "__AVR_ATxmega128B1__",     0x2000, 0x0, 0x22000, 0)
+AVR_MCU ("atxmega128b3",     ARCH_AVRXMEGA6, AVR_ISA_RMW,  "__AVR_ATxmega128B3__",     0x2000, 0x0, 0x22000, 0)
+AVR_MCU ("atxmega128c3",     ARCH_AVRXMEGA6, AVR_ISA_RMW,  "__AVR_ATxmega128C3__",     0x2000, 0x0, 0x22000, 0)
+AVR_MCU ("atxmega128d4",     ARCH_AVRXMEGA6, AVR_ISA_NONE, "__AVR_ATxmega128D4__",     0x2000, 0x0, 0x22000, 0)
+AVR_MCU ("atxmega192a3u",    ARCH_AVRXMEGA6, AVR_ISA_RMW,  "__AVR_ATxmega192A3U__",    0x2000, 0x0, 0x32000, 0)
+AVR_MCU ("atxmega192c3",     ARCH_AVRXMEGA6, AVR_ISA_RMW,  "__AVR_ATxmega192C3__",     0x2000, 0x0, 0x32000, 0)
+AVR_MCU ("atxmega256a3u",    ARCH_AVRXMEGA6, AVR_ISA_RMW,  "__AVR_ATxmega256A3U__",    0x2000, 0x0, 0x42000, 0)
+AVR_MCU ("atxmega256c3",     ARCH_AVRXMEGA6, AVR_ISA_RMW,  "__AVR_ATxmega256C3__",     0x2000, 0x0, 0x42000, 0)
+AVR_MCU ("atxmega384c3",     ARCH_AVRXMEGA6, AVR_ISA_RMW,  "__AVR_ATxmega384C3__",     0x2000, 0x0, 0x62000, 0)
+AVR_MCU ("atxmega384d3",     ARCH_AVRXMEGA6, AVR_ISA_NONE, "__AVR_ATxmega384D3__",     0x2000, 0x0, 0x62000, 0)
+/* Xmega, 128K < Flash, RAM > 64K RAM.  */
+AVR_MCU ("avrxmega7",        ARCH_AVRXMEGA7, AVR_ISA_NONE, NULL,                       0x2000, 0x0, 0x22000, 0)
+AVR_MCU ("atxmega128a1",     ARCH_AVRXMEGA7, AVR_ISA_NONE, "__AVR_ATxmega128A1__",     0x2000, 0x0, 0x22000, 0)
+AVR_MCU ("atxmega128a1u",    ARCH_AVRXMEGA7, AVR_ISA_RMW,  "__AVR_ATxmega128A1U__",    0x2000, 0x0, 0x22000, 0)
+AVR_MCU ("atxmega128a4u",    ARCH_AVRXMEGA7, AVR_ISA_RMW,  "__AVR_ATxmega128A4U__",    0x2000, 0x0, 0x22000, 0)
+/* Tiny family */
+AVR_MCU ("avrtiny",          ARCH_AVRTINY, AVR_ISA_NONE, NULL,                     0x0040, 0x0, 0x400, 0)
+AVR_MCU ("attiny4",          ARCH_AVRTINY, AVR_ISA_LDS,  "__AVR_ATtiny4__",        0x0040, 0x0, 0x200, 0)
+AVR_MCU ("attiny5",          ARCH_AVRTINY, AVR_ISA_LDS,  "__AVR_ATtiny5__",        0x0040, 0x0, 0x200, 0)
+AVR_MCU ("attiny9",          ARCH_AVRTINY, AVR_ISA_LDS,  "__AVR_ATtiny9__",        0x0040, 0x0, 0x400, 0)
+AVR_MCU ("attiny10",         ARCH_AVRTINY, AVR_ISA_LDS,  "__AVR_ATtiny10__",       0x0040, 0x0, 0x400, 0)
+AVR_MCU ("attiny102",        ARCH_AVRTINY, AVR_ISA_LDS,  "__AVR_ATtiny102__",      0x0040, 0x0, 0x400, 0)
+AVR_MCU ("attiny104",        ARCH_AVRTINY, AVR_ISA_LDS,  "__AVR_ATtiny104__",      0x0040, 0x0, 0x400, 0)
+AVR_MCU ("attiny20",         ARCH_AVRTINY, AVR_ISA_LDS,  "__AVR_ATtiny20__",       0x0040, 0x0, 0x800, 0)
+AVR_MCU ("attiny40",         ARCH_AVRTINY, AVR_ISA_NONE, "__AVR_ATtiny40__",       0x0040, 0x0, 0x1000, 0)
+/* Assembler only.  */
+AVR_MCU ("avr1",             ARCH_AVR1, AVR_ISA_NONE, NULL,                        0x0060, 0x0, 0x400, 0)
+AVR_MCU ("at90s1200",        ARCH_AVR1, AVR_ISA_NONE, "__AVR_AT90S1200__",         0x0060, 0x0, 0x400, 0)
+AVR_MCU ("attiny11",         ARCH_AVR1, AVR_ISA_NONE, "__AVR_ATtiny11__",          0x0060, 0x0, 0x400, 0)
+AVR_MCU ("attiny12",         ARCH_AVR1, AVR_ISA_NONE, "__AVR_ATtiny12__",          0x0060, 0x0, 0x400, 0)
+AVR_MCU ("attiny15",         ARCH_AVR1, AVR_ISA_NONE, "__AVR_ATtiny15__",          0x0060, 0x0, 0x400, 0)
+AVR_MCU ("attiny28",         ARCH_AVR1, AVR_ISA_NONE, "__AVR_ATtiny28__",          0x0060, 0x0, 0x800, 0)
+--->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.prune", "navigation.indexes", "content.footnote.tooltips", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
