@@ -1,5 +1,14 @@
 # HP/PA RISC
 
+`__hppa`
+`__hppa__`
+
+: Identifies the target architecture as HP/PA RISC.
+
+`__HPPA__`
+
+: Identifies the target architecture as HP/PA RISC.
+
 <!---
 Type 	Macro 	Description
 Identification 	__hppa__ 	Defined by GNU C

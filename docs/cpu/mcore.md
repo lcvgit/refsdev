@@ -1,5 +1,27 @@
 # MCore
 
+## Identification
+
+`__mcore__`
+
+: Identifies the target architecture as MCore.
+
+`__MCORE__`
+
+: Identifies the target architecture as MCore.
+
+## Versioning
+
+`__M210__`
+
+: Defined if the target architecture is the MCore M210.
+
+`__M340__`
+
+: Defined if the target architecture is the MCore M340.
+
+## References
+
 <!---
 <gcc/config/mcore/mcore.h> (3.1.0)
 #define CPP_PREDEFINES \

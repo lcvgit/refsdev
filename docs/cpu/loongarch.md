@@ -1,5 +1,34 @@
 # LoongArch
 
+## Identification
+
+`__loongarch__`
+
+: Identifies the target architecture as LoongArch.
+
+## Versioning
+
+`__loongarch_arch`
+
+: An integer
+
+`_LOONGARCH_ARCH`
+
+: An integer
+
+`__loongarch_tune`
+
+: An integer
+
+`_LOONGARCH_TUNE`
+
+: An integer
+
+## References
+
+- <https://loongson.github.io/LoongArch-Documentation/LoongArch-toolchain-conventions-EN.html#_cc_preprocessor_built_in_macro_definitions>{:target="_blank"}
+
+
 <!---
 Type|Macro|Description
 ---|---|---

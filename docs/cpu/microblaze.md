@@ -1,5 +1,15 @@
 # MicroBlaze
 
+`__microblaze__`
+
+: Identifies the target architecture as MicroBlaze.
+
+`__MICROBLAZE__`
+
+: Identifies the target architecture as MicroBlaze.
+
+## References
+
 <!---
 <gcc/config/microblaze/microblaze.h> (14.2.0)
 
