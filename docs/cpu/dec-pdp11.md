@@ -1,5 +1,21 @@
 # DEC PDP-11
 
+## Identification
+
+`pdp11`
+`__pdp11`
+`__pdp11__`
+
+: Identifies the target architecture as the PDP-11.
+
+## Versioning
+
+`__pdp11_model`
+
+: An integer for the model of the PDP-11.
+
+## References
+
 <!---
 #define CPP_PREDEFINES "-Dpdp11"
 ////

@@ -1,4 +1,19 @@
+---
+tags:
+  - AArch64
+  - ARM64
+---
 # AArch64
+
+## Identification
+
+`__aarch64__`
+
+: Identifies the target processor as AArch64.
+
+`_M_ARM64`
+
+: Identifies the target processor as AArch64.
 
 <!--
 Type|Macro|Description

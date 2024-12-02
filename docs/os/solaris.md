@@ -53,16 +53,12 @@
       }							\
     TARGET_SUB_OS_CPP_BUILTINS();			\
   } while (0)
-////
-
-
-////
 
 Type|Macro|Description
 ---|---|---
 Identification|`sun`|
 Identification|`__sun`|
-Version|`__'System'_'Version'`|System = `uname -s`<br/>Version = `uname -r`<br/>Any illegal character is replaced by an underscore.<br/><br/>Defined by Sun Studio
+Version|`__'System'_'Version'`|System = `uname -s`Version = `uname -r`Any illegal character is replaced by an underscore.Defined by Sun Studio
 
 Use the SVR4 macros to distinguish between Solaris and SunOS.
 

@@ -1,4 +1,14 @@
+---
+tags:
+  - AMD GCN
+  - AMDGCN
+  - Graphics Core Next
+---
 # AMD GCN
+
+`__AMDGCN__`
+
+: Identifies the target architecture as AMD GCN.
 
 <!---
 <gcc/config/gcn/gcn.h> (14.2.0)

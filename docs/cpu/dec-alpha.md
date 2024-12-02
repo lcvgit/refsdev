@@ -9,63 +9,63 @@
 `__ALPHA`
 `__ALPHA__`
 
-:   Identifies the target CPU as the DEC Alpha.
+: Identifies the target CPU as the DEC Alpha.
 
 `__Alpha_AXP`
 `__Alpha_AXP__`
 
-:   Identifies the target CPU as the DEC Alpha.
+: Identifies the target CPU as the DEC Alpha.
 
 `__alpha`
 `__alpha__`
 
-:   Identifies the target CPU as the DEC Alpha.
+: Identifies the target CPU as the DEC Alpha.
 
 `__alpha_vxworks`
 `__alpha_vxworks__`
 
-:   Identifies the target CPU as the DEC Alpha.
+: Identifies the target CPU as the DEC Alpha.
 
 `_M_ALPHA`
 `__M_ALPHA__`
 
-:   Identifies the target CPU as the DEC Alpha.
+: Identifies the target CPU as the DEC Alpha.
 
 ## Extension
 
 `__alpha_bwx__`
 
-:   Byte/Word Extension (BWX)
+: Byte/Word Extension (BWX)
 
 `__alpha_cix__`
 
-:   Count Extension (CIX)
+: Count Extension (CIX)
 
 `__alpha_fix__`
 
-:   Square-root and Floating-point Convert Extension (FIX)
+: Square-root and Floating-point Convert Extension (FIX)
 
 `__alpha_max__`
 
-:   Motion Video Instructions (MVI)
+: Motion Video Instructions (MVI)
 
-    !!!note
+  !!!note
     
-        The predefined macro `__alpha_max__` appears to be named after the similar RISC Multimedia Acceleration eXtensions (MAX-1, MAX-2), which shares many similarities with the DEC Alpha's Motion Video Instructions (MVI).
+    The predefined macro `__alpha_max__` appears to be named after the similar RISC Multimedia Acceleration eXtensions (MAX-1, MAX-2), which shares many similarities with the DEC Alpha's Motion Video Instructions (MVI).
 
 ## Versioning
 
 `__alpha_ev4__`
 
-:   Defined if the CPU is a variant of the DEC Alpha EV4 (e.g., 21064, 21064A, etc.).
+: Defined if the CPU is a variant of the DEC Alpha EV4 (e.g., 21064, 21064A, etc.).
 
 `__alpha_ev5__`
 
-:   Defined if the CPU is a variant of the DEC Alpha EV5 (e.g., 21164, 21164A, etc.).
+: Defined if the CPU is a variant of the DEC Alpha EV5 (e.g., 21164, 21164A, etc.).
 
 `__alpha_ev6__`
 
-:   Defined if the CPU is a variant of the DEC Alpha EV6 (e.g., 21264, 21264A, etc.).
+: Defined if the CPU is a variant of the DEC Alpha EV6 (e.g., 21264, 21264A, etc.).
 
 | Model   | Code Name | Status      | Extensions |
 | ------- | --------- | ----------- | ---------- |

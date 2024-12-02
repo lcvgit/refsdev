@@ -1,5 +1,11 @@
 # Elbrus
 
+## Identification
+
+`__e2k__`
+
+: Identifies the target architecture as the Elbrus 2000.
+
 <!---
 Type 	Macro 	Description
 Identification 	__e2k__ 	Defined by MCST lcc

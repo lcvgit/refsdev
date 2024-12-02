@@ -5,12 +5,12 @@
 `_AM29K`
 `__AMD29K__`
 
-:   Identifies the target CPU as the AMD Am29000.
+: Identifies the target CPU as the AMD Am29000.
 
 `_AM29000`
 `__AM29000__`
 
-:   Identifies the target CPU as the AMD Am29000.
+: Identifies the target CPU as the AMD Am29000.
 
 ## References
 

@@ -1,3 +1,8 @@
+---
+tags:
+  - ARC
+  - Argonaut RISC Core
+---
 # ARC
 
 ## Identification

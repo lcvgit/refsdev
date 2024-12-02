@@ -1,4 +1,29 @@
-# ARM
+# Arm
+
+`__arm`
+`__arm__`
+
+: Identifies the target architecture as Arm.
+
+`__thumb__`
+
+: Identifies the target architecture as Arm in Thumb mode.
+
+`__TARGET_ARCH_ARM`
+
+: Identifies the target architecture as Arm.
+
+`_ARM`
+
+: Identifies the target architecture as Arm.
+
+`_M_ARM`
+
+: Identifies the target architecture as Arm.
+
+`_M_ARMT`
+
+: Identifies the target architecture as Arm in Thumb mode.
 
 <!---
 Type|Macro|Description

@@ -4,7 +4,12 @@
 
 `AVR`
 `__AVR__`
+
+: Identifies the target architecture as AVR.
+
 `__avr32__`
+
+: Identifies the target architecture as AVR.
 
 <!----
 <gcc/config/avr/avr-c.cc> (14.2.0)

@@ -1,5 +1,15 @@
 # FR-V
 
+## Identification
+
+`__frv__`
+
+: Identifies the target architecture as FR-V.
+
+## References
+
+- <https://en.wikipedia.org/wiki/FR-V_(microprocessor)>{:target="_blank"}
+
 <!---
 <gcc/config/frv/frv.h> (14.2.0)
 

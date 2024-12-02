@@ -1,5 +1,14 @@
 # DEC VAX
 
+## Identification
+
+`vax`
+`__vax__`
+
+: Identifies the target architecture as the DEC VAX.
+
+## References
+
 <!---
 <gcc/config/vax/vax.h> (3.1.0)
 

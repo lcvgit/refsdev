@@ -5,48 +5,48 @@
 `convex`
 `__convex__`
 
-:   Identifies the target machine/processor as Convex.
+: Identifies the target machine/processor as Convex.
 
 ## Versioning
 
 `__convex_c1__`
 
-:   Indicates that the machine/processor belongs to the Convex C1 Family.
+: Indicates that the machine/processor belongs to the Convex C1 Family.
 
-    GNU Compiler (3.1) -- Defined if the command line option `-mc1` is enabled.
-
-    !!!bug
-        
-        A typo for the Convex C1 macro is found in GCC documentation however, the `<gcc/config/convex/convex.h>` header contains the correct spelling of `__convex_c1__`.
+  GNU Compiler (3.1) -- Defined if the command line option `-mc1` is enabled.
 
 `__convex_c2__`
 
-:   Indicates that the machine/processor belongs to the Convex C2 Family.
+:  Indicates that the machine/processor belongs to the Convex C2 Family.
 
-    GNU Compiler (3.1) -- Defined if the command line option `-mc2` is enabled.
+  GNU Compiler (3.1) -- Defined if the command line option `-mc2` is enabled.
 
 `__convex_c32__`
 
-:   Indicates that the machine/processor belongs to the Convex C32xx Family.
+:  Indicates that the machine/processor belongs to the Convex C32xx Family.
 
-    GNU Compiler (3.1) -- Defined if the command line option `-mc32` is enabled.
+  GNU Compiler (3.1) -- Defined if the command line option `-mc32` is enabled.
 
 `__convex_c34__`
 
-:   Indicates that the machine/processor belongs to the Convex C34xx Family.
+: Indicates that the machine/processor belongs to the Convex C34xx Family.
 
-    GNU Compiler (3.1) -- Defined if the command line option `-mc34` is enabled.
+  GNU Compiler (3.1) -- Defined if the command line option `-mc34` is enabled.
 
 `__convex_c38__`
 
-:   Indicates that the machine/processor belongs to the Convex C38xx Family.
+: Indicates that the machine/processor belongs to the Convex C38xx Family.
 
-GNU Compiler (3.1) -- Defined if the command line option `-mc38` is enabled.
+  GNU Compiler (3.1) -- Defined if the command line option `-mc38` is enabled.
 
 ## References
 
 - [Convex Computer - Wikipedia](https://en.wikipedia.org/wiki/Convex_Computer){:target="_blank"}
 - [GCC 3.1 - Convex Options](https://gcc.gnu.org/onlinedocs/gcc-3.1/gcc/Convex-Options.html){:target="_blank"}
+
+!!!bug
+
+  A typo for the Convex C1 macro is found in the GCC documentation however, the `<gcc/config/convex/convex.h>` header contains the correct spelling of `__convex_c1__`.
 
 <!---
 <gcc/config/convex/convex.h> (3.1)

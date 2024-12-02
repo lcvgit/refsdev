@@ -1,4 +1,31 @@
+---
+tags:
+  - BPF
+  - eBPF
+  - Berkley Packet Filter
+  - Extended Berkley Packet Filter
+---
 # BPF
+
+## Identification
+
+`__bpf__`
+
+: Identifies the target architecture as BPF.
+
+`__BPF__`
+
+: Identifies the target architecture as BPF.
+
+## Versioning
+
+`__BPF_CPU_VERSION__`
+
+: An integer for the BPF CPU version.
+
+## References
+
+- <https://en.wikipedia.org/wiki/EBPF>{:target="_blank"}
 
 <!---
 <gcc/config/bpf/bpf-c.cc> (14.2.0)

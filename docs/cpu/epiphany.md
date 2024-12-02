@@ -1,5 +1,16 @@
 # Epiphany
 
+## Identification
+
+`__epiphany__`
+
+:	Identifies the target architecture as Epiphany.
+
+## References
+
+- <https://en.wikipedia.org/wiki/Zero_ASIC#Epiphany_V>{:target="_blank"}
+
+
 <!---
 Type 	Macro
 Identification 	__epiphany__
