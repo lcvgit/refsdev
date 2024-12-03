@@ -1,5 +1,17 @@
 # RS/6000
 
+## Identification
+
+`_IBMR2`
+`__IBMR2__`
+
+`_POWER`
+`__POWER__`
+
+`__THW_RS6000`
+
+## References
+
 <!---
 Type|Macro|Description
 ---|---|---

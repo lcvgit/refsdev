@@ -1,5 +1,19 @@
 # MIPS
 
+## Identification
+
+`_mips`
+`__mips`
+`__mips__`
+: Identifies the target architecture as MIPS.
+
+`__MIPS__`
+: Identifies the target architecture as MIPS.
+
+## Versioning
+
+## References
+
 <!---
 Type|Macro|Description
 ---|---|---

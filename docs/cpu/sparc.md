@@ -1,5 +1,32 @@
 # SPARC
 
+## Identification
+
+`sparc`
+`__sparc`
+`__sparc__`
+
+: Identifies the target architecture as SPARC.
+
+`SPARC`
+`__SPARC__`
+
+: Identifies the target architecture as SPARC.
+
+`__sparc64__`
+
+: Identifies the target architecture as SPARC.
+
+`__sparcv9`
+
+: Identifies the target architecture as SPARC.
+
+`__sparc_v9__`
+
+: Identifies the target architecture as SPARC.
+
+## References
+
 <!---
 Type|Macro|Description
 ---|---|---

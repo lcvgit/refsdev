@@ -1,5 +1,21 @@
 # PRU
 
+## Identification
+
+`__pru__`
+
+: Identifies the target architecture as PRU.
+
+`__PRU__`
+
+: Identifies the target architecture as PRU.
+
+`__PRU_V3__`
+
+: Identifies the target architecture as PRU.
+
+## References
+
 <!---
 <gcc/config/pru/pru.h>
 

@@ -1,4 +1,28 @@
+---
+tags:
+  - Nvidia PTX
+  - PTX
+  - Parallel Thread Execution
+---
 # Nvidia PTX
+
+## Identification
+
+`__nvptx__`
+
+: Identifies the target architecture as Nvidia PTX.
+
+## Versioning
+
+`__PTX_ISA_VERSION_MAJOR__`
+
+: An integer for the Nvidia PTX major version.
+
+`__PTX_ISA_VERSION_MINOR__`
+
+: An integer for the Nvidia PTX minor version.
+
+## References
 
 <!---
 <gcc/config/nvptx/nvptx-c.cc>

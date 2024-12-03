@@ -1,5 +1,10 @@
 # NEC SX-Aurora TSUBASA
 
+`__NEC__`
+
+`__ve`
+`__ve__`
+
 ## References
 
 - [NEC SX-Aurora TSUBASA - Wikipedia](https://en.wikipedia.org/wiki/NEC_SX-Aurora_TSUBASA){:target="_blank"}

@@ -1,4 +1,19 @@
-# PJ
+---
+tags:
+  - picoJava
+  - PJ
+---
+# picoJava
+
+## Identification
+
+`__pj__`
+
+: Identifies the target architecture as PJ.
+
+## References
+
+- <https://en.wikipedia.org/wiki/PicoJava>{:target="_blank"}
 
 <!---
 #ifdef TARGET_LITTLE_ENDIAN_DEFAULT

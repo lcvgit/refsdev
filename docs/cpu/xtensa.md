@@ -1,5 +1,13 @@
 # Xtensa
 
+## Identification
+
+`__XTENSA__`
+
+: Identifies the target architecture as Xtensa.
+
+## References
+
 <!---
 elf
   #define CPP_PREDEFINES "-D__XTENSA__ -D__ELF__ -Acpu=xtensa -Amachine=xtensa"

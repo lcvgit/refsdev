@@ -1,5 +1,15 @@
 # MMIX
 
+`__mmix__`
+
+: Identifies the target architecture as MMIX.
+
+`__MMIX__`
+
+: Identifies the target architecture as MMIX.
+
+## References
+
 <!---
 #define CPP_SPEC \
  "%{mabi=gnu:-D__MMIX_ABI_GNU__\

@@ -1,5 +1,17 @@
 # NDS32
 
+## Identification
+
+`__nds32__`
+
+: Identifies the target architecture as NDS32.
+
+`__NDS32__`
+
+: Identifies the target architecture as NDS32.
+
+## References
+
 <!---
 <gcc/config/nds32/nds32.h> (14.2.0)
 

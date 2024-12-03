@@ -1,5 +1,21 @@
 # Moxie
 
+## Identification
+
+`moxie`
+`__moxie`
+`__moxie__`
+
+: Identifies the target architecture as Moxie.
+
+`MOXIE`
+`__MOXIE`
+`__MOXIE__`
+
+: Identifies the target architecture as Moxie.
+
+## References
+
 <!---
 <gcc/config/moxie/moxie.h> (14.2.0)
 

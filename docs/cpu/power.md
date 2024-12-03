@@ -1,5 +1,20 @@
 # POWER / PowerPC
 
+## Identification
+
+`__powerpc`
+`__powerpc__`
+`__powerpc64__`
+`__POWERPC__`
+`__ppc__`
+`__ppc64__`
+`__PPC__`
+`__PPC64__`
+`_ARCH_PPC`
+`_ARCH_PPC64`
+`_M_PPC`
+`__ppc`
+
 <!---
 Type|Macro|Description
 ---|---|---

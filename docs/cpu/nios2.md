@@ -1,4 +1,25 @@
+---
+tags:
+  - Nios 2
+  - Nios II
+---
 # NIOS II
+
+## Identification
+
+`nios2`
+`__nios2`
+`__nios2__`
+
+: Identifies the target architecture as the Nios II.
+
+`NIOS2`
+`__NIOS2`
+`__NIOS2__`
+
+: Identifies the target architecture as the Nios II.
+
+## References
 
 <!---
 <gcc/config/nios2/nios2.h> (14.2.0)

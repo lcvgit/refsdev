@@ -1,4 +1,22 @@
+---
+tags:
+  - OR1K
+  - OpenRISC 1000
+  - OpenRISC 1K
+---
 # OpenRISC 1000
+
+## Identification
+
+`__or1k__`
+
+: Identifies the target architecture as the OpenRISC 1000.
+
+`__OR1K__`
+
+: Identifies the target architecture as the OpenRISC 1000.
+
+## References
 
 <!---
 <gcc/config/or1k/or1k.h> (14.2.0)

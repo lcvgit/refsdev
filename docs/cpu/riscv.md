@@ -1,5 +1,13 @@
 # RISC-V
 
+## Identification
+
+`__riscv`
+
+: Identifies the target architecture as RISC-V.
+
+## References
+
 <!---
 Type|Macro|Description
 ---|---|---

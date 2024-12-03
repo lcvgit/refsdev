@@ -1,5 +1,13 @@
 # RX
 
+## Identification
+
+`__RX__`
+
+: Identifies the target architecture as RX.
+
+## References
+
 <!---
 <gcc/config/rx/rx.h> (14.2.0)
 

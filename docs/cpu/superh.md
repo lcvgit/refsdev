@@ -1,5 +1,64 @@
 # SuperH
 
+## Identification
+
+`__sh__`
+
+: Identifies the target architecture as SuperH.
+
+## Versioning
+
+<!--
+`__sh1__`
+`__SH1__`
+
+:
+
+`__sh2__`
+`__SH2__`
+
+:
+
+`__SH2E__`
+
+:
+
+`__SH2A__`
+
+:
+
+`__sh3__`
+`__SH3__`
+
+:
+
+`__SH4_NOFPU__`
+
+:
+
+`__SH4_SINGLE_ONLY__`
+
+:
+
+`__SH3E__`
+
+:
+
+`__SH4_SINGLE__`
+
+:
+
+`__SH4__`
+
+:
+
+`__SH4A__`
+
+:
+-->
+
+## References
+
 <!---
 Type|Macro|Description
 ---|---|---

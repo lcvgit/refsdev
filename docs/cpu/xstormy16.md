@@ -1,5 +1,14 @@
 # Xstormy16
 
+## Identification
+
+`xstormy16`
+`__xstormy16__`
+
+: Identifies the target architecture as Xstormy16.
+
+## References
+
 <!---
 <gcc/config/stormy16/stormy16.h> (3.1.0)
 

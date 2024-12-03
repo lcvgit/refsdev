@@ -1,7 +1,12 @@
-# Native Client / PNaCl
+---
+tags:
+  - Native Client
+  - PNaCl
+---
+# Native Client
 
-<!---
-Type|Macro
----|---
-Identification|`__pnacl__`
---->
+## Identification
+
+`__pnacl__`
+
+: Identifies the target architecture as Native Client.

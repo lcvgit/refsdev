@@ -1,5 +1,7 @@
 # Visium
 
+`__VISIUM__`
+
 <!---
 <gcc/config/visium/visium.h> (14.2.0)
 
