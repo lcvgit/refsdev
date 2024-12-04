@@ -5,9 +5,11 @@
 `_mips`
 `__mips`
 `__mips__`
+
 : Identifies the target architecture as MIPS.
 
 `__MIPS__`
+
 : Identifies the target architecture as MIPS.
 
 ## Versioning

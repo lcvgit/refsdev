@@ -4,7 +4,7 @@
 
 `__epiphany__`
 
-:	Identifies the target architecture as Epiphany.
+: Identifies the target architecture as Epiphany.
 
 ## References
 

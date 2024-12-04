@@ -7,15 +7,15 @@
 
 :   Identifies the target processor as a Blackfin processor.
 
-`BFIN`
-`__BFIN`
-`__BFIN__`
-
-:   Identifies the target processor as a Blackfin processor.
-
 `bfin`
 `__bfin`
 `__bfin__`
+
+:   Identifies the target processor as a Blackfin processor.
+
+`BFIN`
+`__BFIN`
+`__BFIN__`
 
 :   Identifies the target processor as a Blackfin processor.
 
@@ -72,7 +72,6 @@
 | ADSP-BF716   | `__ADSPBF716__`  | `__ADSPBF71x__`<br>`__ADSPBF7xx__`<br>`__ADSPBF716_FAMILY__`                      | 7.1.600 |
 | ADSP-BF718   | `__ADSPBF718__`  | `__ADSPBF71x__`<br>`__ADSPBF7xx__`<br>`__ADSPBF716_FAMILY__`                      | 7.1.800 |
 | ADSP-BF719   | `__ADSPBF719__`  | `__ADSPBF71x__`<br>`__ADSPBF7xx__`<br>`__ADSPBF716_FAMILY__`                      | 7.1.900 |
-
 
 `__ADSPBF50x__`
 

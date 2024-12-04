@@ -1,8 +1,8 @@
 ---
 tags:
   - AMD GCN
+  - AMD Graphics Core Next
   - AMDGCN
-  - Graphics Core Next
 ---
 # AMD GCN
 

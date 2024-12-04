@@ -1,5 +1,6 @@
 # HP/PA RISC
 
+`hppa`
 `__hppa`
 `__hppa__`
 
