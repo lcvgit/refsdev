@@ -189,4 +189,20 @@ sh_cpu_cpp_builtins (cpp_reader* pfile)
   cpp_define_formatted (pfile, "__SH_ATOMIC_MODEL_%s__",
 			selected_atomic_model ().cdef_name);
 }
+
+<simde-arch.h>
+
+#if defined(__sh5__) || defined(__SH5__)
+#  define SIMDE_ARCH_SUPERH 5
+#elif defined(__sh4__) || defined(__SH4__)
+#  define SIMDE_ARCH_SUPERH 4
+#elif defined(__sh3__) || defined(__SH3__)
+#  define SIMDE_ARCH_SUPERH 3
+#elif defined(__sh2__) || defined(__SH2__)
+#  define SIMDE_ARCH_SUPERH 2
+#elif defined(__sh1__) || defined(__SH1__)
+#  define SIMDE_ARCH_SUPERH 1
+#elif defined(__sh__) || defined(__SH__)
+#  define SIMDE_ARCH_SUPERH 1
+#endif
 --->

@@ -3,13 +3,26 @@
 ## Identification
 
 `AVR`
+`__AVR`
 `__AVR__`
 
-: Identifies the target architecture as AVR.
+:   Identifies the target architecture as AVR.
 
 `__avr32__`
 
-: Identifies the target architecture as AVR.
+:   Identifies the target architecture as AVR.
+
+`__AVR_ARCH__`
+
+:   Identifies the target architecture as AVR.
+
+## Versioning
+
+`__AVR_ARCH__`
+
+:   An integer for the version of AVR.
+
+## References
 
 <!----
 <gcc/config/avr/avr-c.cc> (14.2.0)

@@ -26,7 +26,13 @@
 
 :   An integer for the CRIS ABI version.
 
+`__CRIS_arch_version`
+
+:   An integer for the CRIS version.
+
 ## References
+
+- <https://en.wikipedia.org/wiki/ETRAX_CRIS>{:target="_blank"}
 
 <!---
 <gcc/config/cris/cris.h> (3.1.0)

@@ -18,3 +18,7 @@ tags:
 :   An integer for the build version of Apple Clang.
 
 ## References
+
+- <https://xcodereleases.com/>{:target="_blank"}
+- <https://en.wikipedia.org/wiki/Xcode#Toolchain_versions>{:target="_blank"}
+- <https://gist.github.com/yamaya/2924292>{:target="_blank"}
