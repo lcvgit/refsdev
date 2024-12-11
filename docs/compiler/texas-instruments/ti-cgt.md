@@ -1,5 +1,9 @@
 # TI Code Generation Tools
 
+## Identification
+
+`__TI_COMPILER_VERSION__`
+
 ## Versioning
 
 `__TI_COMPILER_VERSION__`

@@ -5,6 +5,7 @@ theme:
   name: material
   features:
     - content.tooltips
+    - navigation.footer
     - navigation.tabs
     - navigation.tabs.sticky
     # - navigation.sections
@@ -100,7 +101,13 @@ watch:
   - includes
 
 plugins:
-  - awesome-pages
+  - awesome-pages:
+      # filename: .pages
+      # collapse_single_pages: false
+      strict: true
+      order: asc
+      sort_type: natural
+      order_by: title
   - autorefs
   - search
   - offline:

@@ -1,0 +1,203 @@
+# Compiler
+
+- ACC (David Ashley's C Compiler)
+- Amsterdam Compiler Kit
+- AMD Optimizing C/C++ Compiler (AOCC)
+- Analog Devices Compilers
+    - CrossCore
+    - VisualDSP++
+- Apple Clang
+- Arm Compilers
+    - Arm Compiler for Embedded (RealView)
+    - Arm Compiler for Linux
+    - ARM GCC
+    - ARM LLVM
+- Aztec C Compiler
+- BD Software C Compiler
+- Borland C/C++ (Embarcadero / Turbo)
+- cc65 Cross-Compiler Suite
+- CEIBO Compilers
+- CenterLine-C++ Compilation System
+- CEVA
+- CFront
+- CINT C++ Interpreter
+- Clang (LLVM)
+- CodeSourcery
+- Comeau
+- Compaq
+- CompCert
+- Convex
+- Cosmic Compilers
+- Coverity Static Analyzer
+- Cray
+- Crescent Bay Software
+- Crossware Compilers
+- Custom Computer Services
+- Diab / Wind River Systems
+- DICE C
+- Digital Mars / Symantec / Zortech
+- Digital Research
+- Dignus
+- DJGPP
+- Dunfield Development Systems
+- Edison Design Group
+- Eiffel Software
+- EKOPath
+- Fabius
+- Forth
+- Franklin
+- FreeScale Compilers
+- Fujitsu Compilers
+- GHS (Green Hill Systems)
+- GNU Compilers
+  - GNU Compiler Collection (gcc/g++)
+  - GNU Compiler Collection for Embedded (gcce)
+  - GCC for Tricore
+- HCL Technologies
+- Hexagon
+- Hi-Tech Compilers
+- HP Compilers
+    - HP aC++
+    - HP C/ANSI C
+- IAR Compilers
+- IBM Compilers
+    - IBM Open XL
+    - IBM XL
+    - IBM z/OS XL
+- ImageCraft
+- Intel Compilers
+    - Intel OneAPI DPC/C++
+    - Intel C++ Compiler Classic (icc)
+    - Intel C++ Compiler (icx)
+    - Intel Parallel Studio XE
+    - Intel System Studio
+- Interstron C++ Compiler
+- KAI
+- Keil Compilers
+    - Keil C166
+    - Keil C251
+    - Keil C51/Cx51
+    - Keil CARM
+- Lattice C
+- LCC
+- Liant
+- MCP (Unisys)
+- MCST eLbrus Compiler Collection
+- MetaWare
+- Microchip Compilers
+- Microsoft Compilers
+    - Microsoft QuickC
+    - Microsoft Visual Studio
+- Microtec
+- Microway NDP
+- mikroC Compilers (Mikroelektronika)
+    - mikroC AI for ARM
+    - mikroC AI for AVR
+    - mikroC AI for dsPIC/PIC24
+    - mikroC AI for PIC
+    - mikroC AI for PIC32
+    - mikroC PRO for 8051
+    - mikroC PRO for ARM
+    - mikroC PRO for AVR
+    - mikroC PRO for dsPIC/PIC24
+    - mikroC PRO for FT90x
+    - mikroC PRO for PIC
+    - mikroC PRO for PIC32
+- MinGW Compilers
+- MIPSpro
+- Miracle C
+- MPW
+- MWC
+- MetroWerks
+    - MetroWerks CodeWarrior
+    - MetroWerks DesignWare ARC MetaWare
+- National Instruments Compilers
+    - National Instruments LabWindows/CVI Compiler
+    - National Instruments LabWindows/CVI Clang C/C++ Compiler
+    - National Instruments C/C++ Development Tools for NI Linux Real-Time
+- Norcroft C
+- Nullstone
+- Nvidia Compilers
+    - NVCC
+    - NVHPC
+- NWCC
+- Open64
+- Oracle Compilers
+    - Oracle Pro  - C
+    - Oracle SunPro / Solaris Studio
+- Orange C
+- Palm
+- Pelles
+- Personal C Compiler (DeSmet)
+- PGI
+- QNX Compilers
+- Raisonance Compilers
+- Reliant CDS
+- Renesas/Hitachi Compilers
+    - Renesas C Compiler Package for RH850 Family
+    - Renesas C Compiler Package for RL78 Family
+    - Renesas C/C++ Compiler Package for RX Family
+    - Renesas C/C++ Compiler Package for SuperH
+- Rigel
+- Salford C++ (Silverfrost)
+- SAS/C
+- SCO
+    - SCO OpenServer
+- SCORE C/C++ (DDC-I)
+- SDCC (Small Device C Compiler)
+- SEGGER Compilers
+- SGI (Silicon Graphics Inc)
+- Simple C
+- SN
+- Softools Inc
+- Softune Compilers
+    - Softune C Compiler FR/F2MC
+    - Softune C Compiler F2MC-8L/8FX
+    - Softune C Compiler F2MC-16
+    - Softune C/C++ Compiler FR
+- Stratus VOS
+- SubC Compiler
+- Symbolics C
+- Tandem C/C++
+- TASKING compilers
+    - TASKING C51
+    - TASKING C850
+    - TASKING C-to-Hardware
+    - TASKING MicroBlaze
+    - TASKING PCP
+    - TASKING TriCore/AURIX
+    - TASKING VX
+- TenDRA
+- THINK C / Lightspeed C
+- Texas Instruments Compiler
+    - Texas Instruments ARM Compiler
+    - Texas Instruments ARM Clang Compiler
+    - Texas Instruments C2000 Compiler
+    - Texas Instruments C29x Clang Compiler
+    - Texas Instruments C54x/C5400 Compiler
+    - Texas Instruments C55x/C5500 Compiler
+    - Texas Instruments C6000 Compiler
+    - Texas Instruments C7000 Compiler
+    - Texas Instruments PRU Compiler
+- TinyC
+- Ultimate C
+- USL
+- VBCC
+- VectorC (Codeplay)
+- Watcom Compilers
+    - Watcom
+    - OpenWatcom
+- Zig Compilers
+    - zig C++
+    - zig cc
+
+## Others
+
+- Acorn C/C++ Compiler
+- Alan Snyder's Portable C Compiler
+- Ch (Interpreter)
+- Deep Blue C
+- Mark Williams C Compiler
+- MISOSYS C Compiler
+- Small-C Compiler
+- Symbolics C

@@ -1,4 +1,4 @@
-# TI Clang C/C++ Compiler
+# TI Clang
 
 ## Identification
 
@@ -14,19 +14,19 @@
 
 `__ti_major__`
 
-:   An integer for the major version of the TI Arm Clang compiler.
+:   An integer for the major version of the TI Clang compiler.
 
 `__ti_minor__`
 
-:   An integer for the minor version of the TI Arm Clang compiler.
+:   An integer for the minor version of the TI Clang compiler.
 
 `__ti_patchlevel__`
 
-:   An integer for the patch version of the TI Arm Clang compiler.
+:   An integer for the patch version of the TI Clang compiler.
 
 `__ti_version__`
 
-:   An integer for the version of the TI Arm Clang compiler, which is encoded as a decimal integer with the general form of **_ABBCC_**~10~, where:
+:   An integer for the version of the TI Clang compiler, which is encoded as a decimal integer with the general form of **_ABBCC_**~10~, where:
 
     - **_A_**~10~ is the major version;
     - **_BB_**~10~ is the minor version; and

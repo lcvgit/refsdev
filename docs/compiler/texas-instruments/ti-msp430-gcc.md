@@ -1,4 +1,4 @@
-# Texas Instruments MSP430 GCC Compiler
+# TI MSP430 GCC
 
 ## References
 

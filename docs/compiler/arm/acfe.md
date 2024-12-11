@@ -2,6 +2,14 @@
 
 ## Identification
 
+`__ARMCOMPILER_VERSION`
+
+:   Identifies the compiler as Arm Compiler for Embedded.
+
+`__ARMCC_VERSION`
+
+:   Identifies the compiler as Arm Compiler for Embedded.
+
 ## Versioning
 
 `__ARMCOMPILER_VERSION`
@@ -20,6 +28,10 @@
     - <**_A_**>~10~ is the major version;
     - <**_B_**>~10~ is the minor version; and
     - <**_CCCC_**>~10~ is the patch version.
+
+    !!!note
+
+        If `__ARMCOMPILER_VERSION` is defined, then `__ARMCC_VERSION` is defined as `__ARMCOMPILER_VERSION`.
 
 ## References
 

@@ -1,4 +1,4 @@
-# Texas Instruments MSP432 GCC Compiler
+# TI MSP432 GCC
 
 ## References
 

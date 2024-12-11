@@ -1,4 +1,4 @@
-# mikroC AI for ARM
+# mikroC PRO for AVR
 
 ## Identification
 
