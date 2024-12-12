@@ -33,10 +33,15 @@
 
         If `__ARMCOMPILER_VERSION` is defined, then `__ARMCC_VERSION` is defined as `__ARMCOMPILER_VERSION`.
 
+    !!!warning
+
+        If `__CC_NORCROFT` is defined, then `__ARMCC_VERSION` may be a floating-point number which is not suitable for preprocessor arithmetic.
+
 ## References
 
 - [Arm Compiler 6.23 Reference Guide (pdf)](https://documentation-service.arm.com/static/671fa191ad463325b23263ce){:target="_blank"}
 - [Arm Compiler 5.06 User Guide (pdf)](https://documentation-service.arm.com/static/602cda95083323480d479712){:target="_blank"}
 - [Arm Compiler 4.1 Reference Guide (pdf)](https://documentation-service.arm.com/static/5f915811f86e16515cdc3335){:target="_blank"}
+- <http://www.ee.ic.ac.uk/pcheung/teaching/ee2_computing/arm/refman2v2.pdf>{:target="_blank"}
 
 *[ACfE]: Arm Compiler for Embedded
