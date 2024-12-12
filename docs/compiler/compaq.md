@@ -12,11 +12,11 @@
 
 `__DECC_VER`
 
-:   <**_AABB_**0**_CCCC_**>~10~
+:   <**_AABB_**_0_**_CCCC_**>~10~
 
 `__DECCXX_VER`
 
-:   <**_AABB_**0**_CCCC_**>~10~
+:   <**_AABB_**_0_**_CCCC_**>~10~
 
 ## References
 

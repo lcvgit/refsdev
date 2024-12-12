@@ -1,4 +1,4 @@
-# Altium TASKING MicroBlaze
+# TASKING MicroBlaze
 
 ## Identification
 
@@ -14,7 +14,7 @@
 
 `__VERSION__`
 
-:   An integer for the version of the TASKING C-to-Hardware compiler, which is encoded as a decimal integer with the general form of **_ABBB_**~10~, where:
+:   An integer for the version of the TASKING MicroBlaze compiler, which is encoded as a decimal integer with the general form of **_ABBB_**~10~, where:
 
     - **_A_**~10~ is the major version; and
     - **_BBB_**~10~ is the minor version.
@@ -25,6 +25,6 @@
 
     !!!warning
 
-        Value may be negative (alpha, beta, etc.).
+        The value of `__REVISION__` is `#!c -1` for alphas, betas, and prototypes.
 
 ## References

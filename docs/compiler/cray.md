@@ -8,7 +8,7 @@
 
 ## Versioning
 
-`_RELEASE`
+`_RELEASE_MAJOR`
 
 :   An integer for the major version of the Cray C/C++ Compiler.
 
@@ -19,6 +19,10 @@
 `_RELEASE_PATCHLEVEL`
 
 :   An integer for the patch version of the Cray C/C++ Compiler.
+
+`_RELEASE_STRING`
+
+:   A string for the version of the Cray C/C++ Compiler.
 
 ## References
 

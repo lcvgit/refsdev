@@ -14,12 +14,6 @@
 
     <**_AABBCCCC_**>~16~
 
-    ```pseudo
-    __CODEGEARC_VERSION__ := ( (<major> << 24) +
-                               (<minor> << 16) +
-                               (<patch>) )
-    ```
-
 `__BORLANDC__`
 
 :   An integer for the version of Borland.

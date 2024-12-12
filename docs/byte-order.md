@@ -48,6 +48,7 @@ Defined by GCC/Clang.
 
 Defined in `<ieee754.h>`.
 
+`_BIG`<!-- Renesas/Hitachi Compilers -->
 `BIG_ENDIAN`
 `_BIG_ENDIAN`
 `__BIG_ENDIAN`
@@ -86,6 +87,7 @@ Defined in `<ieee754.h>`.
 - SPARC
 - System/Z
 
+`_LIT`<!-- Renesas/Hitachi Compilers -->
 `LITTLE_ENDIAN`
 `_LITTLE_ENDIAN`
 `__LITTLE_ENDIAN`

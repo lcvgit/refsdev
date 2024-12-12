@@ -1,4 +1,4 @@
-# Altium TASKING C-to-Hardware
+# TASKING C-to-Hardware
 
 ## Identification
 
@@ -8,7 +8,7 @@
 
 `__TASKING__`
 
-:   Identifies the compiler vendor as Altium TASKING.
+:   Identifies the compiler vendor as TASKING.
 
 ## Versioning
 
@@ -25,6 +25,6 @@
 
     !!!warning
 
-        Value may be negative (alpha, beta, etc.).
+        The value of `__REVISION__` is `#!c -1` for alphas, betas, and prototypes.
 
 ## References
