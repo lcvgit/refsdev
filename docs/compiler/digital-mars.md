@@ -1,3 +1,11 @@
+---
+tags:
+    - DMC
+    - Digital Mars
+    - Symantec
+    - Zorlite
+    - Zortech
+---
 # Digital Mars
 
 ## Identification

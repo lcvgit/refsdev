@@ -1,0 +1,153 @@
+# ISO/IEC 14882:2023
+
+## Language Features
+
+- [P0330R8] Literal suffix for (signed) size_t
+- [P1102R2] Make () more optional for lambdas
+- [P1938R3] if consteval
+- [P2186R2] Removing Garbage Collection Support
+- [P1401R5] Narrowing contextual conversions in static_assert and constexpr if
+- [P2223R2] Trimming whitespaces before line splicing
+- [P1847R4] Make declaration order layout mandated
+- [P2201R1] Removing mixed wide string literal concatenation
+- [P0847R7] Explicit object member functions (deducing this)
+- [P0849R8] auto(x)and auto{x}
+- [P2334R1] #elifdefand #elifndef
+- [P2242R3] Non-literal variables (and labels and gotos) in constexpr functions
+- [P2316R2] Consistent character literal encoding
+- [P2314R4] Character sets and encodings
+- [P2360R0] Extend init-statement (of forloop) to allow alias-declaration
+- [P2128R6] Multidimensional subscript operator
+- [P2173R1] Attributes on lambdas
+- [P2437R1] #warning
+- [P2362R3] Remove non-encodable wide character literals and multicharacter wide character literals
+- [P2324R2] Labels at the end of compound statements
+- [P2290R3] Delimited escape sequences
+- [P2071R2] Named universal character escapes
+- [P2448R2] Relaxing some constexpr restrictions
+- [P2266R3] Simpler implicit move
+- [P1169R4] `static operator()`
+- [P1467R9] Requirements for optional extended floating-point types
+- [P2582R1] Class template argument deduction from inherited constructors
+- [P1774R8] Attribute `[[assume]]`
+- [P2295R6] Support for UTF-8 as a portable source file encoding
+- [P2589R1] `static operator[]`
+- [P2647R1] Permitting static constexpr variables in constexpr functions
+- [P2718R0] Extending the lifetime of temporaries in range-based for loop initializer
+- [P2036R3, P2579R0] DR11: Change scope of lambda trailing-return-type
+- [P2615R1] DR20: Meaningful exports
+- [P2564R0] DR20: consteval needs to propagate up
+- [P1949R7] DR98: C++ Identifier Syntax using Unicode Standard Annex 31
+- [P2156R1] DR11: Allow duplicate attributes
+- [P2493R0] DR20: Adjusting the value of feature-test macro `__cpp_concepts`
+- [P2460R2] DR98: Relax requirements on `wchar_t` to match existing practices
+- [P2280R4] DR11: Using unknown pointers and references in constant expressions
+- [P2468R2] DR20: The Equality Operator You Are Looking For
+- [P2513R4] DR20: `char8_t` Compatibility and Portability Fix
+- [CWG2518] DR98/11: Clarify reporting of diagnostic directives and allow `static_assert` of non-value-dependent expressions in a template context
+
+## Library Features
+
+- [P0881R7, P2301R1] Stacktrace library
+- [P0943R6] `<stdatomic.h>`
+- [P1048R1] `std::is_scoped_enum`
+- [P1679R3] `std::basic_string::contains()`, `std::basic_string_view::contains()`
+- [P1682R3] `std::to_underlying`
+- [P2212R2] Relaxing requirements for `time_point<>::clock`
+- [P0401R6] Providing size feedback in the Allocator interface
+- [P0448R4] `<spanstream>`: string-stream with std::span-based buffer
+- [P1132R8] `std::out_ptr()`, `std::inout_ptr()`
+- [P1328R1] constexpr `type_info::operator==()`
+- [P1425R4] Iterator pair constructors for `std::stack` and `std::queue`
+- [P1518R2] Non-deduction context for allocators in container deduction guides
+- [P1659R3] `ranges::starts_with()` and `ranges::ends_with()`
+- [P2166R1] Prohibiting `std::basic_string` and `std::basic_string_view` construction from `nullptr`
+- [P2136R3] `std::invoke_r()`
+- [P1989R2] Range constructor for `std::basic_string_view`
+- [P1951R1] Default template arguments for `std::pair`'s forwarding constructor
+- [P2186R2] Remove Garbage Collection and Reachability-Based Leak Detection (library support)
+- [P2321R2] zip: `views::zip`, `views::zip_transform`, `views::adjacent`, and `views::adjacent_transform`
+- [P2077R3] Heterogeneous erasure overloads for associative containers
+- [P1272R4] `std::byteswap()`
+- [P1147R1] Printing `volatile T*`
+- [P1072R10] `basic_string::resize_and_overwrite()`
+- [P0798R8] Monadic operations for `std::optional`
+- [P0288R9] `std::move_only_function`
+- [P2401R0] Add a conditional `noexcept` specification to `std::exchange`
+- [P2251R1] Require `std::span` & `std::basic_string_view` to be TriviallyCopyable
+- [P2340R1] Clarifying the status of the “C headers”
+- [P0323R12, P2549R1] `<expected>`
+- [P0533R9] `constexpr` for `<cmath>` and `<cstdlib>`
+- [P0627R6] `std::unreachable()`
+- [P1413R3] Deprecating `std::aligned_storage` and `std::aligned_union`
+- [P2255R2] std::reference_constructs_from_temporary & std::reference_converts_from_temporary
+- [P2273R3] constexpr std::unique_ptr
+- [P1206R7] Constructing containers and strings from ranges with ranges::to(), tagged constructors, insert and assign member functions
+- [P2387R3] Pipe support for user-defined range adaptors (ranges::range_adaptor_closure, std::bind_back)
+- [P2440R1] ranges::iota(), ranges::shift_left(), and ranges::shift_right()
+- [P2441R2] views::join_with
+- [P2442R1] views::chunk and views::slide
+- [P2443R1] views::chunk_by
+- [P0009R18 P2599R2 P2604R0 P2613R1 P2763R1] std::mdspan: a non-owning multidimensional array reference
+- [P0429R9] <flat_map>
+- [P1222R4] <flat_set>
+- [P1223R5] ranges::find_last(), ranges::find_last_if(), and ranges::find_last_if_not()
+- [P1642R11] Freestanding Library: Easy <utility>, <ranges>, and <iterator>
+- [P1899R3] views::stride
+- [P2165R4] Compatibility between std::tuple and tuple-like objects
+- [P2278R4] Rectifying constant iterators, sentinels, and ranges. views::as_const
+- [P2286R8] Formatting Ranges
+- [P2585R1] Improve default container formatting
+- [P2093R14 P2539R4] Formatted output library <print>
+- [P2693R1] Formatting std::thread::id and std::stacktrace
+- [P2291R3] constexpr for integral overloads of std::to_chars() and std::from_chars().
+- [P2302R4] ranges::contains() and ranges::contains_subrange()
+- [P2322R6] Ranges fold algorithms
+- [P2374R4, P2540R1] views::cartesian_product
+- [P2404R3] Adding move-only types support for comparison concepts (equality_comparable, totally_ordered, three_way_comparable)
+- [P2408R5] Ranges iterators as inputs to non-ranges algorithms
+- [P2417R2] constexpr std::bitset
+- [P2438R2] basic_string::substr() &&
+- [P2446R2] views::as_rvalue
+- [P2465R3] Standard Library Modules
+- [P2445R1] std::forward_like()
+- [P2467R1] Support exclusive mode for std::fstream
+- [P2474R2] views::repeat
+- [P2494R2] Relaxing range adaptors to allow for move-only types
+- [P2499R0] std::basic_string_view range constructor should be explicit
+- [P2502R2, P2787R0] std::generator: synchronous coroutine generator for ranges
+- [P2517R1] Add a conditional noexcept specification to std::apply
+- [P2590R2, P2679R2] Explicit lifetime management (std::start_lifetime_as)
+- [P2419R2] Clarify handling of encodings in localized formatting of chrono types
+- [P2520R0] std::move_iterator should not always be input_iterator
+- [LWG3617] Deduction guides update for explicit object parameter call operators
+- [P1169R4] Deduction guides update for static operator()
+- [P1467R9] Standard names and library support for extended floating-point types
+- [P2505R5] Monadic operations for std::expected
+- [P2164R9] views::enumerate
+- [P2674R1] std::is_implicit_lifetime
+- [P2655R3] std::common_reference_t of std::reference_wrapper should be a reference type
+- [P2652R2] Disallowing user specialization of std::allocator_traits
+- [P2614R2] Deprecating std::numeric_limits::has_denorm
+- [P2711R1] Making Multi-Param Constructors Of views explicit
+- [P2609R3] DR20: Relaxing Ranges Just A Smidge
+- [P2770R0] DR20: Stashing Stashing Iterators For Proper Flattening
+- [P2162R2] DR17: std::visit() for classes derived from std::variant
+- [P2017R1] DR20: Conditionally borrowed ranges
+- [P2259R1] DR20: Repairing input range adaptors and std::counted_iterator
+- [P2328R1] DR20: views::join should join all views of ranges
+- [P2325R3] DR20: view does not require default_initializable
+- [P2281R1] DR20: Range adaptor objects bind arguments by value
+- [P2231R1] DR20: constexpr for std::optional and std::variant
+- [P2210R2] DR20: views::lazy_split and redesigned views::split
+- [P2432R1] DR20: Fix ranges::istream_view
+- [P2415R2] DR20: view with ownership
+- [P2372R3] DR20: Fixing locale handling in chrono formatters
+- [P2393R1] DR20: Cleaning up integer-class types
+- [P2216R3] DR20: std::format() improvements
+- [P2418R2] DR20: Add support for non-const-formattable types to std::format
+- [P2508R1] DR20: std::basic_format_string
+- [P2602R2] DR20: Poison Pills are Too Toxic
+- [P2572R1] DR20: std::format fill character allowances
+- [P2675R1] DR20: Improving std::format's width estimation
+- [P2588R3] DR20: std::barrier's phase completion guarantees

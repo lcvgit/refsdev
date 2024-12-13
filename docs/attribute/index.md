@@ -1,0 +1,219 @@
+# Attribute
+
+- <code>abi_tag ("<i>tag</i>")</code><br><code>abi_tag ("<i>tag</i>", ...)</code>
+- `absdata`
+- <code>access (<i>access-mode</i>, <i>ref-index</i>)</code><br><code>access (<i>access-mode</i>, <i>ref-index</i>, <i>size-index</i>)</code>
+- <code>address (<i>addr</i>)</code>
+- <code>alias ("<i>target</i>")</code>
+- `aligned`<br><code>aligned (<i>alignment</i>)</code>
+- <code>alloc_align (<i>position</i>)</code>
+- <code>alloc_size (<i>position</i>)</code><br><code>alloc_size (<i>position-1</i>, <i>position-2</i>)</code>
+- <code>altivec (<i>arg</i>)</code>
+- `always_inline`
+- `amdgpu_hsa_kernel (...)`
+- `artificial`
+- <code>assume (<i>expression</i>)</code>
+- <code>assume_aligned (<i>alignment</i>)</code><br><code>assume_aligned (<i>alignment</i>, <i>offset</i>)</code>
+- `aux`
+- `bank_switch`
+- `below100`
+- `break_handler`
+- `brk_interrupt`
+- <code>callee_pop_aggregate_return (<i>number</i>)</code>
+- `cdecl`
+- `cf_check`
+- <code>cleanup (<i>cleanup-function</i>)</code>
+- `code_readable`<br><code>code_readable (<i>choice</i>)</code>
+- `cold`
+- `common`
+- `const`
+- `constructor`<br><code>constructor (<i>priority</i>)</code>
+- `copy`<br><code>copy (<i>function</i>)</code><br><code>copy (<i>type</i>)</code><br><code>copy (<i>variable</i>)</code>
+- <code>counted_by (<i>count</i>)</code>
+- `critical`
+- `deprecated`<br><code>deprecated ("<i>msg</i>")</code>
+- `designated_init`
+- `destructor`<br><code>destructor (<i>priority</i>)</code>
+- `disinterrupt`
+- `dllexport`
+- `dllimport`
+- `eightbit_data`
+- `either`
+- <code>error ("<i>msg</i>")</code>
+- `exception`
+- `exception_handler`
+- `expected_throw`
+- `externally_visible`
+- `fallthrough`
+- `far`
+- `fast_interrupt`
+- `fastcall`
+- `fd_arg`<br><code>fd_arg (<i>fd-index</i>)</code>
+- `fd_arg_read`<br><code>fd_arg_read (<i>fd-index</i>)</code>
+- `fd_arg_write`<br><code>fd_arg_write (<i>fd-index</i>)</code>
+- <code>fentry_name ("<i>name</i>")</code>
+- <code>fentry_section ("<i>name</i>")</code>
+- `flag_enum`
+- `flatten`
+- `force_align_arg_pointer`
+- <code>format (<i>archetype</i>, <i>string-index</i>, <i>first-to-check</i>)</code>
+- <code>format_arg (<i>string-index</i>)</code>
+- `forwarder_section`
+- <code>function_return ("<i>choice</i>")</code>
+- `function_vector`
+- `gcc_struct`
+- `gnu_inline`
+- `hardbool`<br><code>hardbool (<i>false-value</i>)</code><br><code>hardbool (<i>false-value</i>, <i>true-value</i>)</code>
+- `hot`
+- <code>hotpatch (<i>halfwords-before-function-label</i>, <i>halfwords-after-function-label</i>)</code>
+- `<code>func ("<i>resolver</i>")</code>
+- <code>indirect_branch ("<i>choice</i>")</code>
+- `indirect_return`
+- <code>init_priority (<i>priority</i>)</code>
+- `interrupt`
+- `interrupt_handler`
+- `interrupt_thread`
+- `io`<br><code>io (<i>addr</i>)</code>
+- `io_low`<br><code>io_low (<i>addr</i>)</code>
+- `isr`
+- `jli_always`
+- `jli_fixed`
+- `kernel`
+- <code>kernel_helper (<i>arg</i>)</code>
+- `kspisusp`
+- `l1_data`
+- `l1_data_A`
+- `l1_data_B`
+- `l1_text`
+- `l2`
+- `leaf`
+- `long_call`
+- `longcall`
+- `lower`
+- `malloc`<br><code>malloc (<i>deallocator</i>)</code><br><code>malloc (<i>deallocator</i>, <i>ptr-index</i>)</code>
+- `may_alias`
+- `medium_call`
+- `micromips`
+- `mips16`
+- <code>mode (<i>mode</i>)</code>
+- <code>model (<i>model-name</i>)</code>
+- `ms_abi`
+- `ms_hook_prologue`
+- `ms_struct`
+- `musttail`
+- `naked`
+- `near`
+- `nesting`
+- `nmi_handler`
+- `no_address_safety_analysis`
+- `no_callee_saved_registers`
+- `no_caller_saved_registers`
+- `no_dangling`
+- `no_gccisr`
+- `no_icf`
+- `no_instrument_function`
+- `no_profile_instrument_function`
+- `no_reorder`
+- <code>no_sanitize ("<i>sanitize-options</i>")</code><br><code>no_sanitize ("<i>sanitize-option</i>", ...)</code>
+- `no_sanitize_address`
+- `no_sanitize_coverage`
+- `no_sanitize_thread`
+- `no_sanitize_undefined`
+- `no_split_stack`
+- `no_stack_limit`
+- `no_stack_protector`
+- `noblock`
+- `nocf_check`
+- `noclone`
+- `nocommon`
+- `nocompression`
+- `nodirect_extern_access`
+- `noinit`
+- `noinline`
+- `noipa`
+- `nomicromips`
+- `nomips16`
+- `nonnull`<br><code>nonnull (_arg-index_, ...)</code>
+- `nonstring`
+- `noplt`
+- `noreturn`
+- `nosave_low_regs`
+- `nothrow`
+- `notshared`
+- `null_terminated_string_arg`<br><code>null_terminated_string_arg (<i>argument-index</i>)</code>
+- `objc_nullability (_nullability-kind_)`
+- `objc_root_class`
+- <code>optimize (<i>level</i>)</code><br><code>optimize ("<i>string</i>")</code><br><code>optimize (<i>level</i>, ...)</code><br><code>optimize ("<i>string</i>", ...)</code>
+- `OS_main`
+- `OS_task`
+- `packed`
+- `patchable_function_entry`
+- `pcs`
+- `persistent`
+- `preserve_access_index`
+- `progmem`
+- `pure`
+- `reentrant`
+- <code>regparm (<i>number</i>)</code>
+- `renesas`
+- `reproducible`
+- `resbank`
+- `reset`
+- `retain`
+- `returns_nonnull`
+- `returns_twice`
+- `riscv_vector_cc`
+- `saddr`
+- `save_volatiles`
+- `saveall`
+- <code>scalar_storage_order ("<i>endianness</i>")</code>
+- `sda`
+- <code>section ("<i>section-name</i>")</code>
+- `secure_call`
+- `selectany`
+- `sentinel`<br><code>sentinel (<i>position</i>)</code>
+- `shared`
+- `short_call`
+- `shortcall`
+- `signal`
+- `simd`<br><code>simd ("<i>mask</i>")</code>
+- `sp_switch`
+- `sseregparm`
+- `stack_protect`
+- `stdcall`
+- <code>strict_flex_array (<i>level</i>)</code>
+- `strub`<br><code>strub ("<i>mode</i>")</code>
+- <code>symver ("<i>name2@nodename</i>")</code>
+- `syscall_linkage`
+- `sysv_abi`
+- `tainted_args`
+- <code>target ("<i>options</i>")</code><br><code>target ("<i>option</i>", ...)</code>
+- <code>target_clones (<i>options</i>)</code>
+- `tda`
+- `thiscall`
+- `tiny_data`
+- <code>tls_model ("<i>tls_model</i>")</code>
+- `transparent_union`
+- `trap_exit`
+- `trapa_handler`
+- `unavailable`<br><code>unavailable ("<i>msg</i>")</code>
+- `uncached`
+- `uninitialized`
+- `unsequenced`
+- `unused`
+- `upper`
+- `use_hazard_barrier_return`
+- `used`
+- `vector`
+- <code>vector_size (<i>bytes</i>)</code>
+- `version_id`
+- <code>visibility (<i>visibility-type</i>)</code>
+- `wakeup`
+- <code>warn_if_not_aligned (<i>alignment</i>)</code>
+- `warn_unused`
+- `warn_unused_result`
+- <code>warning ("<i>msg</i>")</code>
+- `weak`
+- `weakref`<br><code>weakref ("_target_")</code>
+- `zda`
+- <code>zero_call_used_regs ("<i>choice</i>")</code>

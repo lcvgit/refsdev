@@ -1,0 +1,114 @@
+# C++26
+
+## Language Features
+
+- [P2621R3] DR98: Removing undefined behavior from lexing
+- [P1854R4] DR98: Making non-encodable string literals ill-formed
+- [P2361R6] Unevaluated strings
+- [P2558R2] Adding `@`, `$`, and <code>`</code> to the basic character set
+- [P2738R1] `constexpr` cast from `void*`
+- [P2552R3] DR20: On the ignorability of standard attributes
+- [P2752R3] DR11: Static storage for braced initializers
+- [P2741R3] User-generated static_assert messages
+- [P2169R4] Placeholder variables with no name
+- [P2662R3] Pack indexing
+- [P2864R2] Removing deprecated arithmetic conversion on enumerations
+- [P2308R1] DR11/20: Template parameter initialization
+- [P2748R5] Disallow binding a returned reference to a temporary
+- [P0609R3] Attributes for structured bindings
+- [P2795R5] Erroneous behavior for uninitialized reads
+- [P2573R2] Err:50
+- [P2893R3] Variadic friends
+- [P3106R1] DR98: Clarifying rules for brace elision in aggregate initialization
+- [P3034R1] DR20: Disallow module declarations to be macros
+- [P2809R3] DR11: Trivial infinite loops are not undefined behavior
+- [P2747R2] constexpr placement new
+- [P0963R3] Structured binding declaration as a condition
+- [P2963R3] Ordering of constraints involving fold expressions
+- [P3144R2] Deleting a pointer to an incomplete type should be ill-formed
+- [P1061R10] Structured bindings can introduce a pack
+- [P2686R5] `constexpr` structured bindings and references to `constexpr` variables
+- [P3068R6] `constexpr` exceptions
+- [P3176R1] Oxford variadic comma
+- [P2865R5] Removing deprecated array comparisons
+
+## Library Features
+
+- [P2497R0] Testing for success or failure of `<charconv>` functions
+- [P1885R12, P2862R1] `std::text_encoding`: text encodings identification
+- [P2587R3] Arithmetic overloads of `std::to_string` and `std::to_wstring` use `std::format`
+- [P2757R3] Type checking format args
+- [P2510R3] Formatting pointers
+- [P2592R3] Hashing support for std::chrono value classes
+- [P2545R4] Read-Copy Update
+- [P2530R3] Hazard Pointers
+- [P2538R1] ADL-proof std::projected
+- [P2562R1] constexpr stable sorting
+- [P2637R3] Member visit
+- [P2641R4] `std::is_within_lifetime`
+- [P2363R5] Extending associative containers with the remaining heterogeneous overloads
+- [P1901R2] Enabling the use of `std::weak_ptr` as keys in unordered associative containers
+- [P1759R6] Native handles in file streams
+- [P2495R3] Interfacing string streams with `std::string_view`
+- [P2697R1] Interfacing `std::bitset` with `std::string_view`
+- [P1383R2] More constexpr for `<cmath>` and `<complex>`
+- [P2734R0] Adding the new 2022 SI prefixes on ratios: `std::quecto`, `std::ronto`, `std::ronna`, and `std::quetta`
+- [P0792R14] `std::function_ref`: type-erased callable reference
+- [P2548R6] `std::copyable_function`
+- [P2714R1] `std::bind_front`, `std::bind_back`, and `std::not_fn` to NTTP callables
+- [P2630R4, P3355R1] `std::submdspan()`
+- [P2013R5] Freestanding Language: Optional `::operator new`
+- [P0543R3] Saturation Arithmetic
+- [P2546R5, P2810R3] `<debugging>`: Debugging Support
+- [P1673R13, P3050R2, P3222R0] `<linalg>`: A free function linear algebra interface based on the BLAS
+- [P2264R7] Making `assert()` macro user friendly
+- [P2918R2] Runtime format strings
+- [P2447R6] `std::span` over an initializer list
+- [P2821R5] `std::span::at()`
+- [P2819R2] Added `tuple` protocol to `std::complex`
+- [P0952R2] A new specification for `std::generate_canonical`
+- [P2868R3] Removing deprecated typedef `std::allocator::is_always_equal`
+- [P2870R3] Removing function overload of `std::basic_string::reserve()` that takes no argument
+- [P2871R3] Removing deprecated Unicode conversion facets (`<codecvt>`)
+- [P2937R0] Freestanding: removing std::strtok
+- [P2407R5] Freestanding Library: Partial Classes
+- [P2833R2] Freestanding Library: inout expected span
+- [P2836R1, P2950R0] DR23: std::basic_const_iterator should follow its underlying type’s convertibility
+- [P2905R2] DR20: std::make_format_args now accepts only lvalue references instead of forwarding references
+- [P2909R4] DR20: Fix formatting of code units as integers
+- [P2542R8] views::concat
+- [P2591R5] Concatenation of strings and string views
+- [P2248R8, P3217R0] Enabling list-initialization for algorithms
+- [P1068R11] `std::ranges::generate_random`
+- [P2944R3] Comparisons for `std::reference_wrapper`
+- [P2642R6] Padded mdspan layouts
+- [P3029R1] New CTAD for `std::span` and `std::mdspan` with integral constants
+- [P0493R5] Atomic maximum and minimum
+- [P2845R8] `std::formatter<std::filesystem::path>`
+- [P3142R0] Printing Blank Lines with `std::println()`
+- [P2875R4] Undeprecate `std::polymorphic_allocator::destroy`
+- [P2867R2] Removing deprecated `strstreams`
+- [P2869R4] Removing deprecated `std::shared_ptr` Atomic Access APIs
+- [P2872R3] Removing `std::wstring_convert`
+- [P3107R5 P3235R3] DR23: Permit an efficient implementation of `std::print`
+- [P2300R10 P3396R0] Execution library
+- [P0843R14] `std::inplace_vector`: dynamically-resizable vector with fixed capacity
+- [P2075R6] `std::philox_engine`: counter-based random number engine
+- [P3168R2] `std::optional` range support
+- [P2985R0] `std::is_virtual_base_of`: type trait for detecting virtual base classes
+- [P2389R2] `std::dims` for std::mdspan
+- [P2968R2] DR11: Formal specification of the type of `std::ignore`
+- [P2997R1] DR20: Removing the common reference requirement from the indirectly invocable concepts
+- [P3247R2] Deprecating `std::is_trivial` and `std::is_trivial_v`
+- [P3136R1] DR20: Algorithm function objects
+- [P3138R5] `views::cache_latest`
+- [P3379R1] Constraining std::expected equality operators
+- [P2897R7] `std::aligned_accessor`
+- [P2835R7] `std::atomic_ref::address()`
+- [P3323R1] DR11/20: cv-qualified types in `std::atomic` and `std::atomic_ref`
+- [P3309R3] `constexpr` `std::atomic` and `std::atomic_ref`
+- [P3508R0, P3369R0] `constexpr` for specialized memory algorithms
+- [P3370R1] Added new library headers from C23
+- [P1928R15] `std::simd`: data-parallel types
+- [P3325R5] A utility for creating execution environments
+- [P3068R6] `constexpr` for exception types, e.g. `std::bad_alloc`, `std::bad_cast` etc.

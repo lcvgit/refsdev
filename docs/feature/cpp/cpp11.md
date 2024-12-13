@@ -60,6 +60,7 @@
 
 - <https://en.cppreference.com/w/cpp/11>{:target="_blank"}
 - <https://gcc.gnu.org/projects/cxx-status.html#cxx11>{:target="_blank"}
+- <https://gcc.gnu.org/onlinedocs/libstdc++/manual/status.html>{:target="_blank}
 - <https://clang.llvm.org/cxx_status.html>{:target="_blank"}
 - <https://www.edg.com/features.html>{:target="_blank"}
 
@@ -200,7 +201,6 @@ N2340	__func__ predefined identifier
 N1653	C99 preprocessor
 N1811	long long
 N1988	Extended integral types
-
 
 EDG
 
