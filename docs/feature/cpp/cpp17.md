@@ -1,5 +1,7 @@
 # ISO/IEC 14882:2017
 
+## Language Features
+
 - [N3922] DR11: New `auto` rules for direct-list-initialization
 - [N3928] `static_assert` with no message
 - [N4051] `typename` in a template template parameter

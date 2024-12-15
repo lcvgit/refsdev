@@ -1,1 +1,155 @@
 # ISO/IEC 14882:2020
+
+## Language Features
+
+- [P0409R2] Allow Lambda capture [=, this]
+- [P0306R4 P1042R1] `__VA_OPT__`
+- [P0329R4] Designated initializers [FTM]*
+- [P0428R2] template-parameter-list for generic lambdas [FTM]*
+- [P0683R1] Default member initializers for bit-fields
+- [P0702R1] Initializer list constructors in class template argument deduction
+- [P0704R1] const&-qualified pointers to members
+- [P0734R0] Concepts [FTM]*
+- [P0315R4] Lambdas in unevaluated contexts
+- [P0515R3] Three-way comparison operator [FTM]*
+- [P0588R1] DR11: Simplifying implicit lambda capture
+- [P0614R1] init-statements for range-based for
+- [P0624R2] Default constructible and assignable stateless lambdas
+- [P0641R2] Type mismatch of defaulted special member functions
+- [P0692R1] Access checking on specializations
+- [P0846R0] ADL and function templates that are not visible
+- [P0859R0] DR11: Specify when constexpr function definitions are needed for constant evaluation
+- [P0479R5] Attributes `[[likely]]` and `[[unlikely]]`
+- [P0634R3] Make typename more optional
+- [P0780R2] Pack-expansions in lambda init-captures [FTM]*
+- [P0840R2] Attribute `[[no_unique_address]]`
+- [P0848R3] Conditionally Trivial Special Member Functions [FTM]*
+- [P0961R1] DR17: Relaxing the structured bindings customization point finding rules
+- [P0962R1] DR11: Relaxing the range-for loop customization point finding rules
+- [P0969R0] DR17: Allow structured bindings to accessible members
+- [P0722R3] Destroying operator delete [FTM]*
+- [P0732R2] Class types in Non-type template parameters
+- [P0806R2] Deprecate implicit capture of this via [=]
+- [P0892R2] `explicit(bool)` [FTM]*
+- [P0941R2] Integrating feature-test macros
+- [P1008R1] Prohibit aggregates with user-declared constructors
+- [P1064R0] constexpr virtual function [FTM]*
+- [P1120R0] Consistency improvements for comparisons
+- [P0482R6] char8_t [FTM]*
+- [P0595R2] std::is_constant_evaluated()
+- [P1002R1] constexpr try-catch blocks
+- [P1073R3] Immediate functions (consteval) [FTM]*
+- [P1094R2] Nested inline namespaces
+- [P1141R2] Yet another approach for constrained declarations
+- [P1236R1] Signed integers are two's complement
+- [P1327R1] dynamic_cast and polymorphic typeid in constant expressions
+- [P1330R0] Changing the active member of a union inside constexpr [FTM]*
+- [P0912R5] Coroutines [FTM]*
+- [P0960R3] Parenthesized initialization of aggregates [FTM]*
+- [P1009R2] DR11: Array size deduction in new-expressions
+- [P1103R3] Modules [FTM]*
+- [P1041R4 P1139R2] Stronger Unicode requirements
+- [P1185R2] `<=>` `!=` `==`
+- [P1286R2] DR11: Explicitly defaulted functions with different exception specifications
+- [P1091R3, P1381R1] Lambda capture and storage class specifiers of structured bindings
+- [P0388R4] Permit conversions to arrays of unknown bound
+- [P0784R7] constexpr container operations [FTM]*
+- [P1152R4] Deprecating some uses of volatile
+- [P1143R2] constinit [FTM]*
+- [P1161R3] Deprecate comma operator in subscripts
+- [P1301R4] `[[nodiscard]]` with message
+- [P1331R2] Trivial default initialization in constexpr functions
+- [P1668R1] Unevaluated asm-declaration in constexpr functions
+- [P1099R5] using enum [FTM]*
+- [P1186R3] Synthesizing Three-way comparison for specified comparison category
+- [P1771R1] DR17: `[[nodiscard]]` for constructors
+- [P1814R0] class template argument deduction for alias templates [FTM]*
+- [P1816R0 P2082R1] class template argument deduction for aggregates
+- [P1825R0] DR11: Implicit move for more local objects and rvalue references
+- [P1946R0] Allow defaulting comparisons by value
+- [P1959R0] Remove `std::weak_equality` and `std::strong_equality`
+- [P1907R1] Inconsistencies with non-type template parameters [FTM]*
+- [P0593R6] DR98: Pseudo-destructors end object lifetimes
+- [P1957R2] DR11: Converting from `T*` to `bool` should be considered narrowing
+
+## Library Features
+
+- [P0463R1] `std::endian`
+- [P0674R1] Extending `std::make_shared()` to support arrays
+- [P0020R6] Floating-point atomic
+- [P0053R7] Synchronized buffered (`std::basic_osyncstream`)
+- [P0202R3] constexpr for `<algorithm>` and `<utility>`
+- [P0415R1] More constexpr for `<complex>`
+- [P0439R0] Make `std::memory_order` a scoped enumeration
+- [P0457R2] String prefix and suffix checking: string(_view) ::starts_with/ends_with
+- [P0768R1] Library support for `operator<=>` `<compare>`
+- [P0550R2] `std::remove_cvref`
+- [P0600R1] `[[nodiscard]]` in the standard library
+- [P0616R0] Using `std::move` in numeric algorithms
+- [P0653R2] Utility to convert a pointer to a raw pointer
+- [P0718R2] Atomic `std::shared_ptr` and `std::weak_ptr`
+- [P0122R7] `std::span`
+- [P0355R7] Calendar and timezone
+- [P0754R2] `<version>`
+- [P0809R0] Comparing unordered containers
+- [P0858R0] ConstexprIterator requirements
+- [P0966R1] `std::basic_string::reserve()` should not shrink
+- [P0528R3] Atomic Compare-And-Exchange with padding bits
+- [P0019R8] `std::atomic_ref`
+- [P0458R2] `contains()` member function of associative containers, e.g. `std::map::contains()`
+- [P0475R1] DR11: Guaranteed copy elision for piecewise construction
+- [P0476R2] `std::bit_cast()`
+- [P0556R3, P1956R1] Integral power-of-2 operations:  `std::bit_ceil()`, `std::bit_floor()`, `std::bit_width()`, `std::has_single_bit()`
+- [P0646R1] Improving the return value of erase-like algorithms
+- [P0722R3] `std::destroying_delete`
+- [P0758R1] `std::is_nothrow_convertible`
+- [P0769R2] Add `std::shift_left`/`std::shift_right` to `<algorithm>`
+- [P0879R0] Constexpr for `std::swap()` and swap related functions
+- [P0887R1] `std::type_identity`
+- [P0898R3] Concepts library
+- [P1023R0] constexpr comparison operators for `std::array`
+- [P0318R1] `std::unwrap_ref_decay` and `std::unwrap_reference`
+- [P0356R5] `std::bind_front()`
+- [P0357R3] `std::reference_wrapper` for incomplete types
+- [P0487R1] Fixing `operator>>(basic_istream&, CharT*)`
+- [P0482R6] Library support for `char8_t`
+- [P0591R4] Utility functions to implement uses-allocator construction
+- [P0602R4] DR17: `std::variant` and `std::optional` should propagate copy/move triviality
+- [P0608R3] DR17: A sane `std::variant` converting constructor
+- [P0771R1] `std::function`'s move constructor should be noexcept
+- [P0896R4] The One Ranges Proposal
+- [P0919R3, P1690R1] Heterogeneous lookup for unordered containers
+- [P0972R0] <chrono> `zero()`, `min()`, and `max()` should be `noexcept`
+- [P1006R1] `constexpr` in `std::pointer_traits`
+- [P1007R3] `std::assume_aligned()`
+- [P1020R1, P1973R1] Smart pointer creation with default initialization (e.g. `make_unique_for_overwrite`)
+- [P1032R1] Misc `constexpr` bits
+- [P1085R2] Remove comparison operators of `std::span`
+- [P1165R1] Make stateful allocator propagation more consistent for `operator+(basic_string)`
+- [P1209R0, P1115R3] Consistent container erasure, e.g. `std::erase(std::vector)`, or `std::erase_if(std::map)`
+- [P1502R1] Standard library header units
+- [P0339R6] `polymorphic_allocator<>` as a vocabulary type
+- [P1001R2] `std::execution::unseq`
+- [P0811R3] `std::lerp()` and `std::midpoint()`
+- [P1024R3] Usability enhancements for `std::span`
+- [P1164R1] DR17: Make `create_directory()` intuitive
+- [P1227R2] `std::ssize()` and unsigned extent for `std::span`
+- [P1357R1] Traits for (un)bounded arrays
+- [P0325R4] `std::to_array()`
+- [P0408R7] Efficient access to `std::basic_stringbuf`’s buffer
+- [P0466R5] Layout-compatibility and pointer-interconvertibility traits
+- [P0553R4] Bit operations: std::  rotl(), rotr(), countl_zero(), countl_one(), countr_zero(), countr_one(), popcount()
+- [P0631R8] Mathematical constants
+- [P0645R10] Text formatting
+- [P0660R10] `std::stop_token` and `std::jthread`
+- [P0784R7] `constexpr std::allocator` and related utilities
+- [P0980R1] `constexpr std::string`
+- [P1004R2] `constexpr std::vector`
+- [P1035R7] Input range adaptors
+- [P1065R2] constexpr `std::invoke()` and related utilities
+- [P1135R6] Atomic waiting and notifying, `std::counting_semaphore`, `std::latch` and `std::barrier`
+- [P1208R6] `std::source_location`
+- [P1614R2] Adding `<=>` to the standard library
+- [P0883R2] `constexpr` default constructor of `std::atomic` and `std::atomic_flag`
+- [P1645R1] `constexpr` for numeric algorithms
+- [P0586R2] Safe integral comparisons
