@@ -3,7 +3,7 @@
 ## Language Features
 
 - [P0409R2] Allow Lambda capture [=, this]
-- [P0306R4 P1042R1] `__VA_OPT__`
+- [P0306R4, P1042R1] `__VA_OPT__`
 - [P0329R4] Designated initializers [FTM]*
 - [P0428R2] template-parameter-list for generic lambdas [FTM]*
 - [P0683R1] Default member initializers for bit-fields
