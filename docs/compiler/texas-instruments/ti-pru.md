@@ -2,6 +2,10 @@
 
 ## Identification
 
+`__PRU__`
+
+:   Identifies the target architecture as PRU.
+
 `__TI_COMPILER_VERSION__`
 
 :   Identifies the compiler vendor as Texas Instruments.
