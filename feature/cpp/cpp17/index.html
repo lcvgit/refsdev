@@ -1,0 +1,2482 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://refs.dev/feature/cpp/cpp17/">
+      
+      
+        <link rel="prev" href="../cpp14/">
+      
+      
+        <link rel="next" href="../cpp20/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>ISO/IEC 14882:2017 - refs.dev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#isoiec-148822017" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="refs.dev" class="md-header__button md-logo" aria-label="refs.dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            refs.dev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ISO/IEC 14882:2017
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../attribute/" class="md-tabs__link">
+          
+  
+    
+  
+  Attribute
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../byte-order/" class="md-tabs__link">
+        
+  
+    
+  
+  Byte Order
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cpu/aarch64/" class="md-tabs__link">
+          
+  
+    
+  
+  CPU
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../compiler/acc/" class="md-tabs__link">
+          
+  
+    
+  
+  Compiler
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../data-model/" class="md-tabs__link">
+          
+  
+    
+  
+  Data Model
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../c/c90/" class="md-tabs__link">
+          
+  
+    
+  
+  Feature
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../instruction-set/arm/" class="md-tabs__link">
+          
+  
+    
+  
+  Instruction Set
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../language/assembly/" class="md-tabs__link">
+          
+  
+    
+  
+  Language
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../library/c/bionic/" class="md-tabs__link">
+          
+  
+    
+  
+  Library
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../os/aix/" class="md-tabs__link">
+          
+  
+    
+  
+  OS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../platform/dreamcast/" class="md-tabs__link">
+          
+  
+    
+  
+  Platform
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../standard/lsb/" class="md-tabs__link">
+          
+  
+    
+  
+  Standard
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../versioning/" class="md-tabs__link">
+        
+  
+    
+  
+  Versioning
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="refs.dev" class="md-nav__button md-logo" aria-label="refs.dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    refs.dev
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../attribute/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Attribute
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../byte-order/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Byte Order
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../cpu/aarch64/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    CPU
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../compiler/acc/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Compiler
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../data-model/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Data Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Feature
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../c/c90/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    C Features
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C++ Features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            C++ Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp26/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++26
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ Feature Test Macros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:1998
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2003
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2011
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2011
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2017
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2017
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#language-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Library Features
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp23/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../instruction-set/arm/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Instruction Set
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../language/assembly/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Language
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../library/c/bionic/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Library
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../os/aix/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../platform/dreamcast/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Platform
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../standard/lsb/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Standard
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../versioning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Versioning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#language-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Library Features
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="isoiec-148822017">ISO/IEC 14882:2017<a class="headerlink" href="#isoiec-148822017" title="Permanent link">🔗</a></h1>
+<h2 id="language-features">Language Features<a class="headerlink" href="#language-features" title="Permanent link">🔗</a></h2>
+<ul>
+<li>[N3922] DR11: New <code>auto</code> rules for direct-list-initialization</li>
+<li>[N3928] <code>static_assert</code> with no message</li>
+<li>[N4051] <code>typename</code> in a template template parameter</li>
+<li>[N4086] Removing trigraphs</li>
+<li>[N4230] Nested <code>namespace</code> definition</li>
+<li>[N4266] Attributes for namespaces and enumerators</li>
+<li>[N4267] u8 character literals</li>
+<li>[N4268] Allow constant evaluation for all non-type template arguments</li>
+<li>[N4295] Fold Expressions</li>
+<li>[P0036R0] Unary fold expressions and empty parameter packs</li>
+<li>[P0001R1] Remove Deprecated Use of the <code>register</code> Keyword</li>
+<li>[P0002R1] Remove Deprecated <code>operator++(bool)</code></li>
+<li>[P0012R1] Make exception specifications part of the type system</li>
+<li>[P0017R1] Aggregate classes with base classes</li>
+<li>[P0061R1] <code>__has_include</code> in preprocessor conditionals</li>
+<li>[P0136R1] DR11: New specification for inheriting constructors (DR1941 et al)</li>
+<li>[P0018R3] Lambda capture of <code>*this</code></li>
+<li>[P0138R2] Direct-list-initialization of enumerations</li>
+<li>[P0170R1] <code>constexpr</code> <code>lambda</code> expressions</li>
+<li>[P0184R0] Differing begin and end types in range-based for</li>
+<li>[P0188R1] <code>[[fallthrough]]</code> attribute</li>
+<li>[P0189R1] <code>[[nodiscard]]</code> attribute</li>
+<li>[P0212R1] <code>[[maybe_unused]]</code> attribute</li>
+<li>[P0245R1] Hexadecimal floating-point literals</li>
+<li>[P0028R4] Using attribute namespaces without repetition</li>
+<li>[P0035R4] Dynamic memory allocation for over-aligned data</li>
+<li>[P0091R3] Class template argument deduction</li>
+<li>[P0127R2] Non-type template parameters with <code>auto</code> type</li>
+<li>[P0135R1] Guaranteed copy elision</li>
+<li>[P0137R1] Replacement of class objects containing reference members</li>
+<li>[P0145R3] Stricter expression evaluation order</li>
+<li>[P0217R3] Structured Bindings</li>
+<li>[P0283R2] Ignore unknown attributes</li>
+<li>[P0292R2] constexpr if statements</li>
+<li>[P0305R1] init-statements for if and switch</li>
+<li>[P0386R2] Inline variables</li>
+<li>[P0003R5] Removing dynamic exception specifications</li>
+<li>[P0195R2] Pack expansions in using-declarations</li>
+<li>[P0522R0] DR98: Matching of template template-arguments excludes compatible templates</li>
+</ul>
+<h2 id="library-features">Library Features<a class="headerlink" href="#library-features" title="Permanent link">🔗</a></h2>
+<ul>
+<li>[N3911] <code>std::void_t</code></li>
+<li>[N4259] <code>std::uncaught_exceptions()</code></li>
+<li>[N4280] <code>std::size()</code>, <code>std::empty()</code> and <code>std::data()</code></li>
+<li>[N4387] Improving <code>std::pair</code> and <code>std::tuple</code></li>
+<li>[N4389] <code>std::bool_constant</code></li>
+<li>[N4508] <code>std::shared_mutex</code> (untimed)</li>
+<li>[P0006R0] Type traits variable templates</li>
+<li>[P0013R1] Logical operator type traits</li>
+<li>[P0024R2] Parallel algorithms and execution policies</li>
+<li>[P0025R1] <code>std::clamp()</code></li>
+<li>[P0154R1] Hardware interference size</li>
+<li>[P0185R1] (nothrow-)swappable traits</li>
+<li>[P0218R1] File system library (std::filesystem)</li>
+<li>[N3921, P0220R1] std::string_view</li>
+<li>[P0220R1] <code>std::any</code></li>
+<li>[P0220R1] <code>std::optional</code></li>
+<li>[P0220R1] Polymorphic memory resources</li>
+<li>[P0226R1] Mathematical special functions</li>
+<li>[P0063R3] Major portion of C11 standard library</li>
+<li>[P0083R3] Splicing Maps and Sets</li>
+<li>[P0084R2] return type of emplace* functions of some containers changed from void to reference</li>
+<li>[P0088R3] <code>std::variant</code></li>
+<li>[P0209R2] <code>std::make_from_tuple()</code></li>
+<li>[P0258R2] <code>std::has_unique_object_representations</code></li>
+<li>[P0295R0] <code>std::gcd()</code> and <code>std::lcm()</code></li>
+<li>[P0005R4, P0358R1] <code>std::not_fn</code></li>
+<li>[P0067R5] Elementary string conversions: <code>std::to_chars</code>/<code>std::from_chars</code></li>
+<li>[P0414R2] <code>std::shared_ptr</code> and <code>std::weak_ptr</code> with array support</li>
+<li>[P0156R2] <code>std::scoped_lock</code></li>
+<li>[P0298R3] <code>std::byte</code></li>
+<li>[LWG2911] <code>std::is_aggregate</code></li>
+<li>[LWG3657] DR17: <code>std::hash&lt;std::filesystem::path&gt;</code></li>
+</ul>
+<!---
+GCC
+
+- [N4086] Removing trigraphs
+- [N4267] u8 character literals
+    - `__cpp_unicode_characters >= 201411 `
+- [N4295] Folding expressions
+    - `__cpp_fold_expressions >= 201411`
+- [N4266] Attributes for namespaces and enumerators
+    - `__cpp_namespace_attributes >= 201411`
+    - `__cpp_enumerator_attributes >= 201411`
+- [N4230] Nested namespace definitions
+    - `__cpp_nested_namespace_definitions >= 201411`
+- [N4268] Allow constant evaluation for all non-type template arguments
+    - `__cpp_nontype_template_args >= 201411`
+- [N3928] Extending static_assert
+    - `__cpp_static_assert >= 201411`
+- [N3922] New Rules for auto deduction from braced-init-list
+- [N4051] Allow typename in a template template parameter
+- [P0188R1] `[[fallthrough]]` attribute
+    - `__has_cpp_attribute(fallthrough)`
+- [P0189R1] [[nodiscard]] attribute
+    - `__has_cpp_attribute(nodiscard)`
+- [P0212R1] `[[maybe_unused]]` attribute
+    - `__has_cpp_attribute(maybe_unused)`
+- [P0017R1] Extension to aggregate initialization
+    - `__cpp_aggregate_bases >= 201603`
+- [P0170R1] Wording for constexpr lambda
+    - `__cpp_constexpr >= 201603`
+- [P0036R0] Unary Folds and Empty Parameter Packs
+    - `__cpp_fold_expressions >= 201603`
+- [P0184R0] Generalizing the Range-Based For Loop
+    - `__cpp_range_based_for >= 201603`
+- [P0018R3] Lambda capture of *this by Value
+    - `__cpp_capture_star_this >= 201603`
+- [P0138R2] Construction Rules for enum class variables
+- [P0245R1] Hexadecimal floating literals for C++
+    - `__cpp_hex_float >= 201603`
+- [P0035R4] Dynamic memory allocation for over-aligned data
+    - `__cpp_aligned_new >= 201606`
+- [P0135R1] Guaranteed copy elision
+    - `__cpp_guaranteed_copy_elision >= 201606`
+- [P0145R3] Refining Expression Evaluation Order for Idiomatic C++
+- [P0292R2] constexpr if
+    - `__cpp_if_constexpr >= 201606`
+- [P0305R1] Selection statements with initializer
+- [P0091R3] P0512R0 Template argument deduction for class templates
+    - `__cpp_deduction_guides >= 201606`
+    - `__cpp_deduction_guides >= 201611`
+- [P0127R2] Declaring non-type template parameters with auto
+    - `__cpp_template_auto >= 201606`
+    - `__cpp_nontype_template_parameter_auto >= 201606`
+- [P0028R4] Using attribute namespaces without repetition
+- [P0283R2] Ignoring unsupported non-standard attributes
+- [P0217R3] Structured bindings
+    - `__cpp_structured_bindings >= 201606`
+- [P0001R1] Remove Deprecated Use of the register Keyword
+- [P0002R1] Remove Deprecated operator++(bool)
+- [P0012R1] Make exception specifications be part of the type system
+    - `__cpp_noexcept_function_type >= 201510`
+- [P0061R1] `__has_include` for C++17
+- [P0136R1] Rewording inheriting constructors (core issue 1941 et al)
+    - `__cpp_inheriting_constructors >= 201511`
+- [P0386R2] Inline variables
+    - `__cpp_inline_variables >= 201606`
+- [P0522R0] DR 150, Matching of template template arguments
+    - `__cpp_template_template_args >= 201611`
+- [P0003R5] Removing dynamic exception specifications
+- [P0195R2] Pack expansions in using-declarations
+    - `__cpp_variadic_using >= 201611`
+- [P0298R0] A byte type definition
+
+Clang
+
+N3928   static_assert with no message
+N4086   Disabling trigraph expansion by default
+N4051   typename in a template template parameter
+N3922   New auto rules for direct-list-initialization 
+N4295   Fold expressions
+P0036R0 
+N4267   u8 character literals
+N4230   Nested namespace definition
+N4266   Attributes for namespaces and enumerators
+N4268   Allow constant evaluation for all non-type template arguments
+P0001R1 Remove deprecated register storage class
+P0002R1 Remove deprecated bool increment
+P0012R1 Make exception specifications part of the type system
+P0061R1 __has_include in preprocessor conditionals
+P0188R1 [[fallthrough]] attribute
+P0189R1 [[nodiscard]] attribute
+P1771R1 (DR)    
+P0212R1 [[maybe_unused]] attribute
+P0017R1 Aggregate initialization of classes with base classes
+P0170R1 constexpr lambda expressions
+P0184R0 Differing begin and end types in range-based for
+P0018R3 Lambda capture of *this
+P0138R2 Direct-list-initialization of enums
+P0245R1 Hexadecimal floating-point literals
+P0028R4 Using attribute namespaces without repetition
+P0035R4 Dynamic memory allocation for over-aligned data
+P0091R3 Template argument deduction for class templates
+P0512R0 
+P0620R0 (DR)    
+P0702R1 (DR)    
+P0127R2 Non-type template parameters with auto type
+P0135R1 Guaranteed copy elision
+P0145R3 Stricter expression evaluation order
+P0400R0 
+P0283R2 Requirement to ignore unknown attributes
+P0292R2 constexpr if-statements
+P0386R2 Inline variables
+P0217R3 Structured bindings
+P0961R1 (DR)    
+P0969R0 (DR)    
+P0305R1 Separate variable and condition for if and switch
+P0522R0 (DR)    Matching template template parameters to compatible arguments
+P0003R5 Removing deprecated dynamic exception specifications
+P0195R2 Pack expansions in using-declarations
+
+EDG
+N4266   Attributes for namespaces and enumerators
+N4267   u8 character literals
+N4268   Constant evaluation for all non-type template arguments
+N4230   Nested namespace definitions
+N4295   Fold expressions
+N3928   Extended static_assert
+N3922   New rules for auto deduction from braced-init-list
+N4051   Allow typename in template template parameter list
+N4086   Removing trigraphs
+N4261   Qualification conversions and pointers to arrays of pointers
+P0001R1 Remove deprecated register keyword
+P0002R1 Remove deprecated operator++(bool)
+P0012R1 Exception specification part of type
+P0061R1 __has_include
+P0136R1 Rewording inheriting constructors
+P0188R1 [[fallthrough]]
+P0189R1 [[nodiscard]]
+P0212R1 [[maybe_unused]]
+P0017R1 Extension to aggregate initialization
+P0170R1 Constexpr lambda
+P0036R0 Unary folds and empty parameter packs
+P0184R0 Generalized range-based for
+P0018R3 Lambda capture of *this by value
+P0138R2 Construction rules for enum class values
+P0245R1 Hexadecimal floating literals
+P0028R4 Using attribute namespaces without repetition
+P0035R4 Dynamic memory allocation for over-aligned data
+P0091R3 Template argument deduction for class templates
+P0127R2 Declaring non-type template parameters with auto
+P0135R1 Guaranteed copy elision through simplified value categories
+P0137R1 Replacement of class objects containing reference members
+P0145R3/P0400R0 Refining Expression Evaluation Order for Idiomatic C++
+P0283R2 Standard and non-standard attributes
+P0292R2 constexpr if
+P0386R2 Inline Variables
+P0217R3 Structured Bindings
+P0305R1 Selection statements with initializer
+P0003R5 Removing deprecated exception specificatoins
+P0195R2 Pack expansions in using-declarations
+P0522R0 Matching of template template-arguments excludes compatible templates
+P0298R3 A byte type definition
+
+--->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../cpp14/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ISO/IEC 14882:2011">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                ISO/IEC 14882:2011
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../cpp20/" class="md-footer__link md-footer__link--next" aria-label="Next: ISO/IEC 14882:2020">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                ISO/IEC 14882:2020
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.tooltips", "navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "content.footnote.tooltips", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../../javascripts/tablesort.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

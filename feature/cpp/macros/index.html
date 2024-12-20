@@ -1,0 +1,4128 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://refs.dev/feature/cpp/macros/">
+      
+      
+        <link rel="prev" href="../cpp26/">
+      
+      
+        <link rel="next" href="../cpp98/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>C++ Feature Test Macros - refs.dev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c-feature-test-macros" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="refs.dev" class="md-header__button md-logo" aria-label="refs.dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            refs.dev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C++ Feature Test Macros
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../attribute/" class="md-tabs__link">
+          
+  
+    
+  
+  Attribute
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../byte-order/" class="md-tabs__link">
+        
+  
+    
+  
+  Byte Order
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cpu/aarch64/" class="md-tabs__link">
+          
+  
+    
+  
+  CPU
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../compiler/acc/" class="md-tabs__link">
+          
+  
+    
+  
+  Compiler
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../data-model/" class="md-tabs__link">
+          
+  
+    
+  
+  Data Model
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../c/c90/" class="md-tabs__link">
+          
+  
+    
+  
+  Feature
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../instruction-set/arm/" class="md-tabs__link">
+          
+  
+    
+  
+  Instruction Set
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../language/assembly/" class="md-tabs__link">
+          
+  
+    
+  
+  Language
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../library/c/bionic/" class="md-tabs__link">
+          
+  
+    
+  
+  Library
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../os/aix/" class="md-tabs__link">
+          
+  
+    
+  
+  OS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../platform/dreamcast/" class="md-tabs__link">
+          
+  
+    
+  
+  Platform
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../standard/lsb/" class="md-tabs__link">
+          
+  
+    
+  
+  Standard
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../versioning/" class="md-tabs__link">
+        
+  
+    
+  
+  Versioning
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="refs.dev" class="md-nav__button md-logo" aria-label="refs.dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    refs.dev
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../attribute/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Attribute
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../byte-order/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Byte Order
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../cpu/aarch64/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    CPU
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../compiler/acc/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Compiler
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../data-model/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Data Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Feature
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../c/c90/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    C Features
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C++ Features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            C++ Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp26/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++26
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    C++ Feature Test Macros
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    C++ Feature Test Macros
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attribute
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Library
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:1998
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2003
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2011
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2011
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp17/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2017
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp23/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ISO/IEC 14882:2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../instruction-set/arm/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Instruction Set
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../language/assembly/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Language
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../library/c/bionic/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Library
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../os/aix/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../platform/dreamcast/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Platform
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../standard/lsb/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Standard
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../versioning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Versioning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attribute
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Library
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="c-feature-test-macros">C++ Feature Test Macros<a class="headerlink" href="#c-feature-test-macros" title="Permanent link">🔗</a></h1>
+<h2 id="language">Language<a class="headerlink" href="#language" title="Permanent link">🔗</a></h2>
+<table>
+<thead>
+<tr>
+<th>Macro</th>
+<th>Values</th>
+<th>Papers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__cpp_deleted_function</code></td>
+<td><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P2573R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_aggregate_bases</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0017R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_aggregate_nsdmi</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3653]</td>
+</tr>
+<tr>
+<td><code>__cpp_aggregate_paren_init</code></td>
+<td><code class="language-c highlight"><span class="mi">201902</span></code></td>
+<td>[P0960R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_alias_templates</code></td>
+<td><code class="language-c highlight"><span class="mi">200704</span></code></td>
+<td>[N2258]</td>
+</tr>
+<tr>
+<td><code>__cpp_aligned_new</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0035R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_attributes</code></td>
+<td><code class="language-c highlight"><span class="mi">200809</span></code></td>
+<td>[N2761]</td>
+</tr>
+<tr>
+<td><code>__cpp_binary_literals</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3472]</td>
+</tr>
+<tr>
+<td><code>__cpp_capture_star_this</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0018R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_char8_t</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code><br><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P0482R6]<br>[P2513R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_concepts</code></td>
+<td><code class="language-c highlight"><span class="mi">201707</span></code><br><code class="language-c highlight"><span class="mi">201811</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code><br><code class="language-c highlight"><span class="mi">202002</span></code></td>
+<td>[P0734R0]<br>[P1084R2]<br>[P1452R2]<br>[P0848R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_conditional_explicit</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code></td>
+<td>[P0892R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_consteval</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code><br><code class="language-c highlight"><span class="mi">202211</span></code></td>
+<td>[P1073R3]<br>[P2564R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_constexpr</code></td>
+<td><code class="language-c highlight"><span class="mi">200704</span></code><br><code class="language-c highlight"><span class="mi">201304</span></code><br><code class="language-c highlight"><span class="mi">201603</span></code><br><code class="language-c highlight"><span class="mi">201806</span></code><br><code class="language-c highlight"><span class="mi">201811</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code><br><code class="language-c highlight"><span class="mi">202002</span></code><br><code class="language-c highlight"><span class="mi">202110</span></code><br><code class="language-c highlight"><span class="mi">202207</span></code><br><code class="language-c highlight"><span class="mi">202211</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[N2235]<br>[N3652]<br>[P0170R1]<br>[P1064R0]<br>[P1002R1, P1327R1]<br>[P1331R2, P1668R1]<br>[P1330R0]<br>[P2242R3]<br>[P2448R2]<br>[P2647R1]<br>[P2738R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_constexpr_dynamic_alloc</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0784R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_constexpr_in_decltype</code></td>
+<td><code class="language-c highlight"><span class="mi">201711</span></code></td>
+<td>[P0859R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_constinit</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P1143R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_decltype</code></td>
+<td><code class="language-c highlight"><span class="mi">200707</span></code></td>
+<td>[N2343]</td>
+</tr>
+<tr>
+<td><code>__cpp_decltype_auto</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3638]</td>
+</tr>
+<tr>
+<td><code>__cpp_deduction_guides</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code><br><code class="language-c highlight"><span class="mi">201611</span></code><br><code class="language-c highlight"><span class="mi">201703</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0091R3]<br>[P0512R0]<br>[P0620R0]<br>[P1814R0, P1816R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_delegating_constructors</code></td>
+<td><code class="language-c highlight"><span class="mi">200604</span></code></td>
+<td>[N1986]</td>
+</tr>
+<tr>
+<td><code>__cpp_designated_initializers</code></td>
+<td><code class="language-c highlight"><span class="mi">201707</span></code></td>
+<td>[P0329R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_enumerator_attributes</code></td>
+<td><code class="language-c highlight"><span class="mi">201411</span></code></td>
+<td>[N4266]</td>
+</tr>
+<tr>
+<td><code>__cpp_exceptions</code></td>
+<td><code class="language-c highlight"><span class="mi">199711</span></code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>__cpp_explicit_this_parameter</code></td>
+<td><code class="language-c highlight"><span class="mi">202110</span></code></td>
+<td>[P0847R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_fold_expressions</code></td>
+<td><code class="language-c highlight"><span class="mi">201411</span></code><br><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[N4295]<br>[P0036R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_generic_lambdas</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code><br><code class="language-c highlight"><span class="mi">201707</span></code></td>
+<td>[N3649]<br>[P0428R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_guaranteed_copy_elision</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0135R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_hex_float</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0245R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_if_consteval</code></td>
+<td><code class="language-c highlight"><span class="mi">202106</span></code></td>
+<td>[P1938R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_if_constexpr</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0292R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_impl_coroutine</code></td>
+<td><code class="language-c highlight"><span class="mi">201902</span></code></td>
+<td>[P0912R5, LWG3393]</td>
+</tr>
+<tr>
+<td><code>__cpp_impl_destroying_delete</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code></td>
+<td>[P0722R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_impl_three_way_comparison</code></td>
+<td><code class="language-c highlight"><span class="mi">201711</span></code><br><code class="language-c highlight"><span class="mi">201902</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0515R3, P0768R1]<br>[P1185R2]<br>[P1630R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_implicit_move</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2266R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_inheriting_constructors</code></td>
+<td><code class="language-c highlight"><span class="mi">200802</span></code><br><code class="language-c highlight"><span class="mi">201511</span></code></td>
+<td>[N2540]<br>[P0136R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_init_captures</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code><br><code class="language-c highlight"><span class="mi">201803</span></code></td>
+<td>[N3648]<br>[P0780R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_initializer_lists</code></td>
+<td><code class="language-c highlight"><span class="mi">200806</span></code></td>
+<td>[N2672]</td>
+</tr>
+<tr>
+<td><code>__cpp_inline_variables</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0386R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lambdas</code></td>
+<td><code class="language-c highlight"><span class="mi">200907</span></code></td>
+<td>[N2927]</td>
+</tr>
+<tr>
+<td><code>__cpp_modules</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P1103R3, P1811R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_multidimensional_subscript</code></td>
+<td><code class="language-c highlight"><span class="mi">202110</span></code><br><code class="language-c highlight"><span class="mi">202211</span></code></td>
+<td>[P2128R6]<br>[P2589R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_named_character_escapes</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2071R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_namespace_attributes</code></td>
+<td><code class="language-c highlight"><span class="mi">201411</span></code></td>
+<td>[N4266]</td>
+</tr>
+<tr>
+<td><code>__cpp_noexcept_function_type</code></td>
+<td><code class="language-c highlight"><span class="mi">201510</span></code></td>
+<td>[P0012R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_nontype_template_args</code></td>
+<td><code class="language-c highlight"><span class="mi">201411</span></code><br><code class="language-c highlight"><span class="mi">201911</span></code></td>
+<td>[N4268]<br>[P1907R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_nontype_template_parameter_auto</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0127R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_nontype_template_parameter_class</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code><br><em>deleted</em></td>
+<td>[P0732R2]<br>[P1907R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_nsdmi</code></td>
+<td><code class="language-c highlight"><span class="mi">200809</span></code></td>
+<td>[N2756]</td>
+</tr>
+<tr>
+<td><code>__cpp_pack_indexing</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2662R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_placeholder_variables</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2169R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_range_based_for</code></td>
+<td><code class="language-c highlight"><span class="mi">200907</span></code><br><code class="language-c highlight"><span class="mi">201603</span></code><br><code class="language-c highlight"><span class="mi">202211</span></code></td>
+<td>[N2930]<br>[P0184R0]<br>[P2644R1, P2718R0, CWG2659]</td>
+</tr>
+<tr>
+<td><code>__cpp_raw_strings</code></td>
+<td><code class="language-c highlight"><span class="mi">200710</span></code></td>
+<td>[N2442]</td>
+</tr>
+<tr>
+<td><code>__cpp_ref_qualifiers</code></td>
+<td><code class="language-c highlight"><span class="mi">200710</span></code></td>
+<td>[N2439]</td>
+</tr>
+<tr>
+<td><code>__cpp_return_type_deduction</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3638]</td>
+</tr>
+<tr>
+<td><code>__cpp_rtti</code></td>
+<td><code class="language-c highlight"><span class="mi">199711</span></code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>__cpp_rvalue_references</code></td>
+<td><code class="language-c highlight"><span class="mi">200610</span></code></td>
+<td>[N2118]</td>
+</tr>
+<tr>
+<td><code>__cpp_size_t_suffix</code></td>
+<td><code class="language-c highlight"><span class="mi">202011</span></code></td>
+<td>[P0330R8]</td>
+</tr>
+<tr>
+<td><code>__cpp_sized_deallocation</code></td>
+<td><code class="language-c highlight"><span class="mi">201309</span></code></td>
+<td>[N3778]</td>
+</tr>
+<tr>
+<td><code>__cpp_static_assert</code></td>
+<td><code class="language-c highlight"><span class="mi">200410</span></code><br><code class="language-c highlight"><span class="mi">201411</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[N1720]<br>[N3928]<br>[P2741R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_static_call_operator</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P1169R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_structured_bindings</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code><br><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P0217R3]<br>[P0609R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_template_template_args</code></td>
+<td><code class="language-c highlight"><span class="mi">201611</span></code></td>
+<td>[P0522R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_threadsafe_static_init</code></td>
+<td><code class="language-c highlight"><span class="mi">200806</span></code></td>
+<td>[N2660]</td>
+</tr>
+<tr>
+<td><code>__cpp_unicode_characters</code></td>
+<td><code class="language-c highlight"><span class="mi">200704</span></code></td>
+<td>[N2249]</td>
+</tr>
+<tr>
+<td><code>__cpp_unicode_literals</code></td>
+<td><code class="language-c highlight"><span class="mi">200710</span></code></td>
+<td>[N2442]</td>
+</tr>
+<tr>
+<td><code>__cpp_user_defined_literals</code></td>
+<td><code class="language-c highlight"><span class="mi">200809</span></code></td>
+<td>[N2765]</td>
+</tr>
+<tr>
+<td><code>__cpp_using_enum</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P1099R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_variable_templates</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3651]</td>
+</tr>
+<tr>
+<td><code>__cpp_variadic_friend</code></td>
+<td><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P2893R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_variadic_templates</code></td>
+<td><code class="language-c highlight"><span class="mi">200704</span></code></td>
+<td>[N2242]</td>
+</tr>
+<tr>
+<td><code>__cpp_variadic_using</code></td>
+<td><code class="language-c highlight"><span class="mi">201611</span></code></td>
+<td>[P0195R2]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="attribute">Attribute<a class="headerlink" href="#attribute" title="Permanent link">🔗</a></h2>
+<table>
+<thead>
+<tr>
+<th>Macro</th>
+<th>Values</th>
+<th>Papers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__has_cpp_attribute(assume)</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P1774R8, CWG2615]</td>
+</tr>
+<tr>
+<td><code>__has_cpp_attribute(carries_dependency)</code></td>
+<td><code class="language-c highlight"><span class="mi">200809</span></code></td>
+<td>[N2782]</td>
+</tr>
+<tr>
+<td><code>__has_cpp_attribute(deprecated)</code></td>
+<td><code class="language-c highlight"><span class="mi">201309</span></code></td>
+<td>[N3760]</td>
+</tr>
+<tr>
+<td><code>__has_cpp_attribute(fallthrough)</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0188R1]</td>
+</tr>
+<tr>
+<td><code>__has_cpp_attribute(likely)</code></td>
+<td><code class="language-c highlight"><span class="mi">201803</span></code></td>
+<td>[P0479R5]</td>
+</tr>
+<tr>
+<td><code>__has_cpp_attribute(maybe_unused)</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0212R1]</td>
+</tr>
+<tr>
+<td><code>__has_cpp_attribute(no_unique_address)</code></td>
+<td><code class="language-c highlight"><span class="mi">201803</span></code></td>
+<td>[P0840R2]</td>
+</tr>
+<tr>
+<td><code>__has_cpp_attribute(nodiscard)</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0189R1]<br>[P1301R4, P1771R1]</td>
+</tr>
+<tr>
+<td><code>__has_cpp_attribute(noreturn)</code></td>
+<td><code class="language-c highlight"><span class="mi">200809</span></code></td>
+<td>[N2761]</td>
+</tr>
+<tr>
+<td><code>__has_cpp_attribute(unlikely)</code></td>
+<td><code class="language-c highlight"><span class="mi">201803</span></code></td>
+<td>[P0479R5]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="library">Library<a class="headerlink" href="#library" title="Permanent link">🔗</a></h2>
+<table>
+<thead>
+<tr>
+<th>Macro</th>
+<th>Headers</th>
+<th>Values</th>
+<th>Papers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__cpp_lib_adaptor_iterator_pair_constructor</code></td>
+<td><code>&lt;queue&gt;</code><br><code>&lt;stack&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202106</span></code></td>
+<td>[P1425R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_addressof_constexpr</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[LWG2296]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_algorithm_iterator_requirements</code></td>
+<td><code>&lt;algorithm&gt;</code><br><code>&lt;memory&gt;</code><br><code>&lt;numeric&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2408R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_allocate_at_least</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202106</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P0401R6]<br>[LWG3887]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_allocator_traits_is_always_equal</code></td>
+<td><code>&lt;deque&gt;</code><br><code>&lt;forward_list&gt;</code><br><code>&lt;list&gt;</code><br><code>&lt;map&gt;</code><br><code>&lt;memory&gt;</code><br><code>&lt;scoped_allocator&gt;</code><br><code>&lt;set&gt;</code><br><code>&lt;string&gt;</code><br><code>&lt;unordered_map&gt;</code><br><code>&lt;unordered_set&gt;</code><br><code>&lt;vector&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201411</span></code></td>
+<td>[N4258]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_any</code></td>
+<td><code>&lt;any&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code><br><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0220R1]<br>[P0032R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_apply</code></td>
+<td><code>&lt;tuple&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0220R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_array_constexpr</code></td>
+<td><code>&lt;array&gt;</code><br><code>&lt;iterator&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code><br><code class="language-c highlight"><span class="mi">201803</span></code><br><code class="language-c highlight"><span class="mi">201806</span></code><br><code class="language-c highlight"><span class="mi">201811</span></code></td>
+<td>[P0031R0]<br>[P0858R0, LWG3257]<br>[P1023R0]<br>[P1032R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_as_const</code></td>
+<td><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201510</span></code></td>
+<td>[P0007R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_associative_heterogeneous_erasure</code></td>
+<td><code>&lt;map&gt;</code><br><code>&lt;set&gt;</code><br><code>&lt;unordered_map&gt;</code><br><code>&lt;unordered_set&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202110</span></code></td>
+<td>[P2077R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_associative_heterogeneous_insertion</code></td>
+<td><code>&lt;map&gt;</code><br><code>&lt;set&gt;</code><br><code>&lt;unordered_map&gt;</code><br><code>&lt;unordered_set&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2363R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_assume_aligned</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code></td>
+<td>[P1007R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_atomic_flag_test</code></td>
+<td><code>&lt;atomic&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P1135R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_atomic_float</code></td>
+<td><code>&lt;atomic&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201711</span></code></td>
+<td>[P0020R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_atomic_is_always_lock_free</code></td>
+<td><code>&lt;atomic&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0152R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_atomic_lock_free_type_aliases</code></td>
+<td><code>&lt;atomic&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P1135R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_atomic_min_max</code></td>
+<td><code>&lt;atomic&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P0493R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_atomic_ref</code></td>
+<td><code>&lt;atomic&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code></td>
+<td>[P0019R8]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_atomic_shared_ptr</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201711</span></code></td>
+<td>[P0718R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_atomic_value_initialization</code></td>
+<td><code>&lt;atomic&gt;</code><br><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201911</span></code></td>
+<td>[P0883R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_atomic_wait</code></td>
+<td><code>&lt;atomic&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P1135R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_barrier</code></td>
+<td><code>&lt;barrier&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code><br><code class="language-c highlight"><span class="mi">202302</span></code></td>
+<td>[P1135R6]<br>[P2588R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_bind_back</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2387R3]<br>[P2714R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_bind_front</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P0356R5]<br>[P1651R0]<br>[P2714R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_bit_cast</code></td>
+<td><code>&lt;bit&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code></td>
+<td>[P0476R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_bitops</code></td>
+<td><code>&lt;bit&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0553R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_bitset</code></td>
+<td><code>&lt;bitset&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2697R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_bool_constant</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201505</span></code></td>
+<td>[N4389]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_bounded_array_traits</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201902</span></code></td>
+<td>[P1357R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_boyer_moore_searcher</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0220R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_byte</code></td>
+<td><code>&lt;cstddef&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0298R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_byteswap</code></td>
+<td><code>&lt;bit&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202110</span></code></td>
+<td>[P1272R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_char8_t</code></td>
+<td><code>&lt;atomic&gt;</code><br><code>&lt;filesystem&gt;</code><br><code>&lt;istream&gt;</code><br><code>&lt;limits&gt;</code><br><code>&lt;locale&gt;</code><br><code>&lt;ostream&gt;</code><br><code>&lt;string&gt;</code><br><code>&lt;string_view&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0482R6]<br>[P1423R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_chrono</code></td>
+<td><code>&lt;chrono&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201510</span></code><br><code class="language-c highlight"><span class="mi">201611</span></code><br><code class="language-c highlight"><span class="mi">201803</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P0092R1]<br>[P0505R0]<br>[P0355R7]<br>[P1466R3]<br>[P2592R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_chrono_udls</code></td>
+<td><code>&lt;chrono&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3642]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_clamp</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0025R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_common_reference</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202302</span></code></td>
+<td>[P2655R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_common_reference_wrapper</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202302</span></code></td>
+<td>[P2655R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_complex_udls</code></td>
+<td><code>&lt;complex&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201309</span></code></td>
+<td>[N3779]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_concepts</code></td>
+<td><code>&lt;compare&gt;</code><br><code>&lt;concepts&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code><br><code class="language-c highlight"><span class="mi">202002</span></code><br><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P0898R3]<br>[P1754R1]<br>[P1964R2]<br>[P2404R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_algorithms</code></td>
+<td><code>&lt;algorithm&gt;</code><br><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201703</span></code><br><code class="language-c highlight"><span class="mi">201806</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P0202R3]<br>[P0879R0, LWG3256, LWG3792]<br>[P2562R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_bitset</code></td>
+<td><code>&lt;bitset&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2417R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_charconv</code></td>
+<td><code>&lt;charconv&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2291R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_cmath</code></td>
+<td><code>&lt;cmath&gt;</code><br><code>&lt;cstdlib&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P0533R9]<br>[P1383R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_complex</code></td>
+<td><code>&lt;complex&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201711</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P0415R1]<br>[P1383R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_dynamic_alloc</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0784R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_functional</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P1032R1]<br>[P1065R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_iterator</code></td>
+<td><code>&lt;iterator&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code></td>
+<td>[P1032R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_memory</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code><br><code class="language-c highlight"><span class="mi">202202</span></code></td>
+<td>[P1006R1]<br>[P2273R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_numeric</code></td>
+<td><code>&lt;numeric&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201911</span></code></td>
+<td>[P1645R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_string</code></td>
+<td><code>&lt;string&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201611</span></code><br><code class="language-c highlight"><span class="mi">201811</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0426R1]<br>[P1032R1]<br>[P0980R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_string_view</code></td>
+<td><code>&lt;string_view&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201611</span></code><br><code class="language-c highlight"><span class="mi">201811</span></code></td>
+<td>[P0426R1]<br>[P1032R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_tuple</code></td>
+<td><code>&lt;tuple&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code></td>
+<td>[P1032R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_typeinfo</code></td>
+<td><code>&lt;typeinfo&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202106</span></code></td>
+<td>[P1328R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_utility</code></td>
+<td><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code></td>
+<td>[P1032R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constexpr_vector</code></td>
+<td><code>&lt;vector&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P1004R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_constrained_equality</code></td>
+<td><code>&lt;optional&gt;</code><br><code>&lt;tuple&gt;</code><br><code>&lt;utility&gt;</code><br><code>&lt;variant&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P2944R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_containers_ranges</code></td>
+<td><code>&lt;deque&gt;</code><br><code>&lt;forward_list&gt;</code><br><code>&lt;list&gt;</code><br><code>&lt;map&gt;</code><br><code>&lt;queue&gt;</code><br><code>&lt;set&gt;</code><br><code>&lt;stack&gt;</code><br><code>&lt;string&gt;</code><br><code>&lt;unordered_map&gt;</code><br><code>&lt;unordered_set&gt;</code><br><code>&lt;vector&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code></td>
+<td>[P1206R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_copyable_function</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2548R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_coroutine</code></td>
+<td><code>&lt;coroutine&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201902</span></code></td>
+<td>[P0912R5, LWG3393]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_debugging</code></td>
+<td><code>&lt;debugging&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code><br><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P2546R5]<br>[P2810R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_deduction_guides</code></td>
+<td></td>
+<td><code class="language-c highlight"><span class="mi">201703</span></code></td>
+<td>[P0433R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_default_template_type_for_algorithm_values</code></td>
+<td><code>&lt;algorithm&gt;</code><br><code>&lt;deque&gt;</code><br><code>&lt;forward_list&gt;</code><br><code>&lt;list&gt;</code><br><code>&lt;ranges&gt;</code><br><code>&lt;string&gt;</code><br><code>&lt;vector&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P2248R8]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_destroying_delete</code></td>
+<td><code>&lt;new&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code></td>
+<td>[P0722R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_enable_shared_from_this</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0033R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_endian</code></td>
+<td><code>&lt;bit&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0463R1, P1612R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_erase_if</code></td>
+<td><code>&lt;deque&gt;</code><br><code>&lt;forward_list&gt;</code><br><code>&lt;list&gt;</code><br><code>&lt;map&gt;</code><br><code>&lt;set&gt;</code><br><code>&lt;string&gt;</code><br><code>&lt;unordered_map&gt;</code><br><code>&lt;unordered_set&gt;</code><br><code>&lt;vector&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code><br><code class="language-c highlight"><span class="mi">202002</span></code></td>
+<td>[P1209R0]<br>[P1115R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_exchange_function</code></td>
+<td><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3668]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_execution</code></td>
+<td><code>&lt;execution&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code><br><code class="language-c highlight"><span class="mi">201902</span></code></td>
+<td>[P0024R2]<br>[P1001R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_expected</code></td>
+<td><code>&lt;expected&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code><br><code class="language-c highlight"><span class="mi">202211</span></code></td>
+<td>[P0323R12]<br>[P2505R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_filesystem</code></td>
+<td><code>&lt;filesystem&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code><br><code class="language-c highlight"><span class="mi">201606</span></code><br><code class="language-c highlight"><span class="mi">201703</span></code></td>
+<td>[P0218R1]<br>[P0219R1, P0392R0]<br>[P0317R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_flat_map</code></td>
+<td><code>&lt;flat_map&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P0429R9]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_flat_set</code></td>
+<td><code>&lt;flat_set&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P1222R4, LWG3751]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_format</code></td>
+<td><code>&lt;format&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code><br><code class="language-c highlight"><span class="mi">202106</span></code><br><code class="language-c highlight"><span class="mi">202110</span></code><br><code class="language-c highlight"><span class="mi">202207</span></code><br><code class="language-c highlight"><span class="mi">202304</span></code><br><code class="language-c highlight"><span class="mi">202305</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code><br><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P0645R10, P1361R2, P1652R1]<br>[P2216R3]<br>[P2372R3, P2418R2]<br>[P2419R2, P2508R1]<br>[P2510R3]<br>[P2757R3]<br>[P2637R3]<br>[P2918R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_format_path</code></td>
+<td><code>&lt;filesystem&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P2845R8]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_format_ranges</code></td>
+<td><code>&lt;format&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2286R8, P2585R1, LWG3750]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_format_uchar</code></td>
+<td><code>&lt;format&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2909R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_forward_like</code></td>
+<td><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2445R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_algorithm</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2407R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_array</code></td>
+<td><code>&lt;array&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2407R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_char_traits</code></td>
+<td><code>&lt;string&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2338R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_charconv</code></td>
+<td><code>&lt;charconv&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2338R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_cstdlib</code></td>
+<td><code>&lt;cmath&gt;</code><br><code>&lt;cstdlib&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2338R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_cstring</code></td>
+<td><code>&lt;cstring&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code><br><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2338R4]<br>[P2937R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_cwchar</code></td>
+<td><code>&lt;cwchar&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2338R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_errc</code></td>
+<td><code>&lt;cerrno&gt;</code><br><code>&lt;system_error&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2338R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_expected</code></td>
+<td><code>&lt;expected&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2833R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_feature_test_macros</code></td>
+<td></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2198R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_functional</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2198R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_iterator</code></td>
+<td><code>&lt;iterator&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2198R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_mdspan</code></td>
+<td><code>&lt;mdspan&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2833R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_memory</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2198R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_operator_new</code></td>
+<td><code>&lt;operator_new&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2198R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_optional</code></td>
+<td><code>&lt;optional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2407R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_ranges</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2198R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_ratio</code></td>
+<td><code>&lt;ratio&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2198R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_string_view</code></td>
+<td><code>&lt;string_view&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2407R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_tuple</code></td>
+<td><code>&lt;tuple&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2198R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_utility</code></td>
+<td><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2198R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_freestanding_variant</code></td>
+<td><code>&lt;variant&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2407R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_fstream_native_handle</code></td>
+<td><code>&lt;fstream&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P1759R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_function_ref</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P0792R14]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_gcd_lcm</code></td>
+<td><code>&lt;numeric&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0295R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_generate_random</code></td>
+<td><code>&lt;random&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P1068R11]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_generator</code></td>
+<td><code>&lt;generator&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2502R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_generic_associative_lookup</code></td>
+<td><code>&lt;map&gt;</code><br><code>&lt;set&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3657]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_generic_unordered_hash_lookup</code></td>
+<td><code>&lt;unordered_map&gt;</code><br><code>&lt;unordered_set&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201902</span></code><br><em>deleted</em></td>
+<td>[P0920R2]<br>[P1661R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_generic_unordered_lookup</code></td>
+<td><code>&lt;unordered_map&gt;</code><br><code>&lt;unordered_set&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code></td>
+<td>[P0919R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_hardware_interference_size</code></td>
+<td><code>&lt;new&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201703</span></code></td>
+<td>[P0154R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_has_unique_object_representations</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0258R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_hazard_pointer</code></td>
+<td><code>&lt;hazard_pointer&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2545R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_hypot</code></td>
+<td><code>&lt;cmath&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0030R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_incomplete_container_elements</code></td>
+<td><code>&lt;forward_list&gt;</code><br><code>&lt;list&gt;</code><br><code>&lt;vector&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201505</span></code></td>
+<td>[N4510]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_int_pow2</code></td>
+<td><code>&lt;bit&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code><br><code class="language-c highlight"><span class="mi">202002</span></code></td>
+<td>[P0556R3]<br>[P1956R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_integer_comparison_functions</code></td>
+<td><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202002</span></code></td>
+<td>[P0586R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_integer_sequence</code></td>
+<td><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3658]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_integral_constant_callable</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3545]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_interpolate</code></td>
+<td><code>&lt;cmath&gt;</code><br><code>&lt;numeric&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201902</span></code></td>
+<td>[P0811R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_invoke</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201411</span></code></td>
+<td>[N4169]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_invoke_r</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202106</span></code></td>
+<td>[P2136R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ios_noreplace</code></td>
+<td><code>&lt;ios&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2467R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_aggregate</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201703</span></code></td>
+<td>[LWG2911]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_constant_evaluated</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code></td>
+<td>[P0595R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_final</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201402</span></code></td>
+<td>[LWG2112]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_implicit_lifetime</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202302</span></code></td>
+<td>[P2674R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_invocable</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201703</span></code></td>
+<td>[P0604R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_layout_compatible</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0466R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_nothrow_convertible</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code></td>
+<td>[P0758R1, LWG3356]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_null_pointer</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201309</span></code></td>
+<td>[LWG2247]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_pointer_interconvertible</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0466R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_scoped_enum</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202011</span></code></td>
+<td>[P1048R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_swappable</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0185R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_is_within_lifetime</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2641R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_jthread</code></td>
+<td><code>&lt;stop_token&gt;</code><br><code>&lt;thread&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code><br><code class="language-c highlight"><span class="mi">201911</span></code></td>
+<td>[P0660R10]<br>[P1869R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_latch</code></td>
+<td><code>&lt;latch&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P1135R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_launder</code></td>
+<td><code>&lt;new&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0137R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_linalg</code></td>
+<td><code>&lt;linalg&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P1673R13]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_list_remove_return_type</code></td>
+<td><code>&lt;forward_list&gt;</code><br><code>&lt;list&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code></td>
+<td>[P0646R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_logical_traits</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201510</span></code></td>
+<td>[P0013R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_make_from_tuple</code></td>
+<td><code>&lt;tuple&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0209R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_make_reverse_iterator</code></td>
+<td><code>&lt;iterator&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201402</span></code></td>
+<td>[LWG2285]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_make_unique</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3656]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_map_try_emplace</code></td>
+<td><code>&lt;map&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201411</span></code></td>
+<td>[N4279]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_math_constants</code></td>
+<td><code>&lt;numbers&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0631R8]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_math_special_functions</code></td>
+<td><code>&lt;cmath&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0226R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_mdspan</code></td>
+<td><code>&lt;mdspan&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P0009R18, P2599R2, P2604R0, P2613R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_memory_resource</code></td>
+<td><code>&lt;memory_resource&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0220R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_modules</code></td>
+<td></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2465R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_monadic_optional</code></td>
+<td><code>&lt;optional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202110</span></code><br><em>deleted</em></td>
+<td>[P0798R8]<br>[LWG3621]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_move_iterator_concept</code></td>
+<td><code>&lt;iterator&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2520R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_move_only_function</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202110</span></code></td>
+<td>[P0288R9]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_node_extract</code></td>
+<td><code>&lt;map&gt;</code><br><code>&lt;set&gt;</code><br><code>&lt;unordered_map&gt;</code><br><code>&lt;unordered_set&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0083R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_nonmember_container_access</code></td>
+<td><code>&lt;array&gt;</code><br><code>&lt;deque&gt;</code><br><code>&lt;forward_list&gt;</code><br><code>&lt;iterator&gt;</code><br><code>&lt;list&gt;</code><br><code>&lt;map&gt;</code><br><code>&lt;regex&gt;</code><br><code>&lt;set&gt;</code><br><code>&lt;string&gt;</code><br><code>&lt;unordered_map&gt;</code><br><code>&lt;unordered_set&gt;</code><br><code>&lt;vector&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201411</span></code></td>
+<td>[N4280]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_not_fn</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P0005R4]<br>[P2714R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_null_iterators</code></td>
+<td><code>&lt;iterator&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3644]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_optional</code></td>
+<td><code>&lt;optional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code><br><code class="language-c highlight"><span class="mi">201606</span></code><br><code class="language-c highlight"><span class="mi">202106</span></code><br><code class="language-c highlight"><span class="mi">202110</span></code></td>
+<td>[P0220R1]<br>[P0032R3, P0307R2]<br>[P2231R1]<br>[P0798R8, LWG3621]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_out_ptr</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202106</span></code><br><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P1132R7]<br>[P2833R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_parallel_algorithm</code></td>
+<td><code>&lt;algorithm&gt;</code><br><code>&lt;numeric&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0024R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_polymorphic_allocator</code></td>
+<td><code>&lt;memory_resource&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201902</span></code></td>
+<td>[P0339R6, LWG3437]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_print</code></td>
+<td><code>&lt;ostream&gt;</code><br><code>&lt;print&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code><br><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P2093R14]<br>[P3107R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_quoted_string_io</code></td>
+<td><code>&lt;iomanip&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3654]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges</code></td>
+<td><code>&lt;algorithm&gt;</code><br><code>&lt;functional&gt;</code><br><code>&lt;iterator&gt;</code><br><code>&lt;memory&gt;</code><br><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code><br><code class="language-c highlight"><span class="mi">201911</span></code><br><code class="language-c highlight"><span class="mi">202106</span></code><br><code class="language-c highlight"><span class="mi">202110</span></code><br><code class="language-c highlight"><span class="mi">202202</span></code><br><code class="language-c highlight"><span class="mi">202207</span></code><br><code class="language-c highlight"><span class="mi">202211</span></code><br><code class="language-c highlight"><span class="mi">202302</span></code></td>
+<td>[P0896R4]<br>[P1035R7]<br>[P1716R3]<br>[P2325R3]<br>[P2415R2]<br>[P2387R3]<br>[P2494R2]<br>[P2602R2]<br>[P2609R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_as_const</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code><br><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2278R4]<br>[P2836R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_as_rvalue</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2446R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_cartesian_product</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2374R4, P2540R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_chunk</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code></td>
+<td>[P2442R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_chunk_by</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code></td>
+<td>[P2443R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_concat</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P2542R8]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_contains</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2302R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_enumerate</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202302</span></code></td>
+<td>[P2164R9]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_find_last</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P1223R5, LWG3807]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_fold</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2322R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_iota</code></td>
+<td><code>&lt;numeric&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code></td>
+<td>[P2440R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_join_with</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code></td>
+<td>[P2441R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_repeat</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2474R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_slide</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code></td>
+<td>[P2442R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_starts_ends_with</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202106</span></code></td>
+<td>[P1659R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_stride</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P1899R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_to_container</code></td>
+<td><code>&lt;ranges&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code></td>
+<td>[P1206R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ranges_zip</code></td>
+<td><code>&lt;ranges&gt;</code><br><code>&lt;tuple&gt;</code><br><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202110</span></code></td>
+<td>[P2321R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ratio</code></td>
+<td><code>&lt;ratio&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2734R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_raw_memory_algorithms</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0040R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_rcu</code></td>
+<td><code>&lt;rcu&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2545R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_reference_from_temporary</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code></td>
+<td>[P2255R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_reference_wrapper</code></td>
+<td><code>&lt;functional&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P2944R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_remove_cvref</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201711</span></code></td>
+<td>[P0550R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_result_of_sfinae</code></td>
+<td><code>&lt;functional&gt;</code><br><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201210</span></code></td>
+<td>[N3462]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_robust_nonmodifying_seq_ops</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3671]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_sample</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code></td>
+<td>[P0220R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_saturation_arithmetic</code></td>
+<td><code>&lt;numeric&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P0543R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_scoped_lock</code></td>
+<td><code>&lt;mutex&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201703</span></code></td>
+<td>[P0156R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_semaphore</code></td>
+<td><code>&lt;semaphore&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P1135R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_shared_mutex</code></td>
+<td><code>&lt;shared_mutex&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201505</span></code></td>
+<td>[N4508]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_shared_ptr_arrays</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201611</span></code><br><code class="language-c highlight"><span class="mi">201707</span></code></td>
+<td>[P0497R0]<br>[P0674R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_shared_ptr_weak_type</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code></td>
+<td>[P0163R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_shared_timed_mutex</code></td>
+<td><code>&lt;shared_mutex&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201402</span></code></td>
+<td>[N3891]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_shift</code></td>
+<td><code>&lt;algorithm&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code><br><code class="language-c highlight"><span class="mi">202202</span></code></td>
+<td>[P0769R2]<br>[P2440R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_smart_pointer_owner_equality</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P1901R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_smart_ptr_for_overwrite</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202002</span></code></td>
+<td>[P1020R1, P1973R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_source_location</code></td>
+<td><code>&lt;source_location&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P1208R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_span</code></td>
+<td><code>&lt;span&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201803</span></code><br><code class="language-c highlight"><span class="mi">201902</span></code><br><code class="language-c highlight"><span class="mi">202002</span></code><br><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P0122R7, LWG3274]<br>[P1024R3]<br>[P1976R2]<br>[P2821R5, P2833R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_span_initializer_list</code></td>
+<td><code>&lt;span&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2447R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_spanstream</code></td>
+<td><code>&lt;spanstream&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202106</span></code></td>
+<td>[P0448R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_ssize</code></td>
+<td><code>&lt;iterator&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201902</span></code></td>
+<td>[P1227R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_sstream_from_string_view</code></td>
+<td><code>&lt;sstream&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2495R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_stacktrace</code></td>
+<td><code>&lt;stacktrace&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202011</span></code></td>
+<td>[P0881R7]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_start_lifetime_as</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code></td>
+<td>[P2590R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_starts_ends_with</code></td>
+<td><code>&lt;string&gt;</code><br><code>&lt;string_view&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201711</span></code></td>
+<td>[P0457R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_stdatomic_h</code></td>
+<td><code>&lt;stdatomic.h&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202011</span></code></td>
+<td>[P0943R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_string_contains</code></td>
+<td><code>&lt;string&gt;</code><br><code>&lt;string_view&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202011</span></code></td>
+<td>[P1679R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_string_resize_and_overwrite</code></td>
+<td><code>&lt;string&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202110</span></code></td>
+<td>[P1072R10]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_string_udls</code></td>
+<td><code>&lt;string&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3642]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_string_view</code></td>
+<td><code>&lt;string&gt;</code><br><code>&lt;string_view&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201603</span></code><br><code class="language-c highlight"><span class="mi">201606</span></code><br><code class="language-c highlight"><span class="mi">201803</span></code><br><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P0220R1]<br>[P0254R2]<br>[P0858R0, LWG3257]<br>[P2591R5]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_submdspan</code></td>
+<td><code>&lt;mdspan&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code><br><code class="language-c highlight"><span class="mi">202403</span></code></td>
+<td>[P2630R4]<br>[P2642R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_syncbuf</code></td>
+<td><code>&lt;syncstream&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201711</span></code><br><code class="language-c highlight"><span class="mi">201803</span></code></td>
+<td>[P0053R7]<br>[P0753R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_text_encoding</code></td>
+<td><code>&lt;text_encoding&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P1885R12]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_three_way_comparison</code></td>
+<td><code>&lt;compare&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201711</span></code><br><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0768R1]<br>[P1614R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_to_address</code></td>
+<td><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201711</span></code></td>
+<td>[P0653R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_to_array</code></td>
+<td><code>&lt;array&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201907</span></code></td>
+<td>[P0325R4]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_to_chars</code></td>
+<td><code>&lt;charconv&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201611</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P0067R5, P0682R1, LWG3137]<br>[P2497R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_to_string</code></td>
+<td><code>&lt;string&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P2587R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_to_underlying</code></td>
+<td><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202102</span></code></td>
+<td>[P1682R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_transformation_trait_aliases</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3655]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_transparent_operators</code></td>
+<td><code>&lt;functional&gt;</code><br><code>&lt;memory&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201210</span></code><br><code class="language-c highlight"><span class="mi">201510</span></code></td>
+<td>[N3421]<br>[P0074R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_tuple_element_t</code></td>
+<td><code>&lt;tuple&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201402</span></code></td>
+<td>[N3887]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_tuple_like</code></td>
+<td><code>&lt;map&gt;</code><br><code>&lt;tuple&gt;</code><br><code>&lt;unordered_map&gt;</code><br><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202207</span></code><br><code class="language-c highlight"><span class="mi">202311</span></code></td>
+<td>[P2165R4]<br>[P2819R2]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_tuples_by_type</code></td>
+<td><code>&lt;tuple&gt;</code><br><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201304</span></code></td>
+<td>[N3670]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_type_identity</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201806</span></code></td>
+<td>[P0887R1]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_type_trait_variable_templates</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201510</span></code></td>
+<td>[P0006R0]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_uncaught_exceptions</code></td>
+<td><code>&lt;exception&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201411</span></code></td>
+<td>[N4259]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_unordered_map_try_emplace</code></td>
+<td><code>&lt;unordered_map&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201411</span></code></td>
+<td>[N4279]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_unreachable</code></td>
+<td><code>&lt;utility&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">202202</span></code></td>
+<td>[P0627R6]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_unwrap_ref</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201811</span></code></td>
+<td>[P0318R1, LWG3348]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_variant</code></td>
+<td><code>&lt;variant&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201606</span></code><br><code class="language-c highlight"><span class="mi">202102</span></code><br><code class="language-c highlight"><span class="mi">202106</span></code><br><code class="language-c highlight"><span class="mi">202306</span></code></td>
+<td>[P0088R3, P0393R3, P0032R3]<br>[P2162R2]<br>[P2231R1]<br>[P2637R3]</td>
+</tr>
+<tr>
+<td><code>__cpp_lib_void_t</code></td>
+<td><code>&lt;type_traits&gt;</code></td>
+<td><code class="language-c highlight"><span class="mi">201411</span></code></td>
+<td>[N3911]</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../cpp26/" class="md-footer__link md-footer__link--prev" aria-label="Previous: C++26">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                C++26
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../cpp98/" class="md-footer__link md-footer__link--next" aria-label="Next: ISO/IEC 14882:1998">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                ISO/IEC 14882:1998
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.tooltips", "navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "content.footnote.tooltips", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../../javascripts/tablesort.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
